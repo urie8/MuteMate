@@ -1,0 +1,6 @@
+@MuteMate.Server_HostAddress = http://localhost:5237
+
+GET {{MuteMate.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
