@@ -9,7 +9,7 @@ function QuizComponent() {
   const [loading, setLoading] = useState(true);
   const [clicked, setClicked] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
-  const apiurl = "http://localhost:5099/api/Quiz/GetCategoryColors";
+  const apiurl = "https://localhost:7215/api/Quiz/GetCategoryColors";
 
   useEffect(() => {
     const fetchQuestions = async () => {
