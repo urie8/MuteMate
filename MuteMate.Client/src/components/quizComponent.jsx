@@ -7,8 +7,11 @@ function QuizComponent() {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [loading, setLoading] = useState(true);
-  const [clicked, setClicked] = useState(false);
-  const [questionIndex, setQuestionIndex] = useState(0);
+  const [questionIndex, setQuestionIndex] = useState(1);
+  const [quizFinished, setQuizFinished] = useState(false);
+  const [AnswerBtnStyle, setAnswerBtnStyle] = useState("default-quiz-btn");
+  const [submitBtn, setSubmitBtn] = useState(true);
+
   const apiurl = "https://localhost:7215/api/Quiz/GetCategoryColors";
 
   useEffect(() => {
@@ -33,12 +36,28 @@ function QuizComponent() {
     }
   }, [questions]);
 
-  function handleClick() {
+  function handleAnswerClick(e) {
+    console.log(e.target.value);
+
+    if (e.target.value == "true") {
+      e.target.className = "correct-quiz-btn";
+    } else {
+      e.target.className = "incorrect-quiz-btn";
+    }
+
+    setSubmitBtn(false);
+  }
+
+  function handleNextQuestionClick() {
     // Check if were at the last question if not keep going through the quiz
-    setQuestionIndex(questionIndex + 1);
-    console.log(questionIndex);
-    setCurrentQuestion(questions[questionIndex]);
-    console.log(currentQuestion);
+    if (questionIndex <= questions.length) {
+      setQuestionIndex(questionIndex + 1);
+      setCurrentQuestion(questions[questionIndex]);
+      setSubmitBtn(true);
+      setAnswerBtnStyle("default-quiz-btn");
+    } else {
+      // Pull up finished quiz page
+    }
   }
 
   return (
@@ -55,7 +74,12 @@ function QuizComponent() {
             <div className="answer-buttons">
               {currentQuestion.Answers && currentQuestion.Answers.$values ? (
                 currentQuestion.Answers.$values.map((a, index) => (
-                  <button onClick={handleClick} key={index}>
+                  <button
+                    className={AnswerBtnStyle}
+                    onClick={handleAnswerClick}
+                    key={index}
+                    value={a.IsCorrect}
+                  >
                     {a.Answer}
                   </button>
                 ))
@@ -63,8 +87,12 @@ function QuizComponent() {
                 <p>No answers available</p>
               )}
             </div>
+            <button disabled={submitBtn} onClick={handleNextQuestionClick}>
+              Next question
+            </button>
           </>
         )}
+        {quizFinished}
       </div>
     </>
   );

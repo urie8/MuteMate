@@ -16,5 +16,24 @@
   height: 250px;
 }
 
+.answer-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.default-quiz-btn {
+  width: 100px;
+}
+
+.correct-quiz-btn {
+  width: 100px;
+  border-color: green;
+}
+
+.incorrect-quiz-btn {
+  width: 100px;
+  border-color: red;
+}
+
 @media (min-width: 390px) and (max-width: 844px) {
 }
