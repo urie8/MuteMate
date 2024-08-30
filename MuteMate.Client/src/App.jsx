@@ -14,6 +14,7 @@ import MyPage from "./pages/myPage";
 import Practise from "./pages/Practise";
 import Register from "./pages/register";
 import Quiz from "./pages/quiz";
+import AboutPage from "./pages/aboutPage";
 import NotFound from "./pages/NotFound";
 import CategoryOrPractice from "./pages/categoryOrPractice";
 
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="/categoryQuiz" element={<CategoryQuiz />} />
       <Route path="/practise" element={<Practise />} />
       <Route path="/quiz/:category" element={<Quiz />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="/categoryOrPractice" element={<CategoryOrPractice />} />
 
       <Route path="*" element={<NotFound />} />

@@ -1,0 +1,51 @@
+.about-container{
+    padding: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about-text-container{
+    margin-top: 50px;
+    width: 85rem;
+    border: black 1px solid;
+    padding: 5rem;
+    font-family: "Roboto";
+    font-size: 20px;
+    background-color: #fefee3;
+    border-radius: 2rem;
+}
+
+.about-title{
+    font-size: 45px;
+    font-weight: bold;
+    color: #c5d7d7;
+    font-family: "Fredoka";
+    margin-bottom: 1rem;
+}
+
+
+@media (min-width: 390px) and (max-width: 844px)
+{
+    .about-container{
+        height: 100vh;
+    
+    }
+    .about-text-container{
+        width: 20rem;
+        padding: 1.5rem;
+        font-size: 13px;
+    }
+    .about-title{
+        font-size: 30px;
+    }    
+    .about-text-container{
+        margin-top: 0px;
+    }
+
+}
+
+
+

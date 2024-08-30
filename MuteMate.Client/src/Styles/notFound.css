@@ -1,0 +1,49 @@
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #c5d7d7;
+  font-size: 100px;
+  font-family: "Fredoka";
+  font-weight: bolder;
+}
+
+.notfound-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fefee3;
+}
+
+.go-back-btn{
+  margin-top: 30px;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.go-back-btn:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 390px) and (max-width: 844px) {
+  .notfound-container {
+    height: 100vh;
+  }
+
+    .container-navbar {
+        display: none;
+      }  
+
+  .notfound-text {
+    font-size: 25px;
+  }
+
+  .go-back-btn {
+    margin-top: 30px;
+    font-size: 15px;
+  }
+}
