@@ -7,7 +7,7 @@ import {
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/home";
-import CategoryPractise from "./pages/CategoryPractise";
+import CategoryPractise from "./pages/categoryPractise";
 import CategoryQuiz from "./pages/categoryQuiz";
 import LogIn from "./pages/login";
 import MyPage from "./pages/myPage";
