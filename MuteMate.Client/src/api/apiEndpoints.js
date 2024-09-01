@@ -5,6 +5,7 @@ export const API_BASE_URL = "https://localhost:7215"; // Base URL for the API
 export const ENDPOINTS = {
   REGISTER: `${API_BASE_URL}/register`,
   LOGIN: `${API_BASE_URL}/login`,
+  PINGAUTH: `${API_BASE_URL}/pingauth`,
   GETCATEGORIESCOLORS: `${API_BASE_URL}/api/Quiz/GetCategoryColors`,
   GETCATEGORIESLETTERS: `${API_BASE_URL}/api/Quiz/GetCategoryLetters`,
   GETCATEGORIESANIMALS: `${API_BASE_URL}/api/Quiz/GetCategoryAnimals`,

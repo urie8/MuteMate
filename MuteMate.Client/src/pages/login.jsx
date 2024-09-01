@@ -3,16 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import "../Styles/login.css";
 import { NavLink } from "react-router-dom";
+
 function Login() {
-  // state variables for email and password
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberme, setRememberme] = useState(false);
-  // state variable for error messages
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // handle change events for input fields
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (name === "email") setEmail(value);
@@ -24,19 +22,16 @@ function Login() {
     navigate("/register");
   };
 
-  // handle submit event for the form
   const handleSubmit = (e) => {
     e.preventDefault();
-    // validate email and password
     if (!email || !password) {
       setError("Please fill in all fields.");
     } else {
-      // clear error message
       setError("");
-      // post data to the /login api
-      const loginurl = rememberme
-        ? `${ENDPOINTS.LOGIN}?useCookies=true`
-        : `${ENDPOINTS.LOGIN}?useSessionCookies=true`;
+      const loginurl = `${ENDPOINTS.LOGIN}`;
+      // ? `${ENDPOINTS.LOGIN}?useCookies=true`
+      // : `${ENDPOINTS.LOGIN}`;
+      console.log("remember me is: ", rememberme);
 
       fetch(loginurl, {
         method: "POST",
@@ -49,19 +44,80 @@ function Login() {
         }),
       })
         .then((response) => {
-          // handle success or error from the server
-          if (response.ok) {
-            setError("Successful Login.");
-            window.location.href = "/";
-          } else {
+          console.log("response", response);
+          if (!response.ok) {
             setError("Error Logging In.");
+            throw new Error("login failed");
           }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("response data", data);
+          if (!data.accessToken) {
+            throw new Error("No token found in response");
+          }
+
+          const token = data.accessToken;
+          console.log("token is:", token);
+
+          if (rememberme) {
+            console.log("sparar token i LocalStorage");
+            localStorage.setItem("token", token);
+            localStorage.setItem("isLoggedIn", true);
+          } else {
+            console.log("sparar token i SessionStorage");
+            sessionStorage.setItem("token", token);
+            sessionStorage.setItem("isLoggedIn", true);
+          }
+
+          fetchUserData(token);
         })
         .catch((error) => {
-          // handle network error
           console.error(error);
           setError("Error Logging in.");
         });
+    }
+  };
+
+  const fetchUserData = async (token) => {
+    try {
+      const response = await fetch(`${ENDPOINTS.PINGAUTH}`, {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Could not get the info you wanted");
+      }
+
+      const userData = await response.json();
+      console.log("userdata: ", userData);
+
+      if (userData && userData.email) {
+        if (rememberme) {
+          //här ävan ha med userdata.id
+          // localStorage.setItem("loggedInUserId", userData.id);
+          localStorage.setItem("loggedInUserName", userData.email);
+        } else {
+          //här ävan ha med userdata.id
+          // sessionStorage.setItem("loggedInUserId", userData.id);
+          sessionStorage.setItem("loggedInUserName", userData.email);
+        }
+
+        console.log("User logged in:", userData.email);
+        setError("Successful Login.");
+
+        window.location.href = "/";
+      } else {
+        setError("Invalid response data");
+        console.log("problem med response data");
+      }
+    } catch (error) {
+      console.error(error);
+      setError("Error Logging in.");
     }
   };
 
@@ -70,7 +126,6 @@ function Login() {
       <div className="login-container">
         <div className="containerbox">
           <h3 className="login-text">Login</h3>
-          {/* <div className="img-container"></div> */}
           <div className="image-container"></div>
           <div className="form-container">
             <form onSubmit={handleSubmit}>
@@ -109,15 +164,13 @@ function Login() {
                   checked={rememberme}
                   onChange={handleChange}
                 />
-
                 <span className="rememberme-text">Remember Me</span>
-                {/* {error && <p className="log-in-error">{error}</p>} */}
               </div>
               {error && <p className="log-in-error">{error}</p>}
-              {/* <span>Remember Me</span> */}
               <div className="register-btn-container">
-                <button className="login-button" type="submit">Login</button>
-
+                <button className="login-button" type="submit">
+                  Login
+                </button>
                 <NavLink className="register-login" to="/register">
                   No account? Sign up!
                 </NavLink>
