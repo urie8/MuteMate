@@ -26,7 +26,7 @@ new QuestionModel
 {
     Id = 1,
     Question = "What color is this?",
-    Image = "", // Orange
+    Image = "images/colors/brown.png",  // Brown
     Category = "Colors"
 },
    new QuestionModel
@@ -222,14 +222,14 @@ new QuestionModel
 {
     Id = 29,
     Question = "What color is this?",
-    Image = "", // Red
+    Image = "images/colors/red.png",  // Red
     Category = "Colors"
 },
            new QuestionModel
            {
                Id = 30,
                Question = "What color is this?",
-               Image = "", // Blue
+               Image = "images/colors/blue.png",  // Blue
                Category = "Colors"
            },
 
@@ -237,28 +237,28 @@ new QuestionModel
             {
                 Id = 31,
                 Question = "What color is this?",
-                Image = "", // Green
+                Image = "images/colors/green.png",  // Green
                 Category = "Colors"
             },
            new QuestionModel
            {
                Id = 32,
                Question = "What color is this?",
-               Image = "", // Black
+               Image = "images/colors/black.png",  // Black
                Category = "Colors"
            },
             new QuestionModel
             {
                 Id = 33,
                 Question = "What color is this?",
-                Image = "", // White
+                Image = "images/colors/white.png",  // White
                 Category = "Colors"
             },
            new QuestionModel
            {
                Id = 34,
                Question = "What color is this?",
-               Image = "", // Pink
+               Image = "images/colors/pink.png",  // Pink
                Category = "Colors"
            },
 
@@ -266,21 +266,21 @@ new QuestionModel
            {
                Id = 35,
                Question = "What color is this?",
-               Image = "", // Yellow
+               Image = "images/colors/yellow.png",  // Yellow
                Category = "Colors"
            },
            new QuestionModel
            {
                Id = 36,
                Question = "What color is this?",
-               Image = "", // Grey
+               Image = "images/colors/grey.png",  // Grey
                Category = "Colors"
            },
              new QuestionModel
              {
                  Id = 37,
                  Question = "What color is this?",
-                 Image = "", // Purple
+                 Image = "images/colors/purple.png",  // Purple
                  Category = "Colors"
              }
 
@@ -1066,7 +1066,7 @@ new QuestionModel
                     IsCorrect = true,
                     QuestionId = 28,
                 },
-                //för färgen orange
+                //för färgen brown
                 new AnswerModel
                 {
                     Id = 106,
@@ -1077,7 +1077,7 @@ new QuestionModel
                 new AnswerModel
                 {
                     Id = 107,
-                    Answer = "Orange",
+                    Answer = "Brown",
                     IsCorrect = true,
                     QuestionId = 1,
                 },
@@ -1128,7 +1128,7 @@ new QuestionModel
                 new AnswerModel
                 {
                     Id = 114,
-                    Answer = "Orange",
+                    Answer = "Brown",
                     IsCorrect = false,
                     QuestionId = 30,
                 },
@@ -1251,7 +1251,7 @@ new QuestionModel
                 new AnswerModel
                 {
                     Id = 131,
-                    Answer = "Orange",
+                    Answer = "Brown",
                     IsCorrect = false,
                     QuestionId = 34,
                 },
@@ -1316,7 +1316,7 @@ new QuestionModel
                 new AnswerModel
                 {
                     Id = 140,
-                    Answer = "Orange",
+                    Answer = "Brown",
                     IsCorrect = false,
                     QuestionId = 36,
                 },

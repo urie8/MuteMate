@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using MuteMate.Server.Data;
 using MuteMate.Server.Data.Repositories;
 using MuteMate.Server.Models;
@@ -66,6 +67,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+//Lägger till detta så att vi kan använda statiska filer (alltså bilderna)
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(builder.Environment.ContentRootPath, "images")),
+    RequestPath = "/images"
+});
+
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");

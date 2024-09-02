@@ -12,8 +12,8 @@ using MuteMate.Server.Data;
 namespace MuteMate.Server.Migrations
 {
     [DbContext(typeof(MuteMateDbContext))]
-    [Migration("20240828145637_Initial")]
-    partial class Initial
+    [Migration("20240902101535_initialWithColors")]
+    partial class initialWithColors
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -925,7 +925,7 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 107,
-                            Answer = "Orange",
+                            Answer = "Brown",
                             IsCorrect = true,
                             QuestionId = 1
                         },
@@ -974,7 +974,7 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 114,
-                            Answer = "Orange",
+                            Answer = "Brown",
                             IsCorrect = false,
                             QuestionId = 30
                         },
@@ -1093,7 +1093,7 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 131,
-                            Answer = "Orange",
+                            Answer = "Brown",
                             IsCorrect = false,
                             QuestionId = 34
                         },
@@ -1156,7 +1156,7 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 140,
-                            Answer = "Orange",
+                            Answer = "Brown",
                             IsCorrect = false,
                             QuestionId = 36
                         },
@@ -1294,7 +1294,7 @@ namespace MuteMate.Server.Migrations
                         {
                             Id = 1,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/brown.png",
                             Question = "What color is this?"
                         },
                         new
@@ -1490,63 +1490,63 @@ namespace MuteMate.Server.Migrations
                         {
                             Id = 29,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/red.png",
                             Question = "What color is this?"
                         },
                         new
                         {
                             Id = 30,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/blue.png",
                             Question = "What color is this?"
                         },
                         new
                         {
                             Id = 31,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/green.png",
                             Question = "What color is this?"
                         },
                         new
                         {
                             Id = 32,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/black.png",
                             Question = "What color is this?"
                         },
                         new
                         {
                             Id = 33,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/white.png",
                             Question = "What color is this?"
                         },
                         new
                         {
                             Id = 34,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/pink.png",
                             Question = "What color is this?"
                         },
                         new
                         {
                             Id = 35,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/yellow.png",
                             Question = "What color is this?"
                         },
                         new
                         {
                             Id = 36,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/grey.png",
                             Question = "What color is this?"
                         },
                         new
                         {
                             Id = 37,
                             Category = "Colors",
-                            Image = "",
+                            Image = "images/colors/purple.png",
                             Question = "What color is this?"
                         });
                 });
