@@ -1,9 +1,12 @@
+import AuthorizeView from "../components/authorizeView";
 import QuizComponent from "../components/quizComponent";
 function Quiz() {
   return (
     <>
       <div className="quizPage-container">
-        <QuizComponent></QuizComponent>
+        <AuthorizeView>
+          <QuizComponent></QuizComponent>
+        </AuthorizeView>
       </div>
     </>
   );

@@ -1,10 +1,10 @@
 // src/api/apiEndpoints.js
 
-export const API_BASE_URL = "https://localhost:7215"; // Base URL for the API
+export const API_BASE_URL = "http://localhost:5237"; // Base URL for the API
 
 export const ENDPOINTS = {
-  REGISTER: `${API_BASE_URL}/register`,
-  LOGIN: `${API_BASE_URL}/login`,
+  REGISTER: `${API_BASE_URL}/api/Account/register`,
+  LOGIN: `${API_BASE_URL}/api/Account/login`,
   GETCATEGORIESCOLORS: `${API_BASE_URL}/api/Quiz/GetCategoryColors`,
   GETCATEGORIESLETTERS: `${API_BASE_URL}/api/Quiz/GetCategoryLetters`,
   GETCATEGORIESANIMALS: `${API_BASE_URL}/api/Quiz/GetCategoryAnimals`,

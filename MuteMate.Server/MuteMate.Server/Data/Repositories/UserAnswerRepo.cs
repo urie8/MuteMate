@@ -12,9 +12,6 @@ namespace MuteMate.Server.Data.Repositories
         {
             _context = context;
         }
-
-
-
         public async Task<List<AnswerModel>> GetCorrectAnswersForUserAsync(string userId) //total bananas points
         {
             var correctAnswers = await _context.UserAnswers
@@ -64,14 +61,6 @@ namespace MuteMate.Server.Data.Repositories
             .Select(ua => ua.Answer)
             .ToListAsync();
         }
-
-
-
-
-
-
-
-
 
 
     }

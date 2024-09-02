@@ -12,7 +12,7 @@ function QuizComponent() {
   const [AnswerBtnStyle, setAnswerBtnStyle] = useState("default-quiz-btn");
   const [submitBtn, setSubmitBtn] = useState(true);
 
-  const apiurl = "https://localhost:7215/api/Quiz/GetCategoryColors";
+  const apiurl = "http://localhost:5237/api/Quiz/GetCategoryColors";
 
   useEffect(() => {
     const fetchQuestions = async () => {
