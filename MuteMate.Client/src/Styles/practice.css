@@ -2,11 +2,11 @@
 
 /*    Desktop */
 @media (min-width: 845px) {
-html,
+/* html,
 body {
          height: 130%;
         min-height: 100vh;
-}
+} */
   .practice-container {
     display: flex;
     justify-content: center;
@@ -97,11 +97,11 @@ body {
 
 @media (max-width: 391px) {
 
-html,
+/* html,
 body {
          height: 130%;
         min-height: 100vh;
-}
+} */
   .practice-container {
     display: flex;
     justify-content: center;
