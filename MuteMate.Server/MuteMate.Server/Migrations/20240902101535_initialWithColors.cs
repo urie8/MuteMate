@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MuteMate.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initialWithColors : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -240,7 +240,7 @@ namespace MuteMate.Server.Migrations
                 columns: new[] { "Id", "category", "image", "question" },
                 values: new object[,]
                 {
-                    { 1, "Colors", "", "What color is this?" },
+                    { 1, "Colors", "images/colors/brown.png", "What color is this?" },
                     { 2, "Animals", "", "What animal is this?" },
                     { 3, "Letters", "", "What letter is this?" },
                     { 4, "Letters", "", "What letter is this?" },
@@ -268,15 +268,15 @@ namespace MuteMate.Server.Migrations
                     { 26, "Letters", "", "What letter is this?" },
                     { 27, "Letters", "", "What letter is this?" },
                     { 28, "Letters", "", "What letter is this?" },
-                    { 29, "Colors", "", "What color is this?" },
-                    { 30, "Colors", "", "What color is this?" },
-                    { 31, "Colors", "", "What color is this?" },
-                    { 32, "Colors", "", "What color is this?" },
-                    { 33, "Colors", "", "What color is this?" },
-                    { 34, "Colors", "", "What color is this?" },
-                    { 35, "Colors", "", "What color is this?" },
-                    { 36, "Colors", "", "What color is this?" },
-                    { 37, "Colors", "", "What color is this?" }
+                    { 29, "Colors", "images/colors/red.png", "What color is this?" },
+                    { 30, "Colors", "images/colors/blue.png", "What color is this?" },
+                    { 31, "Colors", "images/colors/green.png", "What color is this?" },
+                    { 32, "Colors", "images/colors/black.png", "What color is this?" },
+                    { 33, "Colors", "images/colors/white.png", "What color is this?" },
+                    { 34, "Colors", "images/colors/pink.png", "What color is this?" },
+                    { 35, "Colors", "images/colors/yellow.png", "What color is this?" },
+                    { 36, "Colors", "images/colors/grey.png", "What color is this?" },
+                    { 37, "Colors", "images/colors/purple.png", "What color is this?" }
                 });
 
             migrationBuilder.InsertData(
@@ -406,14 +406,14 @@ namespace MuteMate.Server.Migrations
                     { 104, "V", false, 28 },
                     { 105, "Z", true, 28 },
                     { 106, "Blue", false, 1 },
-                    { 107, "Orange", true, 1 },
+                    { 107, "Brown", true, 1 },
                     { 108, "Black", false, 1 },
                     { 109, "Red", false, 1 },
                     { 110, "Red", true, 29 },
                     { 111, "White", false, 29 },
                     { 112, "Yellow", false, 29 },
                     { 113, "Purple", false, 29 },
-                    { 114, "Orange", false, 30 },
+                    { 114, "Brown", false, 30 },
                     { 115, "Green", false, 30 },
                     { 116, "Pink", false, 30 },
                     { 117, "Blue", true, 30 },
@@ -430,7 +430,7 @@ namespace MuteMate.Server.Migrations
                     { 128, "Black", false, 33 },
                     { 129, "Pink", false, 33 },
                     { 130, "Yellow", false, 34 },
-                    { 131, "Orange", false, 34 },
+                    { 131, "Brown", false, 34 },
                     { 132, "Pink", true, 34 },
                     { 133, "Grey", false, 34 },
                     { 134, "Green", false, 35 },
@@ -439,7 +439,7 @@ namespace MuteMate.Server.Migrations
                     { 137, "Yellow", true, 35 },
                     { 138, "Grey", true, 36 },
                     { 139, "Black", false, 36 },
-                    { 140, "Orange", false, 36 },
+                    { 140, "Brown", false, 36 },
                     { 141, "Red", false, 36 },
                     { 142, "Grey", false, 37 },
                     { 143, "Purple", true, 37 },
