@@ -119,7 +119,7 @@ button {
     }
 } */
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 
 * {
   margin: 0;
@@ -133,33 +133,47 @@ body {
 }
 
 @media (min-width: 390px) and (max-width: 844px) {
-  #root {
+  /* #root {
     width: 100%;
     height: 100%;
-  }
+  } */
 
-  #footer {
+  /* #footer {
     display: none;
-  }
+  } */
 
 
 
-  body {
+  /* body {
     width: 100%;
     height: 100%;
+  } */
+   .containerboxhome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 82vh;
+    background-color: #a4be74;
   }
   .container-home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    background-color: #a4be74;
+    min-height: 70vh;
+    background-color: #fefee3;
+    border-radius: 20px;
+    border: 1px solid black; 
+    margin: 30px;
   }
   .text-container-home {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 40px 40px 0px 40px;
+    font-family: Fredoka;
+    font-size: 15px;
+    font-weight: bolder;
   }
 
   .title-home {
@@ -173,7 +187,7 @@ body {
   .tagline-home {
     font-weight: lighter;
     text-align: left;
-    color: #fefee3;
+    color: black;
   }
 
   .img-homepage {
@@ -181,9 +195,9 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-    width: 380px;
-    height: 380px;
-    background-image: url(../imgs/mascot/monkeymascot.png);
+    width: 300px;
+    height: 300px;
+    background-image: url(../imgs/mascot/pixelmonkey.png);
     background-size: 110%;
     background-position: left;
 
@@ -195,16 +209,17 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  button {
+  .button-containerhome button {
     border: none;
     width: 300px;
     height: 50px;
     border-radius: 50px;
-    font-family: "Robot";
+    font-family: "fredoka";
     font-size: 20px;
     color: black;
     background-color: #f1f0a0;
     border: 1px solid black;
+    font-weight: bold;
   }
   .button-containerhome button:last-child {
     margin-top: 15px;
@@ -213,8 +228,10 @@ body {
   .signIn-btn {
     padding: 20px;
     font-size: 20px;
-    font-weight: lighter;
-    color: #fefee3;
+    font-weight: bold;
+    font-family: "fredoka";
+
+
   }
 }
 
@@ -223,12 +240,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 40vh;
     border: black solid 1px;
     border-radius: 50px;
-    height: 200px;
-    width: 70vw;
     background-color: #fefee3;
+    min-height: 82vh; 
+    width: 80vw;
+    margin: 0 auto;
   }
 
   .text-container-home {
@@ -240,6 +257,19 @@ body {
     font-size: 15px;
   }
 
+  .img-homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 380px;
+    height: 380px;
+    background-image: url(../imgs/mascot/pixelmonkey.png);
+    background-size: 110%;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+
   .button-containerhome {
     width: 100%;
     display: flex;
@@ -248,13 +278,14 @@ body {
     margin-top: 80px;
   }
 
-  button {
+  .button-containerhome button {
     border: none;
     width: 500px;
     height: 80px;
     border-radius: 50px;
-    font-family: "Robot";
-    font-size: 20px;
+    font-family: "fredoka";
+    font-weight: bolder;
+    font-size: 30px;
     color: black;
     background-color: #f1f0a0;
     border: 1px solid black;
@@ -267,7 +298,7 @@ body {
     padding: 20px;
     font-size: 20px;
     font-weight: lighter;
-    color: #fefee3;
+    color: #black;
   }
   .containerboxhome {
     display: flex;
