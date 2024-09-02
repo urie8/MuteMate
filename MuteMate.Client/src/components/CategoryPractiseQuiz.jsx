@@ -6,10 +6,9 @@ function CategoryPractiseQuiz({ message, linkTo }) {
   const [category, setCategory] = useState([]);
   const navigate = useNavigate();
 
-  function handleImageClick() {
+  function handleImageClick(category) {
     //Måste kolla vilken bild som klickats
-
-    navigate("/practice");
+    navigate(`${linkTo}/${category}`);
   }
   return (
     <>

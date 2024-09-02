@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+/*    Desktop */
+@media (min-width: 845px) {
+  .practice-colors-component-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .practice-colors-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw;
+    height: 10vh;
+    background-color: #fefee3;
+    border-radius: 15px;
+    border: solid 1px black;
+  }
+
+  .orange-text {
+    color: orange;
+    background-color: orange;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .blue-text {
+    color: blue;
+    background-color: blue;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .red-text {
+    color: red;
+    background-color: red;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .green-text {
+    color: green;
+    background-color: green;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .yellow-text {
+    color: yellow;
+    background-color: yellow;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .purple-text {
+    color: purple;
+    background-color: purple;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .black-text {
+    color: black;
+    background-color: black;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .pink-text {
+    color: rgb(253, 114, 239);
+    height: 5vh;
+    width: 13vw;
+    background-color: rgb(253, 114, 239);
+  }
+  .white-text {
+    color: rgb(255, 255, 255);
+    background-color: white;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .grey-text {
+    color: grey;
+    background-color: grey;
+    height: 5vh;
+    width: 13vw;
+  }
+}
+
+@media (max-width: 391px) {
+  .practice-colors-component-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .practice-colors-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw;
+    height: 10vh;
+    background-color: #fefee3;
+    border-radius: 15px;
+    border: solid 1px black;
+  }
+
+  .orange-text {
+    color: orange;
+    background-color: orange;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .blue-text {
+    color: blue;
+    background-color: blue;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .red-text {
+    color: red;
+    background-color: red;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .green-text {
+    color: green;
+    background-color: green;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .yellow-text {
+    color: yellow;
+    background-color: yellow;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .purple-text {
+    color: purple;
+    background-color: purple;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .black-text {
+    color: black;
+    background-color: black;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .pink-text {
+    color: rgb(253, 114, 239);
+    height: 5vh;
+    width: 13vw;
+    background-color: rgb(253, 114, 239);
+  }
+  .white-text {
+    color: rgb(255, 255, 255);
+    background-color: white;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .grey-text {
+    color: grey;
+    background-color: grey;
+    height: 5vh;
+    width: 13vw;
+  }
+}
