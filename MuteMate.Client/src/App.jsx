@@ -27,7 +27,7 @@ const router = createBrowserRouter(
       <Route path="/myPage" element={<MyPage />} />
       <Route path="/categoryPractise" element={<CategoryPractise />} />
       <Route path="/categoryQuiz" element={<CategoryQuiz />} />
-      <Route path="/practise" element={<Practise />} />
+      <Route path="/practice/:category" element={<Practise />} />
       <Route path="/quiz/:category" element={<Quiz />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/categoryOrPractice" element={<CategoryOrPractice />} />
