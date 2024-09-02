@@ -160,6 +160,33 @@ body {
     font-size: 50px;
     font-family: "fredoka";
   }
+
+  .banana {
+    visibility: hidden;
+  }
+
+  .banana-Mobile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+    font-family: "Fredoka";
+    font-size: 20px;
+  }
+
+  .banana-display-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 250px;
+    background-color: #fefee3;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid, 1px, black;
+    font-family: "Fredoka";
+    font-size: 30px;
+  }
 }
 
 /*Mobildesign */
@@ -183,7 +210,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    gap: 50px;
+    gap: 40px;
     /* background-image: url(../images/vines.png);
     background-repeat: no-repeat;
     background-size: 110%; */
@@ -214,6 +241,7 @@ body {
   }
 
   .banana-display {
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -248,11 +276,16 @@ body {
     justify-content: space-between;
   }
 
+  .quotes-container {
+    font-family: "Fredoka";
+    font-size: 20px;
+  }
+
   .score-display {
     background-color: #fefee3;
     border-radius: 10px;
     border: solid, 1px, black;
-    gap: 10px;
+    gap: 2px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -262,6 +295,7 @@ body {
 
   .img-container-profile {
     display: flex;
+    margin: 5px;
     justify-content: space-around;
     align-items: center;
   }
@@ -270,8 +304,8 @@ body {
     display: flex;
     font-size: 20px;
     align-items: center;
-
     margin-left: 10px;
+    margin-bottom: 0px;
   }
 
   .banana2 {
@@ -293,5 +327,36 @@ body {
   .animals-profile {
     max-width: 30%;
     max-height: 200px;
+  }
+
+  .banana-Mobile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .bananaMobile {
+    max-width: 30%;
+    max-height: 200px;
+  }
+
+  .banana-text-1 {
+    font-family: "Fredoka";
+    margin-bottom: 20px;
+  }
+
+  .banana-display-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 250px;
+    background-color: #fefee3;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid, 1px, black;
+  }
+
+  .Total-bananas-text {
+    font-size: 40px;
   }
 }
