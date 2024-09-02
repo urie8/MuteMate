@@ -164,6 +164,29 @@ body {
   .banana {
     visibility: hidden;
   }
+
+  .banana-Mobile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+    font-family: "Fredoka";
+    font-size: 20px;
+  }
+
+  .banana-display-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 250px;
+    background-color: #fefee3;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid, 1px, black;
+    font-family: "Fredoka";
+    font-size: 30px;
+  }
 }
 
 /*Mobildesign */

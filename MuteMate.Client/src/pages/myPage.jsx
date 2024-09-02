@@ -66,11 +66,11 @@ function myPage() {
             <p className="Total-bananas-text"> = 36</p>
           </div>
         </div>
-        <div className="banana-display">
-          <div className="banana-text">Total bananas!</div>
-          <img src={banana} alt="banan" className="banana1" />
-          {/* <div className="banana-point">Hämta bananer här från API</div> */}
-        </div>
+        {/* <div className="banana-display"> */}
+        {/* <div className="banana-text">Total bananas!</div>
+        <img src={banana} alt="banan" className="banana1" /> */}
+        {/* <div className="banana-point">Hämta bananer här från API</div> */}
+        {/* </div> */}
       </div>
     </>
   );
