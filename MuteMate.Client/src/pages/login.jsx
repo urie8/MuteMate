@@ -5,7 +5,7 @@ import "../Styles/login.css";
 import { NavLink } from "react-router-dom";
 function Login() {
   // state variables for email and password
-  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [rememberme, setRememberme] = useState(false);
   // state variable for error messages
@@ -15,7 +15,7 @@ function Login() {
   // handle change events for input fields
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (name === "email") setEmail(value);
+    if (name === "userName") setUserName(value);
     if (name === "password") setPassword(value);
     if (name === "rememberme") setRememberme(checked);
   };
@@ -28,7 +28,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // validate email and password
-    if (!email || !password) {
+    if (!userName || !password) {
       setError("Please fill in all fields.");
     } else {
       // clear error message
@@ -44,9 +44,10 @@ function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: email,
+          username: userName,
           password: password,
         }),
+        credentials: "include",
       })
         .then((response) => {
           // handle success or error from the server
@@ -74,15 +75,15 @@ function Login() {
           <div className="image-container"></div>
           <div className="form-container">
             <form onSubmit={handleSubmit}>
-              <label className="forminput" htmlFor="email">
-                Email:
+              <label className="forminput" htmlFor="userName">
+                Username:
               </label>
 
               <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
+                type="text"
+                id="userName"
+                name="userName"
+                value={userName}
                 onChange={handleChange}
               />
 
@@ -116,7 +117,9 @@ function Login() {
               {error && <p className="log-in-error">{error}</p>}
               {/* <span>Remember Me</span> */}
               <div className="register-btn-container">
-                <button className="login-button" type="submit">Login</button>
+                <button className="login-button" type="submit">
+                  Login
+                </button>
 
                 <NavLink className="register-login" to="/register">
                   No account? Sign up!

@@ -7,6 +7,7 @@ import "../Styles/register.css";
 function Register() {
   // state variables for email and passwords
   const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ function Register() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "email") setEmail(value);
+    if (name === "userName") setUserName(value);
     if (name === "password") setPassword(value);
     if (name === "confirmPassword") setConfirmPassword(value);
   };
@@ -30,7 +32,7 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // validate email and passwords
-    if (!email || !password || !confirmPassword) {
+    if (!email || !userName || !password || !confirmPassword) {
       setError("Please fill in all fields.");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Please enter a valid email address.");
@@ -47,6 +49,7 @@ function Register() {
         },
         body: JSON.stringify({
           email: email,
+          userName: userName,
           password: password,
         }),
       })
@@ -68,62 +71,69 @@ function Register() {
   return (
     <div className="register-container">
       <div className="containerbox">
-      
         {/* <div className="img-container"></div> */}
         <div className="image-container"></div>
 
         <h3 className="register-text">Register</h3>
         <div className="form-container register-form-left">
           <form onSubmit={handleSubmit}>
-           
-              <label className="register-label-text" htmlFor="email">
-                Email:
-              </label>
-           
-        
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleChange}
-              />
-       
-           
-              <label className="register-label-text" htmlFor="password">
-                Password:
-              </label>
-          
-            
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-              />
-          
-              <label className="register-label-text" htmlFor="confirmPassword">
-                Confirm Password:
-              </label>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                value={confirmPassword}
-                onChange={handleChange}
-              />
+            <label className="register-label-text" htmlFor="email">
+              Email:
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+            />
+
+            <label className="register-label-text" htmlFor="username">
+              Username:
+            </label>
+
+            <input
+              type="text"
+              id="userName"
+              name="userName"
+              value={userName}
+              onChange={handleChange}
+            />
+
+            <label className="register-label-text" htmlFor="password">
+              Password:
+            </label>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+            />
+
+            <label className="register-label-text" htmlFor="confirmPassword">
+              Confirm Password:
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={confirmPassword}
+              onChange={handleChange}
+            />
             {error && <p className="register-error">{error}</p>}
 
             <div className="register-btn-container">
               {" "}
-                <button className="register-button" type="submit">
-                  Register
-                </button>
-                {/* <button onClick={handleLoginClick}>Go to Login</button> */}
-                <NavLink to="/login" className="register-login">
-                  Already have an account? Log in.
-                </NavLink>
+              <button className="register-button" type="submit">
+                Register
+              </button>
+              {/* <button onClick={handleLoginClick}>Go to Login</button> */}
+              <NavLink to="/login" className="register-login">
+                Already have an account? Log in.
+              </NavLink>
             </div>
           </form>
         </div>

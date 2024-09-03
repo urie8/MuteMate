@@ -20,11 +20,12 @@ builder.Services.AddIdentityApiEndpoints<ApplicationUser>()
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", options =>
+    options.AddPolicy("AllowSpecificOrigin", policy =>
     {
-        options.AllowAnyHeader();
-        options.AllowAnyMethod();
-        options.AllowAnyOrigin();
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); // Allow credentials if you need to send cookies or authentication headers
     });
 });
 
@@ -77,8 +78,9 @@ app.UseStaticFiles(new StaticFileOptions
 
 
 app.UseHttpsRedirection();
-app.UseCors("AllowAll");
+app.UseCors("AllowSpecificOrigin");
 
+app.UseAuthentication();
 
 app.UseAuthorization();
 
