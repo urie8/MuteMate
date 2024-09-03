@@ -12,8 +12,8 @@ using MuteMate.Server.Data;
 namespace MuteMate.Server.Migrations
 {
     [DbContext(typeof(MuteMateDbContext))]
-    [Migration("20240902101535_initialWithColors")]
-    partial class initialWithColors
+    [Migration("20240903091400_gitinit")]
+    partial class gitinit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1308,182 +1308,182 @@ namespace MuteMate.Server.Migrations
                         {
                             Id = 3,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/a.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 4,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/b.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 5,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/c.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 6,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/d.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 7,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/e.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 8,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/f.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 9,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/g.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 10,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/h.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 11,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/i.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 12,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/j.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 13,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/k.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 14,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/L.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 15,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/m.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 16,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/n.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 17,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/o.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 18,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/p.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 19,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/q.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 20,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/r.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 21,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/s.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 22,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/t.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 23,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/u.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 24,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/v.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 25,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/w.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 26,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/x.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 27,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/y.png",
                             Question = "What letter is this?"
                         },
                         new
                         {
                             Id = 28,
                             Category = "Letters",
-                            Image = "",
+                            Image = "images/Alphabet/z.png",
                             Question = "What letter is this?"
                         },
                         new
