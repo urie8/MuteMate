@@ -40,182 +40,182 @@ new QuestionModel
 {
     Id = 3,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på A
+    Image = "images/Alphabet/a.png", // här ska det vara en bild på A
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 4,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på B
+    Image = "images/Alphabet/b.png", // här ska det vara en bild på B
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 5,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på C
+    Image = "images/Alphabet/c.png", // här ska det vara en bild på C
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 6,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på D
+    Image = "images/Alphabet/d.png", // här ska det vara en bild på D
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 7,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på E
+    Image = "images/Alphabet/e.png", // här ska det vara en bild på E
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 8,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på F
+    Image = "images/Alphabet/f.png", // här ska det vara en bild på F
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 9,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på G
+    Image = "images/Alphabet/g.png", // här ska det vara en bild på G
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 10,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på H
+    Image = "images/Alphabet/h.png", // här ska det vara en bild på H
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 11,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på I
+    Image = "images/Alphabet/i.png", // här ska det vara en bild på I
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 12,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på J
+    Image = "images/Alphabet/j.png", // här ska det vara en bild på J
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 13,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på K
+    Image = "images/Alphabet/k.png", // här ska det vara en bild på K
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 14,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på L
+    Image = "images/Alphabet/L.png", // här ska det vara en bild på L
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 15,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på M
+    Image = "images/Alphabet/m.png", // här ska det vara en bild på M
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 16,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på N
+    Image = "images/Alphabet/n.png", // här ska det vara en bild på N
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 17,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på O
+    Image = "images/Alphabet/o.png", // här ska det vara en bild på O
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 18,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på P
+    Image = "images/Alphabet/p.png", // här ska det vara en bild på P
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 19,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på Q
+    Image = "images/Alphabet/q.png", // här ska det vara en bild på Q
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 20,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på R
+    Image = "images/Alphabet/r.png", // här ska det vara en bild på R
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 21,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på S
+    Image = "images/Alphabet/s.png", // här ska det vara en bild på S
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 22,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på T
+    Image = "images/Alphabet/t.png", // här ska det vara en bild på T
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 23,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på U
+    Image = "images/Alphabet/u.png", // här ska det vara en bild på U
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 24,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på V
+    Image = "images/Alphabet/v.png", // här ska det vara en bild på V
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 25,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på W
+    Image = "images/Alphabet/w.png", // här ska det vara en bild på W
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 26,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på X
+    Image = "images/Alphabet/x.png", // här ska det vara en bild på X
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 27,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på Y
+    Image = "images/Alphabet/y.png", // här ska det vara en bild på Y
     Category = "Letters"
 },
 new QuestionModel
 {
     Id = 28,
     Question = "What letter is this?",
-    Image = "", // här ska det vara en bild på Z
+    Image = "images/Alphabet/z.png", // här ska det vara en bild på Z
     Category = "Letters"
 },
 new QuestionModel
