@@ -1,187 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 
-/*    Desktop */
-@media (min-width: 845px) {
-/* html,
-body {
-         height: 130%;
-        min-height: 100vh;
-} */
-  .practice-container {
-    display: flex;
-    justify-content: center;
-    margin-top: -23px;
+/* Mobile First Styles */
+.practice-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -23px;
+}
 
-  }
+.practice-colors-text-container {
+  display: flex;
+  background-color: #fefee3;
+  width: 80vw;
+  height: 8vh; 
+  border-radius: 15px;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.search-bar-container {
+  background-color: #fefee3;
+  width: 80vw;
+  height: 5vh;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+.practice-text {
+  font-family: "Fredoka";
+  font-weight: 600;
+  font-size: 6vw; 
+  margin-right: 10px;
+}
+
+.colors-text-container {
+  display: flex;
+}
+
+.c-text, .o-text, .o2-text, .l-text, .r-text, .s-text {
+  font-family: "Fredoka";
+  font-weight: 800;
+  font-size: 6vw; 
+}
+
+.c-text { color: #ff0000; }
+.o-text { color: #fdce00; }
+.o2-text { color: #ff00cc; }
+.l-text { color: #1eff00; }
+.r-text { color: #ff9100; }
+.s-text { color: #8800ff; }
+
+/* Tablet Breakpoint */
+@media (min-width: 600px) {
   .practice-colors-text-container {
-    display: flex;
-    background-color: #fefee3;
-    width: 80vw;
-    height: 10vh;
-    border-radius: 15px;
-    border: 1px solid black;
-    align-items: center;
-    justify-content: center;
-  }
-
-
-  .search-container{
-    display: none;
-    justify-content: center;
-    margin-top:15px
-  
-  }
-
-  .search-bar-container{
-        background-color: #fefee3;
-        width: 80vw;
-    height: 5vh;
-    border-radius: 15px;
-    border: 1px solid black;
-    display: none;
-
+    height: 9vh; 
   }
 
   .practice-text {
-    font-family: "Fredoka";
-    font-weight: 600;
-    font-size: 50px;
-    margin-right: 10px;
+    font-size: 4vw; 
   }
 
-  .colors-text-container {
-    display: flex;
-  }
-
-  .c-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 50px;
-    color: #ff0000;
-  }
-  .o-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 50px;
-    color: #fdce00;
-  }
-  .o2-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 50px;
-    color: #ff00cc;
-  }
-
-  .l-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 50px;
-    color: #1eff00;
-  }
-  .r-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 50px;
-    color: #ff9100;
-  }
-  .s-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 50px;
-    color: #8800ff;
+  .c-text, .o-text, .o2-text, .l-text, .r-text, .s-text {
+    font-size: 4vw;
   }
 }
 
-
-
-@media (max-width: 391px) {
-
-/* html,
-body {
-         height: 130%;
-        min-height: 100vh;
-} */
-  .practice-container {
-    display: flex;
-    justify-content: center;
-    margin-top: -23px;
-
-  }
-
+/* Desktop Breakpoint */
+@media (min-width: 845px) {
   .practice-colors-text-container {
-    display: flex;
-    background-color: #fefee3;
     width: 80vw;
-    height: 5vh;
-    border-radius: 15px;
-    border: 1px solid black;
-    align-items: center;
-    justify-content: center;
+    height: 10vh;
   }
 
-
-  .search-container{
-    display: flex;
-    justify-content: center;
-    margin-top:15px
+  .search-container {
+    display: none; 
   }
 
-  .search-bar-container{
-        background-color: #fefee3;
-        width: 80vw;
-    height: 5vh;
-    border-radius: 15px;
-    border: 1px solid black;
-
+  .search-bar-container {
+    display: none; 
   }
 
   .practice-text {
-    font-family: "Fredoka";
-    font-weight: 500;
-    font-size: 28px;
-    margin-right: 10px;
+    font-size: 3vw; 
   }
 
-  .colors-text-container {
-    display: flex;
-  }
-
-  .c-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 28px;
-    color: #ff0000;
-  }
-  .o-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 28px;
-    color: #fdce00;
-  }
-  .o2-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 28px;
-    color: #ff00cc;
-  }
-
-  .l-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 28px;
-    color: #1eff00;
-  }
-  .r-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 28px;
-    color: #ff9100;
-  }
-  .s-text {
-    font-family: "Fredoka";
-    font-weight: 800;
-    font-size: 28px;
-    color: #8800ff;
+  .c-text, .o-text, .o2-text, .l-text, .r-text, .s-text {
+    font-size: 3vw;
   }
 }

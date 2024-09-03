@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+/* Mobile First Styles */
+.abc-image {
+  width: 30px; /* default for small screens */
+}
+
+.practice-letters-component-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.practice-letters-tecken-image {
+  width: 20vw; /* Using vw for better scaling */
+}
+
+.practice-letters-card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80vw; /* Responsive width */
+  height: 20vh; /* Responsive height */
+  background-color: #fefee3;
+  border-radius: 15px;
+  border: solid 1px black;
+}
+
+.grey-line-practice-letters {
+  background-color: rgba(117, 117, 117, 0.116);
+  height: 15vh;
+  width: 1vw; /* Responsive width */
+  border-radius: 10px;
+}
+
+.practice-letter-correct-answer {
+  font-family: "Fredoka";
+  font-size: 5vw; /* Responsive font size */
+  font-weight: 600;
+}
+
+/* Tablet Screens */
+@media (min-width: 600px) {
+  .practice-letters-tecken-image {
+    width: 15vw;
+  }
+
+  .practice-letters-card {
+    width: 60vw;
+    height: 30vh;
+  }
+
+  .grey-line-practice-letters {
+    height: 25vh;
+    width: 2vw;
+  }
+
+  .practice-letter-correct-answer {
+    font-size: 8vw;
+  }
+}
+
+/* Desktop Screens */
+@media (min-width: 845px) {
+  .abc-image {
+    width: 50px;
+  }
+
+  .practice-letters-tecken-image {
+    width: 10vw;
+  }
+
+  .practice-letters-card {
+    width: 39vw;
+    height: 39vh;
+  }
+
+  .grey-line-practice-letters {
+    height: 30vh;
+    width: 8px;
+    margin-right: 52px;
+  }
+
+  .practice-letter-correct-answer {
+    font-size: 100px;
+  }
+}

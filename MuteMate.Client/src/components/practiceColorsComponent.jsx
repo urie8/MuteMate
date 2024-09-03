@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import "../Styles/practiceColorsComponent.css";
 import { ENDPOINTS } from "../api/apiEndpoints";
@@ -18,27 +19,27 @@ function PracticeColorsComponent() {
   const getColorClass = (answer) => {
     switch (answer.toLowerCase()) {
       case "orange":
-        return "orange-text";
+        return "orange-text common-style";
       case "blue":
-        return "blue-text";
+        return "blue-text common-style";
       case "red":
-        return "red-text";
+        return "red-text common-style";
       case "green":
-        return "green-text";
+        return "green-text common-style";
       case "yellow":
-        return "yellow-text";
+        return "yellow-text common-style";
       case "purple":
-        return "purple-text";
+        return "purple-text common-style";
       case "black":
-        return "black-text";
+        return "black-text common-style";
       case "grey":
-        return "grey-text";
+        return "grey-text common-style";
       case "pink":
-        return "pink-text";
+        return "pink-text common-style";
       case "white":
-        return "white-text";
+        return "white-text common-style";
       case "brown":
-        return "brown-text";
+        return "brown-text common-style";
       default:
         return ""; // Default to no color class
     }
@@ -57,6 +58,7 @@ function PracticeColorsComponent() {
             <div className="r-text">r</div>
             <div className="s-text">s</div>
           </div>
+          <div className="black-line-colors"></div>
         </div>
       </div>
 
@@ -65,7 +67,7 @@ function PracticeColorsComponent() {
       </div>
       <div className="practice-colors-component-container">
         {colorQuestions.map((question) => {
-           const imageUrl = `http://localhost:5237/${question.Image}`; // Fullständig URL för bilden
+          const imageUrl = `http://localhost:5237/${question.Image}`; // Fullständig URL för bilden
 
           const correctAnswer = question.Answers.$values.find(
             (answer) => answer.IsCorrect
@@ -79,6 +81,9 @@ function PracticeColorsComponent() {
                 src={imageUrl}
                 alt="Color"
               />
+
+              <div className="grey-line-practice-colors"></div>
+
               <p className={answerClass}>{correctAnswer.Answer}</p>
             </div>
           );
@@ -89,3 +94,6 @@ function PracticeColorsComponent() {
 }
 
 export default PracticeColorsComponent;
+
+
+

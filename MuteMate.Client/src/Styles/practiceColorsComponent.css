@@ -2,100 +2,110 @@
 
 /*    Desktop */
 @media (min-width: 845px) {
+
+.black-line-colors{
+  background-color: black;
+  height: 5px;
+  width: 364px;
+  position: absolute;
+  top: 196px;
+  left:660px;
+  border-radius: 10px;
+
+}
+
   .practice-colors-component-container {
     display: flex;
     justify-content: center;
     margin-top: 15px;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 22px;
   }
 
   .practice-colors-card {
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    width: 80vw;
-    height: 10vh;
+    justify-content: center;
+    width: 39vw;
+    height: 39vh;
     background-color: #fefee3;
     border-radius: 15px;
     border: solid 1px black;
   }
 
+  .practice-colors-image {
+    width: 250px;
+  }
+
+  .common-style {
+    height: 30vh;
+    width: 15vw;
+    border-radius: 10px;
+    border: 1px black solid;
+  }
+
+  .grey-line-practice-colors {
+    background-color: rgba(117, 117, 117, 0.116);
+    height: 30vh;
+    width: 8px;
+    margin-right: 52px;
+    border-radius: 10px;
+  }
+
   .orange-text {
     color: orange;
     background-color: orange;
-    height: 5vh;
-    width: 13vw;
   }
 
   .blue-text {
     color: blue;
     background-color: blue;
-    height: 5vh;
-    width: 13vw;
   }
 
   .red-text {
     color: red;
     background-color: red;
-    height: 5vh;
-    width: 13vw;
   }
 
   .green-text {
     color: green;
     background-color: green;
-    height: 5vh;
-    width: 13vw;
-  }
-
-  .yellow-text {
-    color: yellow;
-    background-color: yellow;
-    height: 5vh;
-    width: 13vw;
-  }
-
-  .purple-text {
-    color: purple;
-    background-color: purple;
-    height: 5vh;
-    width: 13vw;
-  }
-
-  .black-text {
-    color: black;
-    background-color: black;
-    height: 5vh;
-    width: 13vw;
   }
 
   .brown-text {
     color: rgb(74, 32, 32);
     background-color: rgb(74, 32, 32);
-    height: 5vh;
-    width: 13vw;
+  }
+
+  .yellow-text {
+    color: yellow;
+    background-color: yellow;
+  }
+
+  .purple-text {
+    color: purple;
+    background-color: purple;
+  }
+
+  .black-text {
+    color: black;
+    background-color: black;
   }
 
   .pink-text {
     color: rgb(253, 114, 239);
-    height: 5vh;
-    width: 13vw;
     background-color: rgb(253, 114, 239);
   }
+
   .white-text {
     color: rgb(255, 255, 255);
     background-color: white;
-    height: 5vh;
-    width: 13vw;
   }
 
   .grey-text {
     color: grey;
     background-color: grey;
-    height: 5vh;
-    width: 13vw;
   }
 }
 
@@ -116,85 +126,80 @@
     align-items: center;
     justify-content: space-around;
     width: 80vw;
-    height: 10vh;
+    height: 20vh;
     background-color: #fefee3;
     border-radius: 15px;
     border: solid 1px black;
   }
 
+  .common-style {
+    height: 15vh;
+    width: 20vw;
+    border-radius: 10px;
+    border: 1px black solid;
+  }
+
+  .grey-line-practice-colors {
+    background-color: rgba(117, 117, 117, 0.116);
+    height: 15vh;
+    width: 1vw;
+    position: absolute;
+    left: 200px;
+    border-radius: 10px;
+  }
+
   .orange-text {
     color: orange;
     background-color: orange;
-    height: 5vh;
-    width: 13vw;
   }
 
   .blue-text {
     color: blue;
     background-color: blue;
-    height: 5vh;
-    width: 13vw;
   }
 
   .red-text {
     color: red;
     background-color: red;
-    height: 5vh;
-    width: 13vw;
   }
 
   .green-text {
     color: green;
     background-color: green;
-    height: 5vh;
-    width: 13vw;
   }
 
   .brown-text {
     color: rgb(74, 32, 32);
     background-color: rgb(74, 32, 32);
-    height: 5vh;
-    width: 13vw;
   }
 
   .yellow-text {
     color: yellow;
     background-color: yellow;
-    height: 5vh;
-    width: 13vw;
   }
 
   .purple-text {
     color: purple;
     background-color: purple;
-    height: 5vh;
-    width: 13vw;
   }
 
   .black-text {
     color: black;
     background-color: black;
-    height: 5vh;
-    width: 13vw;
   }
 
   .pink-text {
     color: rgb(253, 114, 239);
-    height: 5vh;
-    width: 13vw;
     background-color: rgb(253, 114, 239);
   }
+
   .white-text {
     color: rgb(255, 255, 255);
     background-color: white;
-    height: 5vh;
-    width: 13vw;
   }
 
   .grey-text {
     color: grey;
     background-color: grey;
-    height: 5vh;
-    width: 13vw;
   }
 }

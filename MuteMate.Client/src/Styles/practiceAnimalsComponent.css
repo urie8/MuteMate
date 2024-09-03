@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+/* Mobile First Styles */
+.animals-text-container {
+  display: flex;
+}
+
+.animal-text {
+  font-family: "Fredoka";
+  font-weight: 800;
+  font-size: 6vw; 
+  color: #000000;
+}
+
+.practice-animal-text {
+  font-family: "Fredoka";
+  font-weight: 600;
+  font-size: 6vw; 
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.paw-image {
+  width: 8vw; 
+}
+
+.practice-animals-tecken-image {
+  width: 35vw; 
+}
+
+.practice-animals-component-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.practice-animals-card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80vw; 
+  height: 20vh; 
+  background-color: #fefee3;
+  border-radius: 15px;
+  border: solid 1px black;
+}
+
+.practice-animal-image {
+  width: 25vw; 
+}
+
+.grey-line-practice-animals {
+  background-color: rgba(117, 117, 117, 0.116);
+  height: 15vh; 
+  width: 2vw; 
+  border-radius: 10px;
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 600px) {
+  .animal-text {
+    font-size: 5vw; 
+  }
+
+  .practice-animal-text {
+    font-size: 5vw;
+  }
+
+  .paw-image {
+    width: 7vw;
+  }
+
+  .practice-animals-tecken-image {
+    width: 25vw;
+  }
+
+  .practice-animals-card {
+    width: 60vw;
+    height: 30vh;
+  }
+
+  .practice-animal-image {
+    width: 20vw;
+  }
+
+  .grey-line-practice-animals {
+    height: 25vh;
+    width: 3vw;
+  }
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 845px) {
+  .animal-text {
+    font-size: 3vw; 
+  }
+
+  .practice-animal-text {
+    font-size: 3vw;
+  }
+
+  .paw-image {
+    width: 50px; 
+    margin-bottom: 10px;
+  }
+
+  .practice-animals-tecken-image {
+    width: 17vw;
+  }
+
+  .practice-animals-card {
+    width: 39vw;
+    height: 39vh;
+  }
+
+  .practice-animal-image {
+    width: 10vw;
+  }
+
+  .grey-line-practice-animals {
+    height: 30vh;
+    width: 8px;
+    margin-right: 52px;
+  }
+}
