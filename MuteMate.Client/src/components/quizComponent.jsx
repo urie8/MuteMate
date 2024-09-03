@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ENDPOINTS } from "../api/apiEndpoints";
+import useFetchQuestions from "../hooks/useFetchQuestions";
 import "../Styles/quiz.css";
 
-function QuizComponent() {
-  const [questions, setQuestions] = useState([]);
+function QuizComponent({ category }) {
+  // const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [loading, setLoading] = useState(true);
   const [questionIndex, setQuestionIndex] = useState(1);
@@ -12,29 +13,46 @@ function QuizComponent() {
   const [AnswerBtnStyle, setAnswerBtnStyle] = useState("default-quiz-btn");
   const [submitBtn, setSubmitBtn] = useState(true);
 
-  const apiurl = "http://localhost:5237/api/Quiz/GetCategoryColors";
+  const { questions, error } = useFetchQuestions(category);
+
+  // Temporary url for testing
+  // const apiurl = "http://localhost:5237/api/Quiz/GetCategoryColors";
+
+  // useEffect(() => {
+  //   const fetchQuestions = async () => {
+  //     try {
+  //       const res = await fetch(apiurl);
+  //       const data = await res.json();
+  //       setQuestions(data.$values);
+  //     } catch (error) {
+  //       console.log("Error fetching data", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchQuestions();
+  // }, []);
+
+  // useEffect(() => {
+  //   if (questions.length > 0) {
+  //     console.log(questions);
+  //     setCurrentQuestion(questions[0]);
+  //     console.log(category);
+  //   }
+  // }, [questions]);
 
   useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const res = await fetch(apiurl);
-        const data = await res.json();
-        setQuestions(data.$values);
-      } catch (error) {
-        console.log("Error fetching data", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchQuestions();
-  }, []);
-
-  useEffect(() => {
-    if (questions.length > 0) {
-      console.log(questions);
-      setCurrentQuestion(questions[0]);
+    if (error) {
+      console.error("Error fetching questions:", error);
+      setLoading(false);
+      return;
     }
-  }, [questions]);
+
+    if (questions.length > 0) {
+      setCurrentQuestion(questions[0]);
+      setLoading(false);
+    }
+  }, [questions, error]);
 
   function handleAnswerClick(e) {
     console.log(e.target.value);

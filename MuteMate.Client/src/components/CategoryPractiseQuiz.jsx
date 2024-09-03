@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../categoryPractise.css";
 
 function CategoryPractiseQuiz({ message, linkTo }) {
-  const [category, setCategory] = useState([]);
   const navigate = useNavigate();
 
   function handleImageClick(category) {
