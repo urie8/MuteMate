@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from "react";
 import "../Styles/practiceColorsComponent.css";
 import { ENDPOINTS } from "../api/apiEndpoints";
@@ -40,6 +37,8 @@ function PracticeColorsComponent() {
         return "pink-text";
       case "white":
         return "white-text";
+      case "brown":
+        return "brown-text";
       default:
         return ""; // Default to no color class
     }
@@ -47,7 +46,7 @@ function PracticeColorsComponent() {
 
   return (
     <>
-          <div className="practice-container">
+      <div className="practice-container">
         <div className="practice-colors-text-container">
           <div className="practice-text">Practice:</div>
           <div className="colors-text-container">
@@ -66,6 +65,8 @@ function PracticeColorsComponent() {
       </div>
       <div className="practice-colors-component-container">
         {colorQuestions.map((question) => {
+           const imageUrl = `http://localhost:5237/${question.Image}`; // Fullständig URL för bilden
+
           const correctAnswer = question.Answers.$values.find(
             (answer) => answer.IsCorrect
           );
@@ -73,7 +74,11 @@ function PracticeColorsComponent() {
 
           return (
             <div key={question.Id} className="practice-colors-card">
-              <img src={question.Image} alt="Color" />
+              <img
+                className="practice-colors-image"
+                src={imageUrl}
+                alt="Color"
+              />
               <p className={answerClass}>{correctAnswer.Answer}</p>
             </div>
           );
@@ -84,73 +89,3 @@ function PracticeColorsComponent() {
 }
 
 export default PracticeColorsComponent;
-
-
-
-// import React, { useState, useEffect } from "react";
-// import "../Styles/practiceColorsComponent.css";
-// import { ENDPOINTS } from "../api/apiEndpoints";
-
-// function PracticeColorsComponent() {
-//   const [colorQuestions, setColorQuestions] = useState([]);
-
-//   useEffect(() => {
-//     fetch(ENDPOINTS.GETCATEGORIESCOLORS)
-//       .then((response) => response.json())
-//       .then((data) => setColorQuestions(data.$values))
-//       .catch((error) =>
-//         console.error("Error fetching color questions:", error)
-//       );
-//   }, []);
-
-//   // Function to map answers to CSS classes
-//   const getColorClass = (answer) => {
-//     switch (answer.toLowerCase()) {
-//       case "orange":
-//         return "orange-text";
-//       case "blue":
-//         return "blue-text";
-//       case "red":
-//         return "red-text";
-//       case "green":
-//         return "green-text";
-//       case "yellow":
-//         return "yellow-text";
-//       case "purple":
-//         return "purple-text";
-//       case "black":
-//         return "black-text";
-//       case "grey":
-//         return "grey-text";
-//       case "pink":
-//         return "pink-text";
-//       case "white":
-//         return "white-text";
-//       default:
-//         return ""; // Default to no color class
-//     }
-//   };
-
-//   return (
-
-    
-//     <div className="practice-colors-component-container">
-//       {colorQuestions.map((question) => {
-//         const correctAnswer = question.Answers.$values.find(
-//           (answer) => answer.IsCorrect
-//         );
-//         const answerClass = getColorClass(correctAnswer.Answer);
-
-//         return (
-//           <div key={question.Id} className="practice-colors-card">
-//             <img src={question.Image} alt="Color" />
-//             <p className={answerClass}>{correctAnswer.Answer}</p>
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// }
-
-// export default PracticeColorsComponent;
-
