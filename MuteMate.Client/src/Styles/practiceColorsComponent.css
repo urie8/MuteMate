@@ -71,6 +71,13 @@
     width: 13vw;
   }
 
+  .brown-text {
+    color: rgb(74, 32, 32);
+    background-color: rgb(74, 32, 32);
+    height: 5vh;
+    width: 13vw;
+  }
+
   .pink-text {
     color: rgb(253, 114, 239);
     height: 5vh;
@@ -93,6 +100,8 @@
 }
 
 @media (max-width: 391px) {
+  .practice-colors-image {
+  }
   .practice-colors-component-container {
     display: flex;
     justify-content: center;
@@ -137,6 +146,13 @@
   .green-text {
     color: green;
     background-color: green;
+    height: 5vh;
+    width: 13vw;
+  }
+
+  .brown-text {
+    color: rgb(74, 32, 32);
+    background-color: rgb(74, 32, 32);
     height: 5vh;
     width: 13vw;
   }
