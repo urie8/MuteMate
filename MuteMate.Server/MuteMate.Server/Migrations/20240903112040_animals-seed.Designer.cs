@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MuteMate.Server.Data;
 
@@ -11,9 +12,11 @@ using MuteMate.Server.Data;
 namespace MuteMate.Server.Migrations
 {
     [DbContext(typeof(MuteMateDbContext))]
-    partial class MuteMateDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240903112040_animals-seed")]
+    partial class animalsseed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1197,308 +1200,308 @@ namespace MuteMate.Server.Migrations
                             Id = 146,
                             Answer = "images/animals/bear.png",
                             IsCorrect = true,
-                            QuestionId = 2
+                            QuestionId = 38
                         },
                         new
                         {
                             Id = 147,
                             Answer = "images/animals/horse.png",
                             IsCorrect = false,
-                            QuestionId = 2
+                            QuestionId = 38
                         },
                         new
                         {
                             Id = 148,
                             Answer = "images/animals/cat.png",
                             IsCorrect = false,
-                            QuestionId = 2
+                            QuestionId = 38
                         },
                         new
                         {
                             Id = 149,
                             Answer = "images/animals/sheep.png",
                             IsCorrect = false,
-                            QuestionId = 2
+                            QuestionId = 38
                         },
                         new
                         {
                             Id = 150,
                             Answer = "images/animals/bear.png",
                             IsCorrect = false,
-                            QuestionId = 38
+                            QuestionId = 39
                         },
                         new
                         {
                             Id = 151,
                             Answer = "images/animals/bird.png",
                             IsCorrect = true,
-                            QuestionId = 38
+                            QuestionId = 39
                         },
                         new
                         {
                             Id = 152,
                             Answer = "images/animals/cow.png",
                             IsCorrect = false,
-                            QuestionId = 38
+                            QuestionId = 39
                         },
                         new
                         {
                             Id = 153,
                             Answer = "images/animals/squirrel.png",
                             IsCorrect = false,
-                            QuestionId = 38
+                            QuestionId = 39
                         },
                         new
                         {
                             Id = 154,
                             Answer = "images/animals/goat.png",
                             IsCorrect = false,
-                            QuestionId = 39
+                            QuestionId = 40
                         },
                         new
                         {
                             Id = 155,
                             Answer = "images/animals/chicken.png",
                             IsCorrect = false,
-                            QuestionId = 39
+                            QuestionId = 40
                         },
                         new
                         {
                             Id = 156,
                             Answer = "images/animals/cat.png",
                             IsCorrect = false,
-                            QuestionId = 39
+                            QuestionId = 40
                         },
                         new
                         {
                             Id = 157,
                             Answer = "images/animals/bunny.png",
                             IsCorrect = true,
-                            QuestionId = 39
+                            QuestionId = 40
                         },
                         new
                         {
                             Id = 158,
                             Answer = "images/animals/dog.png",
                             IsCorrect = false,
-                            QuestionId = 40
+                            QuestionId = 41
                         },
                         new
                         {
                             Id = 159,
                             Answer = "images/animals/chicken.png",
                             IsCorrect = false,
-                            QuestionId = 40
+                            QuestionId = 41
                         },
                         new
                         {
                             Id = 160,
                             Answer = "images/animals/cat.png",
                             IsCorrect = true,
-                            QuestionId = 40
+                            QuestionId = 41
                         },
                         new
                         {
                             Id = 161,
                             Answer = "images/animals/sheep.png",
                             IsCorrect = false,
-                            QuestionId = 40
+                            QuestionId = 41
                         },
                         new
                         {
                             Id = 162,
                             Answer = "images/animals/cat.png",
                             IsCorrect = false,
-                            QuestionId = 41
+                            QuestionId = 42
                         },
                         new
                         {
                             Id = 163,
                             Answer = "images/animals/chicken.png",
                             IsCorrect = true,
-                            QuestionId = 41
+                            QuestionId = 42
                         },
                         new
                         {
                             Id = 164,
                             Answer = "images/animals/goat.png",
                             IsCorrect = false,
-                            QuestionId = 41
+                            QuestionId = 42
                         },
                         new
                         {
                             Id = 165,
                             Answer = "images/animals/horse.png",
                             IsCorrect = false,
-                            QuestionId = 41
+                            QuestionId = 42
                         },
                         new
                         {
                             Id = 166,
                             Answer = "images/animals/bird.png",
                             IsCorrect = false,
-                            QuestionId = 42
+                            QuestionId = 43
                         },
                         new
                         {
                             Id = 167,
                             Answer = "images/animals/squirrel.png",
                             IsCorrect = false,
-                            QuestionId = 42
+                            QuestionId = 43
                         },
                         new
                         {
                             Id = 168,
                             Answer = "images/animals/bunny.png",
                             IsCorrect = false,
-                            QuestionId = 42
+                            QuestionId = 43
                         },
                         new
                         {
                             Id = 169,
                             Answer = "images/animals/cow.png",
                             IsCorrect = true,
-                            QuestionId = 42
+                            QuestionId = 43
                         },
                         new
                         {
                             Id = 170,
                             Answer = "images/animals/dog.png",
                             IsCorrect = true,
-                            QuestionId = 43
+                            QuestionId = 44
                         },
                         new
                         {
                             Id = 171,
                             Answer = "images/animals/chicken.png",
                             IsCorrect = false,
-                            QuestionId = 43
+                            QuestionId = 44
                         },
                         new
                         {
                             Id = 172,
                             Answer = "images/animals/horse.png",
                             IsCorrect = false,
-                            QuestionId = 43
+                            QuestionId = 44
                         },
                         new
                         {
                             Id = 173,
                             Answer = "images/animals/sheep.png",
                             IsCorrect = false,
-                            QuestionId = 43
+                            QuestionId = 44
                         },
                         new
                         {
                             Id = 174,
                             Answer = "images/animals/bear.png",
                             IsCorrect = false,
-                            QuestionId = 44
+                            QuestionId = 45
                         },
                         new
                         {
                             Id = 175,
                             Answer = "images/animals/horse.png",
                             IsCorrect = false,
-                            QuestionId = 44
+                            QuestionId = 45
                         },
                         new
                         {
                             Id = 176,
                             Answer = "images/animals/goat.png",
                             IsCorrect = true,
-                            QuestionId = 44
+                            QuestionId = 45
                         },
                         new
                         {
                             Id = 177,
                             Answer = "images/animals/cat.png",
                             IsCorrect = false,
-                            QuestionId = 44
+                            QuestionId = 45
                         },
                         new
                         {
                             Id = 178,
                             Answer = "images/animals/horse.png",
                             IsCorrect = true,
-                            QuestionId = 45
+                            QuestionId = 46
                         },
                         new
                         {
                             Id = 179,
                             Answer = "images/animals/chicken.png",
                             IsCorrect = false,
-                            QuestionId = 45
+                            QuestionId = 46
                         },
                         new
                         {
                             Id = 180,
                             Answer = "images/animals/sheep.png",
                             IsCorrect = false,
-                            QuestionId = 45
+                            QuestionId = 46
                         },
                         new
                         {
                             Id = 181,
                             Answer = "images/animals/squirrel.png",
                             IsCorrect = false,
-                            QuestionId = 45
+                            QuestionId = 46
                         },
                         new
                         {
                             Id = 182,
                             Answer = "images/animals/bird.png",
                             IsCorrect = false,
-                            QuestionId = 46
+                            QuestionId = 47
                         },
                         new
                         {
                             Id = 183,
                             Answer = "images/animals/sheep.png",
                             IsCorrect = true,
-                            QuestionId = 46
+                            QuestionId = 47
                         },
                         new
                         {
                             Id = 184,
                             Answer = "images/animals/bunny.png",
                             IsCorrect = false,
-                            QuestionId = 46
+                            QuestionId = 47
                         },
                         new
                         {
                             Id = 185,
                             Answer = "images/animals/cow.png",
                             IsCorrect = false,
-                            QuestionId = 46
+                            QuestionId = 47
                         },
                         new
                         {
                             Id = 186,
                             Answer = "images/animals/horse.png",
                             IsCorrect = false,
-                            QuestionId = 47
+                            QuestionId = 48
                         },
                         new
                         {
                             Id = 187,
                             Answer = "images/animals/dog.png",
                             IsCorrect = false,
-                            QuestionId = 47
+                            QuestionId = 48
                         },
                         new
                         {
                             Id = 188,
                             Answer = "images/animals/squirrel.png",
                             IsCorrect = true,
-                            QuestionId = 47
+                            QuestionId = 48
                         },
                         new
                         {
                             Id = 189,
                             Answer = "images/animals/bear.png",
                             IsCorrect = false,
-                            QuestionId = 47
+                            QuestionId = 48
                         });
                 });
 
@@ -1606,7 +1609,7 @@ namespace MuteMate.Server.Migrations
                         {
                             Id = 2,
                             Category = "Animals",
-                            Image = "images/animals/beartecken.png",
+                            Image = "",
                             Question = "What animal is this?"
                         },
                         new
@@ -1858,68 +1861,75 @@ namespace MuteMate.Server.Migrations
                         {
                             Id = 38,
                             Category = "Animals",
-                            Image = "images/animals/birdtecken.png",
+                            Image = "images/animals/beartecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 39,
                             Category = "Animals",
-                            Image = "images/animals/bunnytecken.png",
+                            Image = "images/animals/birdtecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 40,
                             Category = "Animals",
-                            Image = "images/animals/cattecken.png",
+                            Image = "images/animals/bunnytecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 41,
                             Category = "Animals",
-                            Image = "images/animals/chickentecken.png",
+                            Image = "images/animals/cattecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 42,
                             Category = "Animals",
-                            Image = "images/animals/cowtecken.png",
+                            Image = "images/animals/chickentecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 43,
                             Category = "Animals",
-                            Image = "images/animals/dogtecken.png",
+                            Image = "images/animals/cowtecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 44,
                             Category = "Animals",
-                            Image = "images/animals/goattecken.png",
+                            Image = "images/animals/dogtecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 45,
                             Category = "Animals",
-                            Image = "images/animals/horsetecken.png",
+                            Image = "images/animals/goattecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 46,
                             Category = "Animals",
-                            Image = "images/animals/sheeptecken.png",
+                            Image = "images/animals/horsetecken.png",
                             Question = "What animal is this?"
                         },
                         new
                         {
                             Id = 47,
+                            Category = "Animals",
+                            Image = "images/animals/sheeptecken.png",
+                            Question = "What animal is this?"
+                        },
+                        new
+                        {
+                            Id = 48,
                             Category = "Animals",
                             Image = "images/animals/squirreltecken.png",
                             Question = "What animal is this?"

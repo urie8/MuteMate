@@ -33,7 +33,7 @@ new QuestionModel
    {
        Id = 2,
        Question = "What animal is this?",
-       Image = "",
+       Image = "images/animals/beartecken.png",  // Bear
        Category = "Animals"
    },
 new QuestionModel
@@ -282,6 +282,77 @@ new QuestionModel
                  Question = "What color is this?",
                  Image = "images/colors/purple.png",  // Purple
                  Category = "Colors"
+             },
+            
+             new QuestionModel
+             {
+                 Id = 38,
+                 Question = "What animal is this?",
+                 Image = "images/animals/birdtecken.png",  // Bird
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 39,
+                 Question = "What animal is this?",
+                 Image = "images/animals/bunnytecken.png",  // Bunny
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 40,
+                 Question = "What animal is this?",
+                 Image = "images/animals/cattecken.png",  // Cat
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 41,
+                 Question = "What animal is this?",
+                 Image = "images/animals/chickentecken.png",  // Chicken
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 42,
+                 Question = "What animal is this?",
+                 Image = "images/animals/cowtecken.png",  // Cow
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 43,
+                 Question = "What animal is this?",
+                 Image = "images/animals/dogtecken.png",  // Dog
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 44,
+                 Question = "What animal is this?",
+                 Image = "images/animals/goattecken.png",  // Goat
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 45,
+                 Question = "What animal is this?",
+                 Image = "images/animals/horsetecken.png",  // Horse
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 46,
+                 Question = "What animal is this?",
+                 Image = "images/animals/sheeptecken.png",  // Sheep
+                 Category = "Animals"
+             },
+             new QuestionModel
+             {
+                 Id = 47,
+                 Question = "What animal is this?",
+                 Image = "images/animals/squirreltecken.png",  // Squirrel
+                 Category = "Animals"
              }
 
             );
@@ -1355,6 +1426,325 @@ new QuestionModel
                     Answer = "Blue",
                     IsCorrect = false,
                     QuestionId = 37,
+                },
+                //För frågan bear
+                new AnswerModel
+                {
+                    Id = 146,
+                    Answer = "images/animals/bear.png",
+                    IsCorrect = true,
+                    QuestionId = 2,
+                },
+                new AnswerModel
+                {
+                    Id = 147,
+                    Answer = "images/animals/horse.png",
+                    IsCorrect = false,
+                    QuestionId = 2,
+                },
+                new AnswerModel
+                {
+                    Id = 148,
+                    Answer = "images/animals/cat.png",
+                    IsCorrect = false,
+                    QuestionId = 2,
+                },
+                new AnswerModel
+                {
+                    Id = 149,
+                    Answer = "images/animals/sheep.png",
+                    IsCorrect = false,
+                    QuestionId = 2,
+                },
+                //För frågan bird
+                new AnswerModel
+                {
+                    Id = 150,
+                    Answer = "images/animals/bear.png",
+                    IsCorrect = false,
+                    QuestionId = 38,
+                },
+                new AnswerModel
+                {
+                    Id = 151,
+                    Answer = "images/animals/bird.png",
+                    IsCorrect = true,
+                    QuestionId = 38,
+                },
+                new AnswerModel
+                {
+                    Id = 152,
+                    Answer = "images/animals/cow.png",
+                    IsCorrect = false,
+                    QuestionId = 38,
+                },
+                new AnswerModel
+                {
+                    Id = 153,
+                    Answer = "images/animals/squirrel.png",
+                    IsCorrect = false,
+                    QuestionId = 38,
+                },
+                //För frågan bunny
+                new AnswerModel
+                {
+                    Id = 154,
+                    Answer = "images/animals/goat.png",
+                    IsCorrect = false,
+                    QuestionId = 39,
+                },
+                new AnswerModel
+                {
+                    Id = 155,
+                    Answer = "images/animals/chicken.png",
+                    IsCorrect = false,
+                    QuestionId = 39,
+                },
+                new AnswerModel
+                {
+                    Id = 156,
+                    Answer = "images/animals/cat.png",
+                    IsCorrect = false,
+                    QuestionId = 39,
+                },
+                new AnswerModel
+                {
+                    Id = 157,
+                    Answer = "images/animals/bunny.png",
+                    IsCorrect = true,
+                    QuestionId = 39,
+                },
+                //För frågan cat
+                new AnswerModel
+                {
+                    Id = 158,
+                    Answer = "images/animals/dog.png",
+                    IsCorrect = false,
+                    QuestionId = 40,
+                },
+                new AnswerModel
+                {
+                    Id = 159,
+                    Answer = "images/animals/chicken.png",
+                    IsCorrect = false,
+                    QuestionId = 40,
+                },
+                new AnswerModel
+                {
+                    Id = 160,
+                    Answer = "images/animals/cat.png",
+                    IsCorrect = true,
+                    QuestionId = 40,
+                },
+                new AnswerModel
+                {
+                    Id = 161,
+                    Answer = "images/animals/sheep.png",
+                    IsCorrect = false,
+                    QuestionId = 40,
+                },
+                //För frågan chicken
+                new AnswerModel
+                {
+                    Id = 162,
+                    Answer = "images/animals/cat.png",
+                    IsCorrect = false,
+                    QuestionId = 41,
+                },
+                new AnswerModel
+                {
+                    Id = 163,
+                    Answer = "images/animals/chicken.png",
+                    IsCorrect = true,
+                    QuestionId = 41,
+                },
+                new AnswerModel
+                {
+                    Id = 164,
+                    Answer = "images/animals/goat.png",
+                    IsCorrect = false,
+                    QuestionId = 41,
+                },
+                new AnswerModel
+                {
+                    Id = 165,
+                    Answer = "images/animals/horse.png",
+                    IsCorrect = false,
+                    QuestionId = 41,
+                },
+                //För frågan cow
+                new AnswerModel
+                {
+                    Id = 166,
+                    Answer = "images/animals/bird.png",
+                    IsCorrect = false,
+                    QuestionId = 42,
+                },
+                new AnswerModel
+                {
+                    Id = 167,
+                    Answer = "images/animals/squirrel.png",
+                    IsCorrect = false,
+                    QuestionId = 42,
+                },
+                new AnswerModel
+                {
+                    Id = 168,
+                    Answer = "images/animals/bunny.png",
+                    IsCorrect = false,
+                    QuestionId = 42,
+                },
+                new AnswerModel
+                {
+                    Id = 169,
+                    Answer = "images/animals/cow.png",
+                    IsCorrect = true,
+                    QuestionId = 42,
+                },
+                //För frågan Dog
+                new AnswerModel
+                {
+                    Id = 170,
+                    Answer = "images/animals/dog.png",
+                    IsCorrect = true,
+                    QuestionId = 43,
+                },
+                new AnswerModel
+                {
+                    Id = 171,
+                    Answer = "images/animals/chicken.png",
+                    IsCorrect = false,
+                    QuestionId = 43,
+                },
+                new AnswerModel
+                {
+                    Id = 172,
+                    Answer = "images/animals/horse.png",
+                    IsCorrect = false,
+                    QuestionId = 43,
+                },
+                new AnswerModel
+                {
+                    Id = 173,
+                    Answer = "images/animals/sheep.png",
+                    IsCorrect = false,
+                    QuestionId = 43,
+                },
+                //För frågan Goat
+                new AnswerModel
+                {
+                    Id = 174,
+                    Answer = "images/animals/bear.png",
+                    IsCorrect = false,
+                    QuestionId = 44,
+                },
+                new AnswerModel
+                {
+                    Id = 175,
+                    Answer = "images/animals/horse.png",
+                    IsCorrect = false,
+                    QuestionId = 44,
+                },
+                new AnswerModel
+                {
+                    Id = 176,
+                    Answer = "images/animals/goat.png",
+                    IsCorrect = true,
+                    QuestionId = 44,
+                },
+                new AnswerModel
+                {
+                    Id = 177,
+                    Answer = "images/animals/cat.png",
+                    IsCorrect = false,
+                    QuestionId = 44,
+                },
+                //För frågan Horse
+                new AnswerModel
+                {
+                    Id = 178,
+                    Answer = "images/animals/horse.png",
+                    IsCorrect = true,
+                    QuestionId = 45,
+                },
+                new AnswerModel
+                {
+                    Id = 179,
+                    Answer = "images/animals/chicken.png",
+                    IsCorrect = false,
+                    QuestionId = 45,
+                },
+                new AnswerModel
+                {
+                    Id = 180,
+                    Answer = "images/animals/sheep.png",
+                    IsCorrect = false,
+                    QuestionId = 45,
+                },
+                new AnswerModel
+                {
+                    Id = 181,
+                    Answer = "images/animals/squirrel.png",
+                    IsCorrect = false,
+                    QuestionId = 45,
+                },
+                //För frågan Sheep
+                new AnswerModel
+                {
+                    Id = 182,
+                    Answer = "images/animals/bird.png",
+                    IsCorrect = false,
+                    QuestionId = 46,
+                },
+                new AnswerModel
+                {
+                    Id = 183,
+                    Answer = "images/animals/sheep.png",
+                    IsCorrect = true,
+                    QuestionId = 46,
+                },
+                new AnswerModel
+                {
+                    Id = 184,
+                    Answer = "images/animals/bunny.png",
+                    IsCorrect = false,
+                    QuestionId = 46,
+                },
+                new AnswerModel
+                {
+                    Id = 185,
+                    Answer = "images/animals/cow.png",
+                    IsCorrect = false,
+                    QuestionId = 46,
+                },
+                //För frågan Squirell
+                new AnswerModel
+                {
+                    Id = 186,
+                    Answer = "images/animals/horse.png",
+                    IsCorrect = false,
+                    QuestionId = 47,
+                },
+                new AnswerModel
+                {
+                    Id = 187,
+                    Answer = "images/animals/dog.png",
+                    IsCorrect = false,
+                    QuestionId = 47,
+                },
+                new AnswerModel
+                {
+                    Id = 188,
+                    Answer = "images/animals/squirrel.png",
+                    IsCorrect = true,
+                    QuestionId = 47,
+                },
+                new AnswerModel
+                {
+                    Id = 189,
+                    Answer = "images/animals/bear.png",
+                    IsCorrect = false,
+                    QuestionId = 47,
                 }
             );
             builder.Entity<QuoteModel>().HasData(
