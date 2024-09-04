@@ -2,17 +2,19 @@
 
 /*    Desktop */
 @media (min-width: 845px) {
+  .color-image {
+    width: 3vw;
+  }
 
-.black-line-colors{
-  background-color: black;
-  height: 5px;
-  width: 364px;
-  position: absolute;
-  top: 196px;
-  left:660px;
-  border-radius: 10px;
-
-}
+  .black-line-colors {
+    background-color: black;
+    height: 5px;
+    width: 364px;
+    position: absolute;
+    top: 196px;
+    left: 660px;
+    border-radius: 10px;
+  }
 
   .practice-colors-component-container {
     display: flex;
@@ -110,6 +112,10 @@
 }
 
 @media (max-width: 391px) {
+  .color-image {
+    width: 30px;
+  }
+
   .practice-colors-image {
   }
   .practice-colors-component-container {
@@ -203,3 +209,213 @@
     background-color: grey;
   }
 }
+
+/* Tablet Breakpoint */
+@media (min-width: 600px) {
+  .color-image {
+    width: 3vw;
+  }
+
+  .black-line-colors {
+    background-color: black;
+    height: 5px;
+    width: 364px;
+    position: absolute;
+    top: 196px;
+    left: 660px;
+    border-radius: 10px;
+  }
+
+  .practice-colors-component-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+
+  .practice-colors-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 39vw;
+    height: 39vh;
+    background-color: #fefee3;
+    border-radius: 15px;
+    border: solid 1px black;
+  }
+
+  .practice-colors-image {
+    width: 250px;
+  }
+
+  .common-style {
+    height: 30vh;
+    width: 15vw;
+    border-radius: 10px;
+    border: 1px black solid;
+    margin-right: 20px;
+  }
+
+  .grey-line-practice-colors {
+    background-color: rgba(117, 117, 117, 0.116);
+    height: 30vh;
+    width: 8px;
+    margin-right: 52px;
+    border-radius: 10px;
+  }
+
+  .orange-text {
+    color: orange;
+    background-color: orange;
+  }
+
+  .blue-text {
+    color: blue;
+    background-color: blue;
+  }
+
+  .red-text {
+    color: red;
+    background-color: red;
+  }
+
+  .green-text {
+    color: green;
+    background-color: green;
+  }
+
+  .brown-text {
+    color: rgb(74, 32, 32);
+    background-color: rgb(74, 32, 32);
+  }
+
+  .yellow-text {
+    color: yellow;
+    background-color: yellow;
+  }
+
+  .purple-text {
+    color: purple;
+    background-color: purple;
+  }
+
+  .black-text {
+    color: black;
+    background-color: black;
+  }
+
+  .pink-text {
+    color: rgb(253, 114, 239);
+    background-color: rgb(253, 114, 239);
+  }
+
+  .white-text {
+    color: rgb(255, 255, 255);
+    background-color: white;
+  }
+
+  .grey-text {
+    color: grey;
+    background-color: grey;
+  }
+}
+
+
+@media (min-width: 392px) and (max-width: 600px) {
+  .color-image {
+    width: 40px; 
+  }
+
+  .practice-colors-component-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px; 
+  }
+
+  .practice-colors-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw; 
+    height: 25vh; 
+    background-color: #fefee3;
+    border-radius: 15px;
+    border: solid 1px black;
+  }
+
+  .common-style {
+    height: 20vh; 
+    width: 25vw; 
+    border-radius: 10px;
+    border: 1px black solid;
+  }
+
+  .grey-line-practice-colors {
+    background-color: rgba(117, 117, 117, 0.116);
+    height: 20vh; 
+    width: 2vw; 
+    position: absolute;
+    border-radius: 10px;
+  }
+
+
+  .orange-text {
+    color: orange;
+    background-color: orange;
+  }
+
+  .blue-text {
+    color: blue;
+    background-color: blue;
+  }
+
+  .red-text {
+    color: red;
+    background-color: red;
+  }
+
+  .green-text {
+    color: green;
+    background-color: green;
+  }
+
+  .brown-text {
+    color: rgb(74, 32, 32);
+    background-color: rgb(74, 32, 32);
+  }
+
+  .yellow-text {
+    color: yellow;
+    background-color: yellow;
+  }
+
+  .purple-text {
+    color: purple;
+    background-color: purple;
+  }
+
+  .black-text {
+    color: black;
+    background-color: black;
+  }
+
+  .pink-text {
+    color: rgb(253, 114, 239);
+    background-color: rgb(253, 114, 239);
+  }
+
+  .white-text {
+    color: rgb(255, 255, 255);
+    background-color: white;
+  }
+
+  .grey-text {
+    color: grey;
+    background-color: grey;
+  }
+  }

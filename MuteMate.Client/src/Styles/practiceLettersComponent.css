@@ -2,7 +2,7 @@
 
 /* Mobile First Styles */
 .abc-image {
-  width: 30px; /* default for small screens */
+  width: 30px; 
 }
 
 .practice-letters-component-container {
@@ -14,7 +14,7 @@
 }
 
 .practice-letters-tecken-image {
-  width: 20vw; /* Using vw for better scaling */
+  width: 20vw;
 }
 
 .practice-letters-card {
@@ -31,13 +31,13 @@
 .grey-line-practice-letters {
   background-color: rgba(117, 117, 117, 0.116);
   height: 15vh;
-  width: 1vw; /* Responsive width */
+  width: 1vw; 
   border-radius: 10px;
 }
 
 .practice-letter-correct-answer {
   font-family: "Fredoka";
-  font-size: 5vw; /* Responsive font size */
+  font-size: 5vw; 
   font-weight: 600;
 }
 
@@ -60,10 +60,16 @@
   .practice-letter-correct-answer {
     font-size: 8vw;
   }
+
 }
 
 /* Desktop Screens */
 @media (min-width: 845px) {
+  .practice-letters-text {
+    font-size: 3vw;
+    margin-left: -30px;
+  }
+
   .abc-image {
     width: 50px;
   }
