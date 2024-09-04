@@ -5,27 +5,61 @@
     justify-content: center;
     flex-direction: column;
 }
+.congrats-container{
+    text-align: center;  
+}
+.display-congrats{
+ background: #fefee3;
+  border: 1px solid black;
+   border-radius: 10px;
+   padding: 10px; 
+  text-align: center; 
+  display: inline-block;
+
+}
+@media (min-width: 768px) {
+    .display-congrats {
+        
+          display: inline-block; 
+        max-width: 800px; 
+        width: auto; 
+        margin: 0 auto; 
+        padding: 20px;
+    }
+    .banana-points{
+        display: flex; 
+        gap: 20px;
+        justify-content: center; 
+    }
+    .congrats-container .congrats-text{
+        font-weight: 400;
+        font-size: 4vw;
+    }
+    
+}
 .congrats-text{
-    background: #fefee3;
-    /* height: 50px;
-    width: 200px; */
-    border: 1px solid black;
-    border-radius: 10px;
-    align-content: center;
+   
     text-align: center;
     font-family: "Fredoka";
     color: #000000;
-     font-weight: 800;
-  font-size: 6vw; 
-  
+     font-weight: 400;
+  font-size: 6vw;
+  padding-bottom: 10px; 
 }
 .quote{
+     color: #fefee3;
     font-family: "Fredoka";
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     margin: 20px 0;
 }
 .practice-container{
-   
     margin: 20px 0;
+     display: flex;
+    justify-content: center;
+    flex-direction: column; 
+}
+.practice-text{
+      text-align: center;
+    font-family: "Fredoka";
 }
