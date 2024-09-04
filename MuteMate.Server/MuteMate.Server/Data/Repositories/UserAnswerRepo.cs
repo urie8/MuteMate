@@ -6,15 +6,15 @@ namespace MuteMate.Server.Data.Repositories
     public class UserAnswerRepo
     {
 
-        private readonly MuteMateDbContext _context;
+        private readonly MuteMateGenericRepository<UserAnswerRepo> _repository;
 
-        public UserAnswerRepo(MuteMateDbContext context)
+        public UserAnswerRepo(MuteMateGenericRepository<UserAnswerRepo> repository)
         {
-            _context = context;
+            _repository = repository;
         }
         public async Task<List<AnswerModel>> GetCorrectAnswersForUserAsync(string userId) //total bananas points
         {
-            var correctAnswers = await _context.UserAnswers
+            var correctAnswers = await _repository.Context.UserAnswers
                 .Where(ua => ua.UserId == userId && ua.isCorrect)
                 .Select(ua => ua.Answer)
                 .ToListAsync();
@@ -27,7 +27,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<AnswerModel>> GetCorrectAnswersForCategoryColorsAsync(string userId)
         {
-            return await _context.UserAnswers
+            return await _repository.Context.UserAnswers
             .Where(ua => ua.UserId == userId && ua.isCorrect && ua.Answer.Question.Category == "Colors")
             .Include(ua => ua.Answer)
             .ThenInclude(a => a.Question)
@@ -40,7 +40,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<AnswerModel>> GetCorrectAnswersForCategoryLettersAsync(string userId)
         {
-            return await _context.UserAnswers
+            return await _repository.Context.UserAnswers
             .Where(ua => ua.UserId == userId && ua.isCorrect && ua.Answer.Question.Category == "Letters")
             .Include(ua => ua.Answer)
             .ThenInclude(a => a.Question)
@@ -54,7 +54,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<AnswerModel>> GetCorrectAnswersForCategoryAnimalsAsync(string userId)
         {
-            return await _context.UserAnswers
+            return await _repository.Context.UserAnswers
             .Where(ua => ua.UserId == userId && ua.isCorrect && ua.Answer.Question.Category == "Animals")
             .Include(ua => ua.Answer)
             .ThenInclude(a => a.Question)

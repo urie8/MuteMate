@@ -2,7 +2,7 @@
 
 namespace MuteMate.Server.Data.Repositories
 {
-    public class MuteMateGenericRepository<T> where T : class
+    public class MuteMateGenericRepository<T> : IMuteMateRepository<T> where T : class
     {
         private readonly MuteMateDbContext _context;
         private readonly DbSet<T> _dbSet;
@@ -13,35 +13,40 @@ namespace MuteMate.Server.Data.Repositories
             _dbSet = context.Set<T>();
         }
 
-        public List<T> GetAll()
+        public MuteMateDbContext Context => _context;
+
+        public async Task<List<T>> GetAllAsync()
         {
-            return _dbSet.ToList();
+            return await _dbSet.ToListAsync();
         }
 
-        public T? GetById(int id)
+        public async Task<T?> GetByIdAsync(int id)
         {
-            return _dbSet.Find(id);
+            return await _dbSet.FindAsync(id);
         }
 
-        public void Add(T entity)
+        public async Task<T> AddAsync(T entity)
         {
-            _dbSet.Add(entity);
+            await _dbSet.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public void Update(T entity)
+        public async Task UpdateAsync(T entity)
         {
             _dbSet.Attach(entity); //Fäster entiteten i kontexten
             _context.Entry(entity).State = EntityState.Modified; //modifierad
-            _context.SaveChanges(); // Uppdaterad i databas
+            await _context.SaveChangesAsync(); // Uppdaterad i databas
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            T? entityToDelete = GetById(id);
+            T? entityToDelete = await GetByIdAsync(id);
 
             if (entityToDelete != null)
             {
                 _dbSet.Remove(entityToDelete);
+                await _context.SaveChangesAsync();
             }
         }
     }
