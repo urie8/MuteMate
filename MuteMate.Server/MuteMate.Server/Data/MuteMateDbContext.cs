@@ -346,13 +346,6 @@ new QuestionModel
                  Question = "What animal is this?",
                  Image = "images/animals/sheeptecken.png",  // Sheep
                  Category = "Animals"
-             },
-             new QuestionModel
-             {
-                 Id = 47,
-                 Question = "What animal is this?",
-                 Image = "images/animals/squirreltecken.png",  // Squirrel
-                 Category = "Animals"
              }
 
             );
@@ -1481,7 +1474,7 @@ new QuestionModel
                 new AnswerModel
                 {
                     Id = 153,
-                    Answer = "images/animals/squirrel.png",
+                    Answer = "images/animals/bunny.png",
                     IsCorrect = false,
                     QuestionId = 38,
                 },
@@ -1583,7 +1576,7 @@ new QuestionModel
                 new AnswerModel
                 {
                     Id = 167,
-                    Answer = "images/animals/squirrel.png",
+                    Answer = "images/animals/cat.png",
                     IsCorrect = false,
                     QuestionId = 42,
                 },
@@ -1684,7 +1677,7 @@ new QuestionModel
                 new AnswerModel
                 {
                     Id = 181,
-                    Answer = "images/animals/squirrel.png",
+                    Answer = "images/animals/dog.png",
                     IsCorrect = false,
                     QuestionId = 45,
                 },
@@ -1716,35 +1709,6 @@ new QuestionModel
                     Answer = "images/animals/cow.png",
                     IsCorrect = false,
                     QuestionId = 46,
-                },
-                //För frågan Squirell
-                new AnswerModel
-                {
-                    Id = 186,
-                    Answer = "images/animals/horse.png",
-                    IsCorrect = false,
-                    QuestionId = 47,
-                },
-                new AnswerModel
-                {
-                    Id = 187,
-                    Answer = "images/animals/dog.png",
-                    IsCorrect = false,
-                    QuestionId = 47,
-                },
-                new AnswerModel
-                {
-                    Id = 188,
-                    Answer = "images/animals/squirrel.png",
-                    IsCorrect = true,
-                    QuestionId = 47,
-                },
-                new AnswerModel
-                {
-                    Id = 189,
-                    Answer = "images/animals/bear.png",
-                    IsCorrect = false,
-                    QuestionId = 47,
                 }
             );
             builder.Entity<QuoteModel>().HasData(
