@@ -15,6 +15,8 @@ export const ENDPOINTS = {
   GETUSERSCORRECTANSWERSCOLORS: `${API_BASE_URL}/CorrectUserAnswersForColors/{userId}`,
   GETUSERSCORRECTANSWERSLETTERS: `${API_BASE_URL}/CorrectUserAnswersForLetters/{userId}`,
   GETUSERSCORRECTANSWERSANIMALS: `${API_BASE_URL}/CorrectUserAnswersForAnimals/{userId}`,
+  GETRANDOMPRAISEQUOTE: `${API_BASE_URL}/api/Quote/GetRandomPraiseQuote`,
+  GETRANDOMENCOURAGEMENTQUOTE: `${API_BASE_URL}/api/Quote/GetRandomEncouragementQuote`,
 
   // Add other endpoints here
 };
