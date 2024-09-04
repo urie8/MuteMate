@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.congrats-text{
+    background: #fefee3;
+    /* height: 50px;
+    width: 200px; */
+    border: 1px solid black;
+    border-radius: 10px;
+    align-content: center;
+    text-align: center;
+    font-family: "Fredoka";
+    color: #000000;
+     font-weight: 800;
+  font-size: 6vw; 
+  
+}
+.quote{
+    font-family: "Fredoka";
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+.practice-container{
+   
+    margin: 20px 0;
+}
