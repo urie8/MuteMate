@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MuteMate.Server.Data.Repositories;
+using MuteMate.Server.Models;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -70,6 +71,21 @@ namespace MuteMate.Server.Controllers
 
         }
 
+        [HttpPost("/AddCorrectUserAnswers")]
+        public async Task<IActionResult> PostCorrectUserAnswers(List<UserAnswerModel> userAnswers)
+        {
+            var userId = GetCurrentUserId();
+
+            foreach (var answer in userAnswers)
+            {
+                answer.UserId = userId;
+            }
+
+            var result = await _userAnswerRepo.PostCorrectAnswersAsync(userAnswers);
+
+            return Ok(result);
+
+        }
     }
 }
 
