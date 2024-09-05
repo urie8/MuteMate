@@ -200,17 +200,17 @@
     margin-top: 10px;
   }
 
-  input[type="email"],
-  input[type="password"],
-  input[type="text"] {
-    width: 25vw;
+.register-input{
+      width: 25vw;
     /* height: 05px; */
     border: 1px solid black;
     padding: 10px;
     border-radius: 5px;
     height: 25px;
     margin-bottom: 10px;
-  }
+}
+
+
 
   input[type="checkbox"] {
     margin-bottom: 20px;
@@ -259,9 +259,9 @@
     text-align: left;
   }
 
-  .register-input {
+  /* .register-input {
     margin-top: 10px;
-  }
+  } */
 
   button {
     height: 40px;
