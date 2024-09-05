@@ -4,7 +4,7 @@ import { ENDPOINTS } from "../api/apiEndpoints";
 function useFetchQuotes(category) {
   const [quote, setQuote] = useState("");
   const [error, setError] = useState("");
-const points = 4;
+const points = 3;
   useEffect(() => {
     if (!category) return;
 

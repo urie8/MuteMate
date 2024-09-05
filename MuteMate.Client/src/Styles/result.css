@@ -31,12 +31,13 @@
         gap: 20px;
         justify-content: center; 
     }
+ 
+}
     .congrats-container .congrats-text{
         font-weight: 400;
         font-size: 4vw;
     }
     
-}
 .congrats-text{
    
     text-align: center;
@@ -53,13 +54,17 @@
     text-align: center;
     margin: 20px 0;
 }
-.practice-container{
+.practise-container{
     margin: 20px 0;
      display: flex;
     justify-content: center;
     flex-direction: column; 
 }
-.practice-text{
+.practise-text{
       text-align: center;
     font-family: "Fredoka";
 }
+   .banana-light {
+  filter: brightness(130%); 
+  opacity: 0.5; 
+   }
