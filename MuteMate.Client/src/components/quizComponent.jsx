@@ -5,41 +5,15 @@ import useFetchQuestions from "../hooks/useFetchQuestions";
 import "../Styles/quiz.css";
 
 function QuizComponent({ category }) {
-  // const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [loading, setLoading] = useState(true);
-  const [questionIndex, setQuestionIndex] = useState(1);
+  const [questionIndex, setQuestionIndex] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
-  const [AnswerBtnStyle, setAnswerBtnStyle] = useState("default-quiz-btn");
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [userAnswers, setUserAnswers] = useState([]);
   const [submitBtn, setSubmitBtn] = useState(true);
 
   const { questions, error } = useFetchQuestions(category);
-
-  // Temporary url for testing
-  // const apiurl = "http://localhost:5237/api/Quiz/GetCategoryColors";
-
-  // useEffect(() => {
-  //   const fetchQuestions = async () => {
-  //     try {
-  //       const res = await fetch(apiurl);
-  //       const data = await res.json();
-  //       setQuestions(data.$values);
-  //     } catch (error) {
-  //       console.log("Error fetching data", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fetchQuestions();
-  // }, []);
-
-  // useEffect(() => {
-  //   if (questions.length > 0) {
-  //     console.log(questions);
-  //     setCurrentQuestion(questions[0]);
-  //     console.log(category);
-  //   }
-  // }, [questions]);
 
   useEffect(() => {
     if (error) {
@@ -54,29 +28,42 @@ function QuizComponent({ category }) {
     }
   }, [questions, error]);
 
-  function handleAnswerClick(e) {
-    console.log(e.target.value);
-
-    if (e.target.value == "true") {
-      e.target.className = "correct-quiz-btn";
-    } else {
-      e.target.className = "incorrect-quiz-btn";
-    }
-
+  function handleAnswerClick(e, isCorrect) {
+    setSelectedAnswer(isCorrect);
     setSubmitBtn(false);
+    // When the user clicks an answer, that answers info is saved as an object in useranswers array
+    const userAnswer = {
+      questionId: currentQuestion.Id,
+      answerId: parseInt(e.target.value),
+    };
+    setUserAnswers((prevUserAnswers) => [...prevUserAnswers, userAnswer]);
+
+    console.log(userAnswers);
+    console.log(userAnswer);
   }
 
   function handleNextQuestionClick() {
-    // Check if were at the last question if not keep going through the quiz
-    if (questionIndex <= questions.length) {
+    // Reset selected answer state and update the question index
+    setSelectedAnswer(null);
+    // Check if we're at the last question, if not keep going through the quiz
+    if (questionIndex < questions.length - 1) {
       setQuestionIndex(questionIndex + 1);
-      setCurrentQuestion(questions[questionIndex]);
+      setCurrentQuestion(questions[questionIndex + 1]);
       setSubmitBtn(true);
-      setAnswerBtnStyle("default-quiz-btn");
     } else {
-      // Pull up finished quiz page
+      setQuizFinished(true);
+      console.log("hi");
+      // Make a post request to the API with the current users answers
     }
   }
+
+  // Send parameter isCorrect which will be true or false depending on what the user selects
+  const getButtonClass = (isCorrect) => {
+    if (selectedAnswer === null) {
+      return "default-quiz-btn";
+    }
+    return isCorrect ? "correct-quiz-btn" : "incorrect-quiz-btn";
+  };
 
   return (
     <>
@@ -93,10 +80,11 @@ function QuizComponent({ category }) {
               {currentQuestion.Answers && currentQuestion.Answers.$values ? (
                 currentQuestion.Answers.$values.map((a, index) => (
                   <button
-                    className={AnswerBtnStyle}
-                    onClick={handleAnswerClick}
+                    className={getButtonClass(a.IsCorrect)}
+                    onClick={(e) => handleAnswerClick(e, a.IsCorrect)}
                     key={index}
-                    value={a.IsCorrect}
+                    value={a.Id}
+                    disabled={selectedAnswer !== null} // Disable buttons after selection
                   >
                     {a.Answer}
                   </button>

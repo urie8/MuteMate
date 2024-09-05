@@ -62,6 +62,11 @@ namespace MuteMate.Server.Data.Repositories
             .ToListAsync();
         }
 
-
+        public async Task<List<UserAnswerModel>> PostCorrectAnswersAsync(List<UserAnswerModel> userAnswers)
+        {
+            await _context.UserAnswers.AddRangeAsync(userAnswers);
+            await _context.SaveChangesAsync();
+            return userAnswers;
+        }
     }
 }
