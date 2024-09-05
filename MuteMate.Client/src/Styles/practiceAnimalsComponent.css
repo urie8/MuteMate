@@ -58,6 +58,17 @@
   border-radius: 10px;
 }
 
+  .search-input-mobile {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-left: 10px;
+      
+}
+
+
 /* Tablet Breakpoint */
 @media (min-width: 600px) {
   .animal-text {
@@ -93,12 +104,35 @@
 
 /* Desktop Breakpoint */
 @media (min-width: 845px) {
+
+  .search-input {
+ width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        position: relative;
+        left: 49px;
+        top: -5px;
+}
+
+  .search-input-mobile {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        position: relative;
+        left: 49px;
+        top: -5px;
+}
   .animal-text {
     font-size: 3vw; 
+
   }
 
   .practice-animal-text {
     font-size: 3vw;
+    margin-left: -30px;
   }
 
   .paw-image {

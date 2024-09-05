@@ -82,6 +82,7 @@ function Register() {
             </label>
 
             <input
+              className="register-input"
               type="email"
               id="email"
               name="email"
@@ -94,6 +95,7 @@ function Register() {
             </label>
 
             <input
+              className="register-input"
               type="text"
               id="userName"
               name="userName"
@@ -106,6 +108,7 @@ function Register() {
             </label>
 
             <input
+              className="register-input"
               type="password"
               id="password"
               name="password"
@@ -117,6 +120,7 @@ function Register() {
               Confirm Password:
             </label>
             <input
+              className="register-input"
               type="password"
               id="confirmPassword"
               name="confirmPassword"

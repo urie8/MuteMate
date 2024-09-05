@@ -27,12 +27,14 @@
 
 .correct-quiz-btn {
   width: 100px;
-  border-color: green;
+  color: white;
+  background-color: green;
 }
 
 .incorrect-quiz-btn {
   width: 100px;
-  border-color: red;
+  color: white;
+  background-color: red;
 }
 
 @media (min-width: 390px) and (max-width: 844px) {
