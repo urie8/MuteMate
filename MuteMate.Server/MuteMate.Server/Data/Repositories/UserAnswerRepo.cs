@@ -62,11 +62,34 @@ namespace MuteMate.Server.Data.Repositories
             .ToListAsync();
         }
 
+        //public async Task<List<UserAnswerModel>> PostCorrectAnswersAsync(List<UserAnswerModel> userAnswers)
+        //{
+        //    await _dbContext.UserAnswers.AddRangeAsync(userAnswers);
+        //    await _dbContext.SaveChangesAsync();
+        //    return userAnswers;
+        //}
+
         public async Task<List<UserAnswerModel>> PostCorrectAnswersAsync(List<UserAnswerModel> userAnswers)
         {
-            await _dbContext.UserAnswers.AddRangeAsync(userAnswers);
+            foreach (var userAnswer in userAnswers)
+            {
+                var existingAnswer = await _dbContext.UserAnswers
+                    .FirstOrDefaultAsync(ua => ua.UserId == userAnswer.UserId && ua.AnswerId == userAnswer.AnswerId);
+
+                if (existingAnswer != null)
+                {
+                    existingAnswer.isCorrect = userAnswer.isCorrect;
+                    _dbContext.UserAnswers.Update(existingAnswer);
+                }
+                else
+                {
+                    await _dbContext.UserAnswers.AddAsync(userAnswer);
+                }
+            }
+
             await _dbContext.SaveChangesAsync();
             return userAnswers;
         }
+
     }
 }
