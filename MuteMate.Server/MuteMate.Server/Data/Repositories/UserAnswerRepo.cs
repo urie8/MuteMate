@@ -3,18 +3,18 @@ using MuteMate.Server.Models;
 
 namespace MuteMate.Server.Data.Repositories
 {
-    public class UserAnswerRepo
+    public class UserAnswerRepo : MuteMateGenericRepository<QuestionModel>
     {
 
-        private readonly MuteMateGenericRepository<UserAnswerRepo> _repository;
+        private readonly MuteMateDbContext _dbContext;
 
-        public UserAnswerRepo(MuteMateGenericRepository<UserAnswerRepo> repository)
+        public UserAnswerRepo(MuteMateDbContext dbContext) : base(dbContext)
         {
-            _repository = repository;
+            _dbContext = dbContext;
         }
         public async Task<List<AnswerModel>> GetCorrectAnswersForUserAsync(string userId) //total bananas points
         {
-            var correctAnswers = await _repository.Context.UserAnswers
+            var correctAnswers = await _dbContext.UserAnswers
                 .Where(ua => ua.UserId == userId && ua.isCorrect)
                 .Select(ua => ua.Answer)
                 .ToListAsync();
@@ -27,7 +27,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<AnswerModel>> GetCorrectAnswersForCategoryColorsAsync(string userId)
         {
-            return await _repository.Context.UserAnswers
+            return await _dbContext.UserAnswers
             .Where(ua => ua.UserId == userId && ua.isCorrect && ua.Answer.Question.Category == "Colors")
             .Include(ua => ua.Answer)
             .ThenInclude(a => a.Question)
@@ -40,7 +40,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<AnswerModel>> GetCorrectAnswersForCategoryLettersAsync(string userId)
         {
-            return await _repository.Context.UserAnswers
+            return await _dbContext.UserAnswers
             .Where(ua => ua.UserId == userId && ua.isCorrect && ua.Answer.Question.Category == "Letters")
             .Include(ua => ua.Answer)
             .ThenInclude(a => a.Question)
@@ -54,7 +54,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<AnswerModel>> GetCorrectAnswersForCategoryAnimalsAsync(string userId)
         {
-            return await _repository.Context.UserAnswers
+            return await _dbContext.UserAnswers
             .Where(ua => ua.UserId == userId && ua.isCorrect && ua.Answer.Question.Category == "Animals")
             .Include(ua => ua.Answer)
             .ThenInclude(a => a.Question)
@@ -64,8 +64,8 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<UserAnswerModel>> PostCorrectAnswersAsync(List<UserAnswerModel> userAnswers)
         {
-            await _context.UserAnswers.AddRangeAsync(userAnswers);
-            await _context.SaveChangesAsync();
+            await _dbContext.UserAnswers.AddRangeAsync(userAnswers);
+            await _dbContext.SaveChangesAsync();
             return userAnswers;
         }
     }

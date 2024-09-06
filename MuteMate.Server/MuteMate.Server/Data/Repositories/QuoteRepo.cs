@@ -3,26 +3,26 @@ using MuteMate.Server.Models;
 
 namespace MuteMate.Server.Data.Repositories
 {
-    public class QuoteRepo
+    public class QuoteRepo : MuteMateGenericRepository<QuestionModel>
     {
 
-        private readonly MuteMateGenericRepository<QuoteModel> _repository;
+        private readonly MuteMateDbContext _dbContext;
 
-        public QuoteRepo(MuteMateGenericRepository<QuoteModel> repository)
+        public QuoteRepo(MuteMateDbContext dbContext) : base(dbContext)
         {
-            _repository = repository;
+            _dbContext = dbContext;
         }
 
         public async Task<List<QuoteModel>> GetCategoryPraise()
         {
-            return await _repository.Context.Quotes
+            return await _dbContext.Quotes
                 .Where(q => q.Category == "Praise")
                 .ToListAsync();
         }
 
         public async Task<List<QuoteModel>> GetCategoryEncouragement()
         {
-            return await _repository.Context.Quotes
+            return await _dbContext.Quotes
                 .Where(q => q.Category == "Encouragement")
                 .ToListAsync();
 
@@ -30,7 +30,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<QuoteModel> GetRandomPraiseQuote()
         {
-            var praiseQuote = await _repository.Context.Quotes
+            var praiseQuote = await _dbContext.Quotes
                 .Where(q => q.Category == "Praise")
                 .ToListAsync();
 
@@ -48,7 +48,7 @@ namespace MuteMate.Server.Data.Repositories
         }
         public async Task<QuoteModel> GetRandomEncouragementQuote()
         {
-            var encouragementQuote = await _repository.Context.Quotes
+            var encouragementQuote = await _dbContext.Quotes
                 .Where(q => q.Category == "Encouragement")
                 .ToListAsync();
 
