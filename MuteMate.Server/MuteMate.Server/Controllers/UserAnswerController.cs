@@ -71,21 +71,31 @@ namespace MuteMate.Server.Controllers
 
         }
 
-        [HttpPost("/AddCorrectUserAnswers")]
-        public async Task<IActionResult> PostCorrectUserAnswers(List<UserAnswerModel> userAnswers)
+        [HttpPost("AddCorrectUserAnswers")]
+        public async Task<IActionResult> PostCorrectUserAnswers([FromBody] List<UserAnswerModel> userAnswers)
         {
             var userId = GetCurrentUserId();
+
+            if (userAnswers == null || !userAnswers.Any())
+            {
+                return BadRequest("No answers provided.");
+            }
 
             foreach (var answer in userAnswers)
             {
                 answer.UserId = userId;
             }
 
-            var result = await _userAnswerRepo.PostCorrectAnswersAsync(userAnswers);
-
-            return Ok(result);
-
+            try
+            {
+                var result = await _userAnswerRepo.PostCorrectAnswersAsync(userAnswers);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and return a server error status code
+                return StatusCode(500, "Internal server error: " + ex.Message);
+            }
         }
     }
 }
-

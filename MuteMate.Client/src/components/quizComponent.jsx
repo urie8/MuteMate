@@ -35,6 +35,7 @@ function QuizComponent({ category }) {
     const userAnswer = {
       questionId: currentQuestion.Id,
       answerId: parseInt(e.target.value),
+      isCorrect: isCorrect,
     };
     setUserAnswers((prevUserAnswers) => [...prevUserAnswers, userAnswer]);
 
@@ -54,6 +55,26 @@ function QuizComponent({ category }) {
       setQuizFinished(true);
       console.log("hi");
       // Make a post request to the API with the current users answers
+      fetch(ENDPOINTS.ADDCORRECTUSERANSWERS, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userAnswers),
+        credentials: "include",
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json(); // Assuming your API returns JSON
+        })
+        .then((data) => {
+          console.log("Success:", data);
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
     }
   }
 
