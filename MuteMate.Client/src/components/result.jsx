@@ -1,38 +1,46 @@
-import React, {useEffect, useState}from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/result.css";
 import useFetchQuotes from "../hooks/useFetchQuotes";
 import banana from "../images/banana.png";
 import bananaSkugga from "../images/banana-skugga.png";
+import happyMonkey from "../images/happyMonkey.png";
 
 const maxPoints = 5;
+let correctAnswers = 50;
 
-function Result({category}) {
-  const { quote, error, points } = useFetchQuotes(category);
-  
+
+function Result({ userAnswers }) {
+  const [category, setCategory] = useState("");
+  const {quote} = useFetchQuotes(category);
+
+
+  useEffect(() => {
+    if (correctAnswers >= 3) {
+      setCategory("praise");
+    } else {
+      setCategory("encouragement");
+    }
+  }, [correctAnswers]);
+
   const bananaPoints = () => {
     let bananas = [];
-    for (let i = 0; i < maxPoints; i++ )
-        
-    bananas.push(
-      <img
-        src={i < points ? banana : bananaSkugga}
-        alt="banana"
-        className="banana2"
-        key={i}
-      />
-    );
+    for (let i = 0; i < maxPoints; i++)
+      bananas.push(
+        <img
+          src={i < correctAnswers ? banana : bananaSkugga}
+          alt="banana"
+          className="banana2"
+          key={i}
+        />
+      );
 
     return bananas;
-  }
- 
+  };
 
-  // om det är 3 eller mer bananer- visa berömmande quote (category praise)
-  // om det är mellan 0 och 2 bananer så är det en uppmuntrande quote (category encouragement)
-//ha en conditional, 1. antingen alla rätt eller
-  // 2. visa vilka svar de hade fel på, så att de kan öva.
+  
+  
   // hämta hem bilder och rätt svar på de som de hade fel på.
-  // måste hämta hur många rätta svar de hade i denna omgången av quiz
-
+  // måste hämta hur många rätta (correctAnswers)svar de hade i denna omgången av quiz
 
   return (
     <>
@@ -48,14 +56,21 @@ function Result({category}) {
             </h1>
           </div>
         </div>
+
         {/* om man hade fel, visa vilka de var så att de kan öva */}
-        <div className="practise-container">
-          <h1 className="practise-text">Let's practice what we missed!</h1>
-          <div className="practice-picture">
-            
-                        
+        {correctAnswers < maxPoints ? (
+          <div className="practise-container">
+            <h1 className="practise-text">Let's practice what we missed!</h1>
+            <div className="practice-picture">
+              {/* //varje userAnswer ska loopas igenom för att söka efter de som ej är korrekt. 
+              //Ta id på dem för att fetcha frågan med rätt svar. */}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="monkey-container">
+            <img className="monkey" src={happyMonkey} alt="happy monkey" />
+          </div>
+        )}
       </div>
     </>
   );

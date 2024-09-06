@@ -68,3 +68,13 @@
   filter: brightness(130%); 
   opacity: 0.5; 
    }
+   .monkey-container {
+  text-align: center;
+  padding: 20px;
+   }
+   .monkey{
+   
+     max-width: 100px;
+     height: auto;
+   
+   }
