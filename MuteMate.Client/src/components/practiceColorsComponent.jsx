@@ -1,10 +1,14 @@
-
 import React, { useState, useEffect } from "react";
 import "../Styles/practiceColorsComponent.css";
 import { ENDPOINTS } from "../api/apiEndpoints";
+import SearchBar from "./searchBarComponent";
+import colorpic from "../images/chromatic.png";
+import SearchBarMobile from "./searchbarMobile";
+
 
 function PracticeColorsComponent() {
   const [colorQuestions, setColorQuestions] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     fetch(ENDPOINTS.GETCATEGORIESCOLORS)
@@ -15,7 +19,7 @@ function PracticeColorsComponent() {
       );
   }, []);
 
-  // Function to map answers to CSS classes
+  //Funktion för att ge answers en klass med färg
   const getColorClass = (answer) => {
     switch (answer.toLowerCase()) {
       case "orange":
@@ -45,34 +49,47 @@ function PracticeColorsComponent() {
     }
   };
 
+  
+  const filteredQuestions = colorQuestions.filter((question) => {
+    const correctAnswer = question.Answers?.$values?.find(
+      (answer) => answer.IsCorrect
+    );
+
+    const questionTitle = question.Title?.toLowerCase() || "";
+    const correctAnswerText = correctAnswer?.Answer?.toLowerCase() || "";
+
+    return (
+      questionTitle.includes(searchQuery.toLowerCase()) ||
+      correctAnswerText.includes(searchQuery.toLowerCase())
+    );
+  });
+
   return (
     <>
       <div className="practice-container">
         <div className="practice-colors-text-container">
-          <div className="practice-text">Practice:</div>
-          <div className="colors-text-container">
-            <div className="c-text">C</div>
-            <div className="o-text">o</div>
-            <div className="l-text">l</div>
-            <div className="o2-text">o</div>
-            <div className="r-text">r</div>
-            <div className="s-text">s</div>
-          </div>
-          <div className="black-line-colors"></div>
+          <div className="practice-text">Practice: Colors</div>
+          <img className="color-image" src={colorpic} alt="Pawprint" />
+
+          <SearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
         </div>
       </div>
+      <SearchBarMobile
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
 
-      <div className="search-container">
-        <div className="search-bar-container"></div>
-      </div>
       <div className="practice-colors-component-container">
-        {colorQuestions.map((question) => {
-          const imageUrl = `http://localhost:5237/${question.Image}`; // Fullständig URL för bilden
+        {filteredQuestions.map((question) => {
+          const imageUrl = `http://localhost:5237/${question.Image}`; // Full URL for the image
 
-          const correctAnswer = question.Answers.$values.find(
+          const correctAnswer = question.Answers?.$values?.find(
             (answer) => answer.IsCorrect
           );
-          const answerClass = getColorClass(correctAnswer.Answer);
+          const answerClass = getColorClass(correctAnswer?.Answer);
 
           return (
             <div key={question.Id} className="practice-colors-card">
@@ -84,7 +101,7 @@ function PracticeColorsComponent() {
 
               <div className="grey-line-practice-colors"></div>
 
-              <p className={answerClass}>{correctAnswer.Answer}</p>
+              <p className={answerClass}>{correctAnswer?.Answer}</p>
             </div>
           );
         })}
@@ -94,6 +111,4 @@ function PracticeColorsComponent() {
 }
 
 export default PracticeColorsComponent;
-
-
 

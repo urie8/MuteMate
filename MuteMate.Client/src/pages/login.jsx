@@ -80,6 +80,7 @@ function Login() {
               </label>
 
               <input
+                className="register-input"
                 type="text"
                 id="userName"
                 name="userName"
@@ -93,6 +94,7 @@ function Login() {
 
               <div>
                 <input
+                  className="register-input"
                   type="password"
                   id="password"
                   name="password"
