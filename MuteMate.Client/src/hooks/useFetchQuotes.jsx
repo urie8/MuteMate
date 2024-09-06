@@ -4,7 +4,7 @@ import { ENDPOINTS } from "../api/apiEndpoints";
 function useFetchQuotes(category) {
   const [quote, setQuote] = useState("");
   const [error, setError] = useState("");
-
+const points = 3;
   useEffect(() => {
     if (!category) return;
 
@@ -23,7 +23,7 @@ function useFetchQuotes(category) {
         return;
     }
 
-    const fetchQuestions = () => {
+    const fetchQuotes = () => {
       fetch(endpoint)
         .then((result) => {
           console.log(result);
@@ -41,10 +41,10 @@ function useFetchQuotes(category) {
           setError(err.message);
         });
     };
-    fetchQuestions();
+    fetchQuotes();
   }, [category]);
 
-  return { quote, error };
+  return { quote, error, points };
 }
 
 export default useFetchQuotes;
