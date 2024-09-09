@@ -6,8 +6,8 @@ export const ENDPOINTS = {
   // Authentication
   REGISTER: `${API_BASE_URL}/api/Account/register`,
   LOGIN: `${API_BASE_URL}/api/Account/login`,
-
-  // GET endpoints
+  LOGOUT: `${API_BASE_URL}/api/Account/logout`,
+  IsAuthenticated: `${API_BASE_URL}/api/Account/isAuthenticated`,
   GETCATEGORIESCOLORS: `${API_BASE_URL}/api/Quiz/GetCategoryColors`,
   GETCATEGORIESLETTERS: `${API_BASE_URL}/api/Quiz/GetCategoryLetters`,
   GETCATEGORIESANIMALS: `${API_BASE_URL}/api/Quiz/GetCategoryAnimals`,

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { ENDPOINTS } from "../api/apiEndpoints";
 import logo from "../images/MuteMateLogo.png";
 import vines from "../images/vines.png";
 import banan from "../images/banan1.png";
@@ -14,11 +15,53 @@ import { AnimatePresence, motion } from "framer-motion";
 
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const ref = useRef(null);
 
   // Close the menu when clicking outside of it
   useClickAway(ref, () => setOpen(false));
+
+  const checkLoginStatus = async () => {
+    try {
+      const response = await fetch(ENDPOINTS.IsAuthenticated, {
+        method: "GET",
+        credentials: "include",
+      });
+      const data = await response.json();
+      console.log(data);
+      setIsLoggedIn(data.isLoggedIn);
+    } catch (error) {
+      console.error("Error checking login status:", error);
+    }
+  };
+
+  const handleLogout = () => {
+    fetch(ENDPOINTS.LOGOUT, { method: "POST", credentials: "include" })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          setIsLoggedIn(false); // Update state to logged out
+        }
+      })
+      .catch((error) => console.error("Error logging out:", error));
+  };
+
+  useEffect(() => {
+    checkLoginStatus();
+    console.log(isLoggedIn);
+  }, []);
+
+  function getCookie(name) {
+    const cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+      const [key, value] = cookie.split("=");
+      if (key === name) {
+        return value;
+      }
+    }
+    return null;
+  }
 
   return (
     <>
@@ -40,10 +83,29 @@ function Navbar() {
             <NavLink className="navbar-text" to="/categoryPractise">
               Practice
             </NavLink>
-            <NavLink className="navbar-text" to="/login">
-              Log in
-              <img src={banan} alt="Logo" className="navbar-banan" />
-            </NavLink>
+
+            {isLoggedIn ? (
+              <>
+                <NavLink className="navbar-text" to="/myPage">
+                  Profile
+                </NavLink>
+                <NavLink
+                  className="navbar-text"
+                  to="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLogout();
+                  }}
+                >
+                  Log out
+                </NavLink>
+              </>
+            ) : (
+              <NavLink className="navbar-text" to="/login">
+                Log in
+                <img src={banan} alt="Logo" className="navbar-banan" />
+              </NavLink>
+            )}
 
             {/* <img src={banan} alt="Logo" className="navbar-banan" /> */}
 
