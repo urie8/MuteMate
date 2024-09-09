@@ -34,6 +34,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+    padding-bottom: 290px;
+
 }
 .choose-text {
   text-align: center;

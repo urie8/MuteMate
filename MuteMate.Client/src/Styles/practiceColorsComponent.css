@@ -22,6 +22,7 @@
     margin-top: 15px;
     flex-wrap: wrap;
     gap: 22px;
+    padding-bottom: 40px;
   }
 
   .practice-colors-card {
@@ -124,6 +125,7 @@
     margin-top: 15px;
     flex-wrap: wrap;
     gap: 10px;
+    padding-bottom: 290px;
   }
 
   .practice-colors-card {
@@ -232,6 +234,7 @@
     margin-top: 15px;
     flex-wrap: wrap;
     gap: 22px;
+    padding-bottom: 40px;
   }
 
   .practice-colors-card {
@@ -334,6 +337,7 @@
     margin-top: 20px;
     flex-wrap: wrap;
     gap: 15px; 
+    padding-bottom: 40px;
   }
 
   .practice-colors-card {

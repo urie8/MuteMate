@@ -118,8 +118,13 @@
 
   .register-button {
     margin-bottom: 10px;
+        background-color: #f1f0a0;
+
   }
 
+    .register-button:hover {
+    background-color: #9b9a45;
+}
   button {
     height: 35px;
     font-size: 20px;
@@ -160,7 +165,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: top;
-    width: 70vw;
+    width: 80vw;
     background-color: #fefee3;
     border-radius: 20px;
     border: solid 1px black;
