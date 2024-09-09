@@ -51,6 +51,27 @@ namespace MuteMate.Server.Controllers
             }
             return BadRequest(new { Success = false, Message = "Invalid login attempt." });
         }
+
+        [HttpPost]
+        [Route("logout")]
+        public async Task<IActionResult> Logout() 
+        {
+            await _signInManager.SignOutAsync();
+            return Ok(new { success =true, message ="Logout Successful"});
+        }
+
+        [HttpGet]
+        [Route("isAuthenticated")]
+        public IActionResult IsAuthenticated()
+        {
+
+
+            if (User.Identity.IsAuthenticated)
+            {
+                return Ok(new { isLoggedIn = true });
+            }
+            return Ok(new { isLoggedIn = false });
+        }
     }
 
 
