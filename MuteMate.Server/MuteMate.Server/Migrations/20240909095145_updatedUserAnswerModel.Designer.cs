@@ -12,8 +12,8 @@ using MuteMate.Server.Data;
 namespace MuteMate.Server.Migrations
 {
     [DbContext(typeof(MuteMateDbContext))]
-    [Migration("20240904083425_initalls")]
-    partial class initalls
+    [Migration("20240909095145_updatedUserAnswerModel")]
+    partial class updatedUserAnswerModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1990,8 +1990,13 @@ namespace MuteMate.Server.Migrations
                     b.Property<int>("AnswerId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("isCorrect")
@@ -2000,6 +2005,10 @@ namespace MuteMate.Server.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AnswerId");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("QuestionId");
 
                     b.HasIndex("UserId");
 
@@ -2073,16 +2082,27 @@ namespace MuteMate.Server.Migrations
                     b.HasOne("MuteMate.Server.Models.AnswerModel", "Answer")
                         .WithMany()
                         .HasForeignKey("AnswerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MuteMate.Server.Models.ApplicationUser", null)
+                        .WithMany("UserAnswers")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("MuteMate.Server.Models.QuestionModel", "Question")
+                        .WithMany()
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MuteMate.Server.Models.ApplicationUser", "User")
-                        .WithMany("UserAnswers")
+                        .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Answer");
+
+                    b.Navigation("Question");
 
                     b.Navigation("User");
                 });
