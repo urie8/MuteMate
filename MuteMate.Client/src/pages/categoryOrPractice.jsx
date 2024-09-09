@@ -7,16 +7,17 @@ function CategoryOrPractice() {
   return (
     <>
       <div className="category-practice-container">
-        <div className="category-or-practice-cards">
-          <NavLink to="/categoryQuiz" className="nav-link">
+        <NavLink to="/categoryQuiz" className="nav-link">
+          <div className="category-or-practice-cards">
             <div className="category-or-practice-text">Quiz</div>
-          </NavLink>
-        </div>
-        <div className="category-or-practice-cards">
-          <NavLink to="/categoryPractise" className="nav-link">
+          </div>
+        </NavLink>
+
+        <NavLink to="/categoryPractise" className="nav-link">
+          <div className="category-or-practice-cards">
             <div className="category-or-practice-text">Practice</div>
-          </NavLink>
-        </div>
+          </div>
+        </NavLink>
       </div>
     </>
   );
