@@ -6,32 +6,26 @@ import bananaSkugga from "../images/banana-skugga.png";
 import happyMonkey from "../images/happyMonkey.png";
 import { ENDPOINTS } from "../api/apiEndpoints";
 
-
 const maxPoints = 5;
-let correctAnswers = 2;
-
-
-const userAnswerMock = [
-  { questionId: 3, answerId: 1, isCorrect: true }, //rätt
-  { questionId: 4, answerId: 5, isCorrect: false }, // fel
-  { questionId: 5, answerId: 11, isCorrect: true }, //rätt
-  { questionId: 6, answerId: 16, isCorrect: false }, //fel
-  { questionId: 7, answerId: 18, isCorrect: false }, //fel
-];
 
 function Result({ userAnswers }) {
   const [category, setCategory] = useState("");
   const { quote } = useFetchQuotes(category);
   const [questions, setQuestions] = useState([]);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
 
   // när info kommer in, loopa igenom dem och välj ut de som ej svarats rätt på, spara questionId på dem i en variable
   useEffect(() => {
     const fetchQuestionsForWrongAnswers = async () => {
       //välj ut de med fel svar
-      const wrongAnswers = userAnswerMock.filter((answer) => !answer.isCorrect);
+      const wrongAnswers = userAnswers.filter((answer) => !answer.isCorrect);
       // spara id på dem
       const wrongQuestionsId = wrongAnswers.map((answer) => answer.questionId);
-      console.log("id på de med fel svar: ", wrongQuestionsId)
+      console.log("id på de med fel svar: ", wrongQuestionsId);
+      //räkna ut banana points
+      const countCorrect = maxPoints - wrongAnswers.length;
+      setCorrectAnswers(countCorrect);
+      console.log("Antal rätta svar: ", countCorrect);
 
       if (wrongQuestionsId.length > 0) {
         try {
@@ -53,7 +47,6 @@ function Result({ userAnswers }) {
     fetchQuestionsForWrongAnswers();
   }, []);
 
-  
   useEffect(() => {
     if (correctAnswers <= 2) {
       setCategory("encouragement");
@@ -99,7 +92,7 @@ function Result({ userAnswers }) {
             <div className="practice-picture">
               <div className="practice-letters-component-container">
                 {questions.map((question) => {
-                  const imageUrl = `http://localhost:5237/${question.Image}`; 
+                  const imageUrl = `http://localhost:5237/${question.Image}`;
 
                   const correctAnswer = question.Answers?.$values?.[0];
                   // question.Answers?.$values?.find( (answer) => answer.IsCorrect );
