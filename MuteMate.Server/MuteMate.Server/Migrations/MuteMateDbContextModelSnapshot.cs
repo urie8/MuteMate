@@ -238,7 +238,7 @@ namespace MuteMate.Server.Migrations
                             Id = 8,
                             Answer = "F",
                             IsCorrect = false,
-                            QuestionId = 5
+                            QuestionId = 4
                         },
                         new
                         {
@@ -637,7 +637,7 @@ namespace MuteMate.Server.Migrations
                             Id = 66,
                             Answer = "M",
                             IsCorrect = false,
-                            QuestionId = 18
+                            QuestionId = 19
                         },
                         new
                         {
