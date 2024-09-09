@@ -3,37 +3,56 @@ using MuteMate.Server.Models;
 
 namespace MuteMate.Server.Data.Repositories
 {
-    public class QuizRepo
+    public class QuizRepo : MuteMateGenericRepository<QuestionModel>
     {
-        private readonly MuteMateDbContext context;
 
-        public QuizRepo(MuteMateDbContext context)
+        private readonly MuteMateDbContext _dbContext;
+
+        public QuizRepo(MuteMateDbContext dbContext) : base(dbContext)
         {
-            this.context = context;
+            _dbContext = dbContext;
+        }
+
+        public async Task<List<QuestionModel>> GetQuestionsById(List<int> id)
+        {
+
+            return await _dbContext.Questions
+                .Where(q => id.Contains(q.Id))
+                .Include(q => q.Answers.Where(a => a.IsCorrect))
+                .ToListAsync();
         }
 
 
         public async Task<List<QuestionModel>> GetCategoryColor()
         {
-            return await context.Questions.Where(q => q.Category == "Colors").Include(q => q.Answers).ToListAsync();
+            return await _dbContext.Questions
+                .Where(q => q.Category == "Colors")
+                .Include(q => q.Answers)
+                .ToListAsync();
 
         }
 
         public async Task<List<QuestionModel>> GetCategoryLetters()
         {
-            return await context.Questions.Where(q => q.Category == "Letters").Include(q => q.Answers).ToListAsync();
+            return await _dbContext.Questions
+                .Where(q => q.Category == "Letters")
+                .Include(q => q.Answers)
+                .ToListAsync();
 
         }
 
         public async Task<List<QuestionModel>> GetCategoryAnimals()
         {
-            return await context.Questions.Where(q => q.Category == "Animals").Include(q => q.Answers).ToListAsync();
+            return await _dbContext.Questions
+                .Where(q => q.Category == "Animals")
+                .Include(q => q.Answers)
+                .ToListAsync();
 
         }
 
         public async Task<List<QuestionModel>> Get5RandomCategoryColor()
         {
-            return await context.Questions
+            return await _dbContext.Questions
                                 .Where(q => q.Category == "Colors")
                                 .Include(q => q.Answers)
                                 .OrderBy(q => Guid.NewGuid())  // Randomize
@@ -44,7 +63,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<QuestionModel>> Get5RandomCategoryAnimals()
         {
-            return await context.Questions
+            return await _dbContext.Questions
                                 .Where(q => q.Category == "Animals")
                                 .Include(q => q.Answers)
                                 .OrderBy(q => Guid.NewGuid())
@@ -54,7 +73,7 @@ namespace MuteMate.Server.Data.Repositories
 
         public async Task<List<QuestionModel>> Get5RandomCategoryLetters()
         {
-            return await context.Questions
+            return await _dbContext.Questions
                                 .Where(q => q.Category == "Letters")
                                 .Include(q => q.Answers)
                                 .OrderBy(q => Guid.NewGuid())

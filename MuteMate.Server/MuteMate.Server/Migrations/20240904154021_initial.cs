@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MuteMate.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class gitinit : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -241,7 +241,7 @@ namespace MuteMate.Server.Migrations
                 values: new object[,]
                 {
                     { 1, "Colors", "images/colors/brown.png", "What color is this?" },
-                    { 2, "Animals", "", "What animal is this?" },
+                    { 2, "Animals", "images/animals/beartecken.png", "What animal is this?" },
                     { 3, "Letters", "images/Alphabet/a.png", "What letter is this?" },
                     { 4, "Letters", "images/Alphabet/b.png", "What letter is this?" },
                     { 5, "Letters", "images/Alphabet/c.png", "What letter is this?" },
@@ -276,7 +276,16 @@ namespace MuteMate.Server.Migrations
                     { 34, "Colors", "images/colors/pink.png", "What color is this?" },
                     { 35, "Colors", "images/colors/yellow.png", "What color is this?" },
                     { 36, "Colors", "images/colors/grey.png", "What color is this?" },
-                    { 37, "Colors", "images/colors/purple.png", "What color is this?" }
+                    { 37, "Colors", "images/colors/purple.png", "What color is this?" },
+                    { 38, "Animals", "images/animals/birdtecken.png", "What animal is this?" },
+                    { 39, "Animals", "images/animals/bunnytecken.png", "What animal is this?" },
+                    { 40, "Animals", "images/animals/cattecken.png", "What animal is this?" },
+                    { 41, "Animals", "images/animals/chickentecken.png", "What animal is this?" },
+                    { 42, "Animals", "images/animals/cowtecken.png", "What animal is this?" },
+                    { 43, "Animals", "images/animals/dogtecken.png", "What animal is this?" },
+                    { 44, "Animals", "images/animals/goattecken.png", "What animal is this?" },
+                    { 45, "Animals", "images/animals/horsetecken.png", "What animal is this?" },
+                    { 46, "Animals", "images/animals/sheeptecken.png", "What animal is this?" }
                 });
 
             migrationBuilder.InsertData(
@@ -444,7 +453,47 @@ namespace MuteMate.Server.Migrations
                     { 142, "Grey", false, 37 },
                     { 143, "Purple", true, 37 },
                     { 144, "Pink", false, 37 },
-                    { 145, "Blue", false, 37 }
+                    { 145, "Blue", false, 37 },
+                    { 146, "images/animals/bear.png", true, 2 },
+                    { 147, "images/animals/horse.png", false, 2 },
+                    { 148, "images/animals/cat.png", false, 2 },
+                    { 149, "images/animals/sheep.png", false, 2 },
+                    { 150, "images/animals/bear.png", false, 38 },
+                    { 151, "images/animals/bird.png", true, 38 },
+                    { 152, "images/animals/cow.png", false, 38 },
+                    { 153, "images/animals/bunny.png", false, 38 },
+                    { 154, "images/animals/goat.png", false, 39 },
+                    { 155, "images/animals/chicken.png", false, 39 },
+                    { 156, "images/animals/cat.png", false, 39 },
+                    { 157, "images/animals/bunny.png", true, 39 },
+                    { 158, "images/animals/dog.png", false, 40 },
+                    { 159, "images/animals/chicken.png", false, 40 },
+                    { 160, "images/animals/cat.png", true, 40 },
+                    { 161, "images/animals/sheep.png", false, 40 },
+                    { 162, "images/animals/cat.png", false, 41 },
+                    { 163, "images/animals/chicken.png", true, 41 },
+                    { 164, "images/animals/goat.png", false, 41 },
+                    { 165, "images/animals/horse.png", false, 41 },
+                    { 166, "images/animals/bird.png", false, 42 },
+                    { 167, "images/animals/cat.png", false, 42 },
+                    { 168, "images/animals/bunny.png", false, 42 },
+                    { 169, "images/animals/cow.png", true, 42 },
+                    { 170, "images/animals/dog.png", true, 43 },
+                    { 171, "images/animals/chicken.png", false, 43 },
+                    { 172, "images/animals/horse.png", false, 43 },
+                    { 173, "images/animals/sheep.png", false, 43 },
+                    { 174, "images/animals/bear.png", false, 44 },
+                    { 175, "images/animals/horse.png", false, 44 },
+                    { 176, "images/animals/goat.png", true, 44 },
+                    { 177, "images/animals/cat.png", false, 44 },
+                    { 178, "images/animals/horse.png", true, 45 },
+                    { 179, "images/animals/chicken.png", false, 45 },
+                    { 180, "images/animals/sheep.png", false, 45 },
+                    { 181, "images/animals/dog.png", false, 45 },
+                    { 182, "images/animals/bird.png", false, 46 },
+                    { 183, "images/animals/sheep.png", true, 46 },
+                    { 184, "images/animals/bunny.png", false, 46 },
+                    { 185, "images/animals/cow.png", false, 46 }
                 });
 
             migrationBuilder.CreateIndex(

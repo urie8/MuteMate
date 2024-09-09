@@ -12,8 +12,8 @@ using MuteMate.Server.Data;
 namespace MuteMate.Server.Migrations
 {
     [DbContext(typeof(MuteMateDbContext))]
-    [Migration("20240903113202_order-fix")]
-    partial class orderfix
+    [Migration("20240904113129_Initialmute")]
+    partial class Initialmute
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1247,7 +1247,7 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 153,
-                            Answer = "images/animals/squirrel.png",
+                            Answer = "images/animals/bunny.png",
                             IsCorrect = false,
                             QuestionId = 38
                         },
@@ -1345,7 +1345,7 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 167,
-                            Answer = "images/animals/squirrel.png",
+                            Answer = "images/animals/cat.png",
                             IsCorrect = false,
                             QuestionId = 42
                         },
@@ -1443,7 +1443,7 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 181,
-                            Answer = "images/animals/squirrel.png",
+                            Answer = "images/animals/dog.png",
                             IsCorrect = false,
                             QuestionId = 45
                         },
@@ -1474,34 +1474,6 @@ namespace MuteMate.Server.Migrations
                             Answer = "images/animals/cow.png",
                             IsCorrect = false,
                             QuestionId = 46
-                        },
-                        new
-                        {
-                            Id = 186,
-                            Answer = "images/animals/horse.png",
-                            IsCorrect = false,
-                            QuestionId = 47
-                        },
-                        new
-                        {
-                            Id = 187,
-                            Answer = "images/animals/dog.png",
-                            IsCorrect = false,
-                            QuestionId = 47
-                        },
-                        new
-                        {
-                            Id = 188,
-                            Answer = "images/animals/squirrel.png",
-                            IsCorrect = true,
-                            QuestionId = 47
-                        },
-                        new
-                        {
-                            Id = 189,
-                            Answer = "images/animals/bear.png",
-                            IsCorrect = false,
-                            QuestionId = 47
                         });
                 });
 
@@ -1918,13 +1890,6 @@ namespace MuteMate.Server.Migrations
                             Id = 46,
                             Category = "Animals",
                             Image = "images/animals/sheeptecken.png",
-                            Question = "What animal is this?"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Category = "Animals",
-                            Image = "images/animals/squirreltecken.png",
                             Question = "What animal is this?"
                         });
                 });

@@ -34,6 +34,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+IServiceCollection serviceCollection = builder.Services.AddScoped(typeof(MuteMateGenericRepository<>));
 
 builder.Services.AddScoped<UserAnswerRepo>();
 

@@ -24,6 +24,29 @@ namespace MuteMate.Server.Controllers
             _quizRepo = quizRepo;
         }
 
+        [HttpGet("GetQuestionsAnsweredWrong")]
+        public async Task<IActionResult> GetQuestionsAnsweredWrongAsync([FromQuery] string? id = null)
+        {
+            List<QuestionModel> questions = new();
+
+            if (!string.IsNullOrEmpty(id))
+            {
+                // Om id skickas, dela upp det till en lista av int och hämta frågorna baserat på dessa id.
+                var idList = id.Split(',').Select(int.Parse).ToList();
+                questions = await _quizRepo.GetQuestionsById(idList);
+            }
+
+            // Om inget id skickas, returnera en tom lista
+            if (questions == null || questions.Count == 0)
+            {
+                return Ok(new List<QuestionModel>());  // Returnera en tom lista om inga frågor hittas eller om inga id skickas
+            }
+
+            var responsesJson = JsonSerializer.Serialize(questions, _jsonSerializerOptions);
+            return Content(responsesJson, "application/json");
+        }
+
+
         [HttpGet("GetCategoryColors")]
         public async Task<IActionResult> GetCategoryColorsAsync()
         {

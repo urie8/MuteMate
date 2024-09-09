@@ -3,6 +3,7 @@
 export const API_BASE_URL = "http://localhost:5237"; // Base URL for the API
 
 export const ENDPOINTS = {
+  // Authentication
   REGISTER: `${API_BASE_URL}/api/Account/register`,
   LOGIN: `${API_BASE_URL}/api/Account/login`,
   LOGOUT: `${API_BASE_URL}/api/Account/logout`,
@@ -19,6 +20,10 @@ export const ENDPOINTS = {
   GETUSERSCORRECTANSWERSANIMALS: `${API_BASE_URL}/CorrectUserAnswersForAnimals/{userId}`,
   GETRANDOMPRAISEQUOTE: `${API_BASE_URL}/api/Quote/GetRandomPraiseQuote`,
   GETRANDOMENCOURAGEMENTQUOTE: `${API_BASE_URL}/api/Quote/GetRandomEncouragementQuote`,
+  GETQUESTIONSANSWEREDWRONG: `${API_BASE_URL}/api/Quiz/GetQuestionsAnsweredWrong`,
+
+  // POST endpoints
+  ADDCORRECTUSERANSWERS: `${API_BASE_URL}/api/UserAnswer/AddCorrectUserAnswers`,
 
   // Add other endpoints here
 };
