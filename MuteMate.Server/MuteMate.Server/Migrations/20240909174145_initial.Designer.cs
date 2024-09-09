@@ -12,8 +12,8 @@ using MuteMate.Server.Data;
 namespace MuteMate.Server.Migrations
 {
     [DbContext(typeof(MuteMateDbContext))]
-    [Migration("20240905192141_Initial")]
-    partial class Initial
+    [Migration("20240909174145_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -241,7 +241,7 @@ namespace MuteMate.Server.Migrations
                             Id = 8,
                             Answer = "F",
                             IsCorrect = false,
-                            QuestionId = 5
+                            QuestionId = 4
                         },
                         new
                         {
@@ -640,7 +640,7 @@ namespace MuteMate.Server.Migrations
                             Id = 66,
                             Answer = "M",
                             IsCorrect = false,
-                            QuestionId = 18
+                            QuestionId = 19
                         },
                         new
                         {
@@ -1990,18 +1990,22 @@ namespace MuteMate.Server.Migrations
                     b.Property<int>("AnswerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
+                    b.Property<string>("ApplicationUserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<bool>("isCorrect")
-                        .HasColumnType("bit");
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AnswerId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("QuestionId");
 
                     b.ToTable("UserAnswers");
                 });
@@ -2073,18 +2077,22 @@ namespace MuteMate.Server.Migrations
                     b.HasOne("MuteMate.Server.Models.AnswerModel", "Answer")
                         .WithMany()
                         .HasForeignKey("AnswerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MuteMate.Server.Models.ApplicationUser", "User")
+                    b.HasOne("MuteMate.Server.Models.ApplicationUser", null)
                         .WithMany("UserAnswers")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("MuteMate.Server.Models.QuestionModel", "Question")
+                        .WithMany()
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Answer");
 
-                    b.Navigation("User");
+                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("MuteMate.Server.Models.ApplicationUser", b =>

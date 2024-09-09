@@ -214,9 +214,10 @@ namespace MuteMate.Server.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    QuestionId = table.Column<int>(type: "int", nullable: false),
                     AnswerId = table.Column<int>(type: "int", nullable: false),
-                    isCorrect = table.Column<bool>(type: "bit", nullable: false)
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -226,13 +227,18 @@ namespace MuteMate.Server.Migrations
                         column: x => x.AnswerId,
                         principalTable: "Answers",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserAnswers_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_UserAnswers_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_UserAnswers_Questions_QuestionId",
+                        column: x => x.QuestionId,
+                        principalTable: "Questions",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
@@ -317,7 +323,7 @@ namespace MuteMate.Server.Migrations
                     { 5, "N", false, 4 },
                     { 6, "B", true, 4 },
                     { 7, "T", false, 4 },
-                    { 8, "F", false, 5 },
+                    { 8, "F", false, 4 },
                     { 9, "N", false, 5 },
                     { 10, "Z", false, 5 },
                     { 11, "C", true, 5 },
@@ -374,7 +380,7 @@ namespace MuteMate.Server.Migrations
                     { 63, "C", false, 18 },
                     { 64, "P", true, 18 },
                     { 65, "I", false, 18 },
-                    { 66, "M", false, 18 },
+                    { 66, "M", false, 19 },
                     { 67, "Q", true, 19 },
                     { 68, "X", false, 19 },
                     { 69, "W", false, 19 },
@@ -546,9 +552,14 @@ namespace MuteMate.Server.Migrations
                 column: "AnswerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserAnswers_UserId",
+                name: "IX_UserAnswers_ApplicationUserId",
                 table: "UserAnswers",
-                column: "UserId");
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserAnswers_QuestionId",
+                table: "UserAnswers",
+                column: "QuestionId");
         }
 
         /// <inheritdoc />
