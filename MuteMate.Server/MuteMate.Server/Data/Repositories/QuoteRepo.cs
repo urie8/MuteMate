@@ -3,7 +3,7 @@ using MuteMate.Server.Models;
 
 namespace MuteMate.Server.Data.Repositories
 {
-    public class QuoteRepo : MuteMateGenericRepository<QuestionModel>
+    public class QuoteRepo : MuteMateGenericRepository<QuoteModel>
     {
 
         private readonly MuteMateDbContext _dbContext;

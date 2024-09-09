@@ -22,23 +22,16 @@ namespace MuteMate.Server.Data
 
             builder.Entity<UserAnswerModel>()
            .HasOne(ua => ua.Question)
-           .WithMany() // No navigation property needed on QuestionModel
+           .WithMany() // 
            .HasForeignKey(ua => ua.QuestionId)
            .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
 
-            // Configure the relationship between UserAnswerModel and AnswerModel
             builder.Entity<UserAnswerModel>()
                 .HasOne(ua => ua.Answer)
-                .WithMany() // No navigation property needed on AnswerModel
+                .WithMany()
                 .HasForeignKey(ua => ua.AnswerId)
                 .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
 
-            // Configure the relationship between UserAnswerModel and ApplicationUser
-            builder.Entity<UserAnswerModel>()
-                .HasOne(ua => ua.User)
-                .WithMany() // Assuming no navigation property on ApplicationUser
-                .HasForeignKey(ua => ua.UserId)
-                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
 
 
             builder.Entity<QuestionModel>().HasData(
