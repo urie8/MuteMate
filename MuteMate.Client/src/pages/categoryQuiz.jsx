@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import CategoryPractiseQuiz from "../components/CategoryPractiseQuiz";
 function categoryQuiz() {
   return (
