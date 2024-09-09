@@ -13,6 +13,15 @@ namespace MuteMate.Server.Data.Repositories
             _dbContext = dbContext;
         }
 
+        public async Task<List<QuestionModel>> GetQuestionsById(List<int> id)
+        {
+
+            return await _dbContext.Questions
+                .Where(q => id.Contains(q.Id))
+                .Include(q => q.Answers.Where(a => a.IsCorrect))
+                .ToListAsync();
+        }
+
 
         public async Task<List<QuestionModel>> GetCategoryColor()
         {

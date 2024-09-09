@@ -20,6 +20,7 @@ export const ENDPOINTS = {
   GETUSERSCORRECTANSWERSANIMALS: `${API_BASE_URL}/CorrectUserAnswersForAnimals/{userId}`,
   GETRANDOMPRAISEQUOTE: `${API_BASE_URL}/api/Quote/GetRandomPraiseQuote`,
   GETRANDOMENCOURAGEMENTQUOTE: `${API_BASE_URL}/api/Quote/GetRandomEncouragementQuote`,
+  GETQUESTIONSANSWEREDWRONG: `${API_BASE_URL}/api/Quiz/GetQuestionsAnsweredWrong`,
 
   // POST endpoints
   ADDCORRECTUSERANSWERS: `${API_BASE_URL}/api/UserAnswer/AddCorrectUserAnswers`,
