@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using MuteMate.Server.Data;
@@ -47,15 +46,6 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 app.MapIdentityApi<ApplicationUser>();
-
-
-// Logout API that uses the built in SignInManager to log out the user
-app.MapPost("/logout", async (SignInManager<ApplicationUser> signInManager) =>
-{
-    await signInManager.SignOutAsync();
-    return Results.Ok();
-}).RequireAuthorization();
-
 
 app.MapGet("/pingauth", (ClaimsPrincipal user) =>
 {

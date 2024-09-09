@@ -28,16 +28,16 @@ function useFetchQuestions(category) {
     const fetchQuestions = () => {
       fetch(endpoint)
         .then((result) => {
-            console.log(result)
+          console.log(result);
           if (!result.ok) {
             setError("Could not fetch questions");
           }
           return result.json();
         })
         .then((data) => {
-            console.log(data.$values)
+          console.log(data.$values);
           setQuestions(data.$values);
-          setError(""); 
+          setError("");
         })
         .catch((err) => {
           setError(err.message);

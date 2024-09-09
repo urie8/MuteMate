@@ -20,6 +20,19 @@ namespace MuteMate.Server.Data
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<UserAnswerModel>()
+           .HasOne(ua => ua.Question)
+           .WithMany() // 
+           .HasForeignKey(ua => ua.QuestionId)
+           .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
+
+            builder.Entity<UserAnswerModel>()
+                .HasOne(ua => ua.Answer)
+                .WithMany()
+                .HasForeignKey(ua => ua.AnswerId)
+                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
+
+
 
             builder.Entity<QuestionModel>().HasData(
 new QuestionModel
@@ -283,7 +296,7 @@ new QuestionModel
                  Image = "images/colors/purple.png",  // Purple
                  Category = "Colors"
              },
-            
+
              new QuestionModel
              {
                  Id = 38,

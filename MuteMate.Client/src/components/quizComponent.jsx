@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import useFetchQuestions from "../hooks/useFetchQuestions";
 import "../Styles/quiz.css";
+import Result from "./result";
 
 function QuizComponent({ category }) {
   const [currentQuestion, setCurrentQuestion] = useState({});
@@ -87,41 +88,44 @@ function QuizComponent({ category }) {
   };
 
   return (
-    <>
-      <div className="quiz-wrapper">
-        {loading ? (
-          <h2>Loading...</h2>
-        ) : (
-          <>
-            <h1 className="question-title">
-              {currentQuestion.Question || "No Question Available"}
-            </h1>
-            <img className="question-img" src={currentQuestion.img} />
-            <div className="answer-buttons">
-              {currentQuestion.Answers && currentQuestion.Answers.$values ? (
-                currentQuestion.Answers.$values.map((a, index) => (
-                  <button
-                    className={getButtonClass(a.IsCorrect)}
-                    onClick={(e) => handleAnswerClick(e, a.IsCorrect)}
-                    key={index}
-                    value={a.Id}
-                    disabled={selectedAnswer !== null} // Disable buttons after selection
-                  >
-                    {a.Answer}
-                  </button>
-                ))
-              ) : (
-                <p>No answers available</p>
-              )}
-            </div>
-            <button disabled={submitBtn} onClick={handleNextQuestionClick}>
-              Next question
-            </button>
-          </>
-        )}
-        {quizFinished}
-      </div>
-    </>
+    <div className="quiz-wrapper">
+      {loading ? (
+        <h2>Loading...</h2>
+      ) : quizFinished ? (
+        <Result userAnswers={userAnswers} />
+      ) : (
+        <>
+          <h1 className="question-title">
+            {currentQuestion.Question || "No Question Available"}
+          </h1>
+          <img
+            className="question-img"
+            src={`http://localhost:5237/${currentQuestion.Image}`}
+            alt="Question"
+          />
+          <div className="answer-buttons">
+            {currentQuestion.Answers && currentQuestion.Answers.$values ? (
+              currentQuestion.Answers.$values.map((a, index) => (
+                <button
+                  className={getButtonClass(a.IsCorrect)}
+                  onClick={(e) => handleAnswerClick(e, a.IsCorrect)}
+                  key={index}
+                  value={a.Id}
+                  disabled={selectedAnswer !== null} // Disable buttons after selection
+                >
+                  {a.Answer}
+                </button>
+              ))
+            ) : (
+              <p>No answers available</p>
+            )}
+          </div>
+          <button disabled={submitBtn} onClick={handleNextQuestionClick}>
+            Next question
+          </button>
+        </>
+      )}
+    </div>
   );
 }
 
