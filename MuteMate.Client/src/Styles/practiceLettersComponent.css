@@ -11,6 +11,7 @@
   margin-top: 15px;
   flex-wrap: wrap;
   gap: 22px;
+  padding-bottom: 290px;
 }
 
 .practice-letters-tecken-image {
@@ -42,13 +43,13 @@
 }
 
 /* Tablet Screens */
-@media (min-width: 600px) {
+@media (min-width: 400px) {
   .practice-letters-tecken-image {
     width: 15vw;
   }
 
   .practice-letters-card {
-    width: 60vw;
+    width: 80vw;
     height: 30vh;
   }
 
@@ -60,6 +61,15 @@
   .practice-letter-correct-answer {
     font-size: 8vw;
   }
+
+    .practice-letters-component-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding-bottom: 40px;
+}
 
 }
 
@@ -92,4 +102,14 @@
   .practice-letter-correct-answer {
     font-size: 100px;
   }
+
+  .practice-letters-component-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding-bottom: 40px;
+}
+
 }

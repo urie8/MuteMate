@@ -20,7 +20,7 @@ function home() {
               Sign up
             </button> */}
           </div>
-          <h5 className="signIn-btn">Sign in</h5>
+          {/* <h5 className="signIn-btn">Sign in</h5> */}
         </div>
       </div>
         
