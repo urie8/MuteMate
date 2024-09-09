@@ -36,7 +36,7 @@ function Result({ userAnswers }) {
       if (wrongQuestionsId.length > 0) {
         try {
           const response = await fetch(
-            //här vill jag fetcha endast de man svarat fel på, funkar dock ej, den hämtar alla i den kategorin förutom de två första
+            //här vill jag fetcha endast de man svarat fel på, skickar en queryParameter
             `${ENDPOINTS.GETQUESTIONSANSWEREDWRONG}?id=${wrongQuestionsId.join(
               ","
             )}`
@@ -99,11 +99,10 @@ function Result({ userAnswers }) {
             <div className="practice-picture">
               <div className="practice-letters-component-container">
                 {questions.map((question) => {
-                  const imageUrl = `http://localhost:5237/${question.Image}`; // Full URL for the question image
+                  const imageUrl = `http://localhost:5237/${question.Image}`; 
 
-                  const correctAnswer = question.Answers?.$values?.find(
-                    (answer) => answer.IsCorrect
-                  );
+                  const correctAnswer = question.Answers?.$values?.[0];
+                  // question.Answers?.$values?.find( (answer) => answer.IsCorrect );
 
                   return (
                     <div key={question.Id} className="practice-letters-card">
