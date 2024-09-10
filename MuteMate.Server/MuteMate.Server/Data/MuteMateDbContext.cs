@@ -907,7 +907,7 @@ new QuestionModel
                 new AnswerModel
                 {
                     Id = 74,
-                    Answer = "´Q",
+                    Answer = "Q",
                     IsCorrect = false,
                     QuestionId = 21,
                 },
@@ -915,14 +915,14 @@ new QuestionModel
               new AnswerModel
               {
                   Id = 75,
-                  Answer = "Á",
+                  Answer = "A",
                   IsCorrect = false,
                   QuestionId = 21,
               },
                new AnswerModel
                {
                    Id = 76,
-                   Answer = "H",
+                   Answer = "S",
                    IsCorrect = true,
                    QuestionId = 21,
                },
