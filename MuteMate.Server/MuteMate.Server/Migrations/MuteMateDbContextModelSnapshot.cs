@@ -691,21 +691,21 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 74,
-                            Answer = "´Q",
+                            Answer = "Q",
                             IsCorrect = false,
                             QuestionId = 21
                         },
                         new
                         {
                             Id = 75,
-                            Answer = "Á",
+                            Answer = "A",
                             IsCorrect = false,
                             QuestionId = 21
                         },
                         new
                         {
                             Id = 76,
-                            Answer = "H",
+                            Answer = "S",
                             IsCorrect = true,
                             QuestionId = 21
                         },

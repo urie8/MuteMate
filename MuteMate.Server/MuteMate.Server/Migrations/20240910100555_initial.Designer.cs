@@ -12,7 +12,7 @@ using MuteMate.Server.Data;
 namespace MuteMate.Server.Migrations
 {
     [DbContext(typeof(MuteMateDbContext))]
-    [Migration("20240909174145_initial")]
+    [Migration("20240910100555_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -241,7 +241,7 @@ namespace MuteMate.Server.Migrations
                             Id = 8,
                             Answer = "F",
                             IsCorrect = false,
-                            QuestionId = 4
+                            QuestionId = 5
                         },
                         new
                         {
@@ -640,7 +640,7 @@ namespace MuteMate.Server.Migrations
                             Id = 66,
                             Answer = "M",
                             IsCorrect = false,
-                            QuestionId = 19
+                            QuestionId = 18
                         },
                         new
                         {
@@ -694,21 +694,21 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 74,
-                            Answer = "´Q",
+                            Answer = "Q",
                             IsCorrect = false,
                             QuestionId = 21
                         },
                         new
                         {
                             Id = 75,
-                            Answer = "Á",
+                            Answer = "A",
                             IsCorrect = false,
                             QuestionId = 21
                         },
                         new
                         {
                             Id = 76,
-                            Answer = "H",
+                            Answer = "S",
                             IsCorrect = true,
                             QuestionId = 21
                         },

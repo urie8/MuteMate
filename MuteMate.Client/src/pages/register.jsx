@@ -57,8 +57,12 @@ function Register() {
         .then((data) => {
           // handle success or error from the server
           console.log(data);
-          if (data.ok) setError("Successful register.");
-          else setError("Error registering.");
+          if (data.ok) {
+            setError("Successful register.");
+            setTimeout(() => {
+              navigate("/login");
+            }, 1500); // 1.5 sekund fördröjning så man hinner se meddelandet
+          } else setError("Error registering.");
         })
         .catch((error) => {
           // handle network error
