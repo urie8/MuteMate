@@ -27,7 +27,8 @@ function myPage({}) {
       credentials: "include",
     })
       .then((response) => response.json())
-      .then((data) => setuserName(data.username));
+      .then((data) => setuserName(data.userName));
+    console.log(data);
   }, []);
 
   useEffect(() => {
