@@ -54,10 +54,10 @@ namespace MuteMate.Server.Controllers
 
         [HttpPost]
         [Route("logout")]
-        public async Task<IActionResult> Logout() 
+        public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return Ok(new { success =true, message ="Logout Successful"});
+            return Ok(new { success = true, message = "Logout Successful" });
         }
 
         [HttpGet]
@@ -71,6 +71,23 @@ namespace MuteMate.Server.Controllers
                 return Ok(new { isLoggedIn = true });
             }
             return Ok(new { isLoggedIn = false });
+        }
+
+        [HttpGet]
+        [Route("users/${userId}")]
+        public async Task<IActionResult> GetUserById(string userId)
+        {
+            if (string.IsNullOrEmpty(userId))
+                return BadRequest(new { Success = false, Message = "User ID is required." });
+
+            // Hämta användardata från datalagret (t.ex. databas)
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+                return NotFound(new { Success = false, Message = "User not found." });
+
+            // Returnera användardata
+            return Ok(new { Success = true, Username = user.UserName });
         }
     }
 
