@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MuteMate.Server.Data;
 
@@ -11,9 +12,11 @@ using MuteMate.Server.Data;
 namespace MuteMate.Server.Migrations
 {
     [DbContext(typeof(MuteMateDbContext))]
-    partial class MuteMateDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240909174145_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -691,21 +694,21 @@ namespace MuteMate.Server.Migrations
                         new
                         {
                             Id = 74,
-                            Answer = "Q",
+                            Answer = "´Q",
                             IsCorrect = false,
                             QuestionId = 21
                         },
                         new
                         {
                             Id = 75,
-                            Answer = "A",
+                            Answer = "Á",
                             IsCorrect = false,
                             QuestionId = 21
                         },
                         new
                         {
                             Id = 76,
-                            Answer = "S",
+                            Answer = "H",
                             IsCorrect = true,
                             QuestionId = 21
                         },

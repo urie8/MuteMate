@@ -17,7 +17,7 @@ import Quiz from "./pages/quiz";
 import AboutPage from "./pages/aboutPage";
 import NotFound from "./pages/NotFound";
 import CategoryOrPractice from "./pages/categoryOrPractice";
-import Test from "./pages/test";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,8 +32,7 @@ const router = createBrowserRouter(
       <Route path="/quiz/:category" element={<Quiz />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/categoryOrPractice" element={<CategoryOrPractice />} />
-      <Route path ="/test" element={<Test/>}/>
-
+      
       <Route path="*" element={<NotFound />} />
     </Route>
   )

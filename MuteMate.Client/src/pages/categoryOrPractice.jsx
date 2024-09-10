@@ -1,38 +1,3 @@
-// import React from "react";
-// import "../Styles/categoryOrPractice.css";
-// import { NavLink } from "react-router-dom";
-// import practice from "../images/practice.png";
-// import brain from "../images/brain.png";
-
-
-// function CategoryOrPractice() {
-//   return (
-//     <>
-//       <div className="category-practice-container">
-//         <div className="category-or-practice-cards">
-//           <NavLink to="/categoryQuiz" className="nav-link">
-//             <div className="category-or-practice-text">Quiz</div>
-//             <img className="pic-img" src={brain} alt="brain picture" />
-//           </NavLink>
-//         </div>
-//         <div className="category-or-practice-cards">
-//           <NavLink to="/categoryPractise" className="nav-link">
-//             <div className="category-or-practice-text">Practice</div>
-//             <img
-//               className="pic-img"
-//               src={practice}
-//               alt="practice-picture"
-//             />
-//           </NavLink>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default CategoryOrPractice;
-
-
 import React from "react";
 import "../Styles/categoryOrPractice.css";
 import { NavLink } from "react-router-dom";
@@ -67,6 +32,7 @@ function CategoryOrPractice() {
             </div>
           </NavLink>
         </div>
+
       </div>
     </>
   );
