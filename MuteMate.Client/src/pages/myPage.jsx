@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import useFetchQuotes from "../hooks/useFetchQuotes";
+import { ENDPOINTS } from "../api/apiEndpoints";
 import "../Styles/myPage.css";
 import banana from "../images/banan1.png";
 import vines from "../images/vines.png";
@@ -6,29 +8,52 @@ import { useNavigate } from "react-router-dom";
 import colorwheel from "/public/MiiaImages/color-wheel.png";
 import alphabet from "/public/MiiaImages/abc.png";
 import livestock from "/public/MiiaImages/livestock.png";
+import AuthorizeView from "../components/authorizeView";
+
+const maxPoints = 48;
+let correctAnswers = 50;
+let totalPoints = 10;
 
 //Import från API, användaruppgifter och poäng.
 
-function myPage() {
+function myPage({}) {
+  const [category, setCategory] = useState("");
+  const { quote } = useFetchQuotes(category);
+  const [userName, setuserName] = useState("");
+
+  useEffect(() => {
+    fetch(ENDPOINTS.GETLOGGEDINUSER, {
+      method: "GET",
+      credentials: "include",
+    })
+      .then((response) => response.json())
+      .then((data) => setuserName(data.username));
+  }, []);
+
+  useEffect(() => {
+    if (totalPoints >= 25) {
+      setCategory("praise");
+    } else if (totalPoints <= 25) setCategory("encouragement");
+  }, [totalPoints]);
+
+  // Hämta totala poäng från den inloggade spelaren.
+  // API
+
   return (
     <>
       <div className="Container-profile">
         <div className="title-profile-container">
-          <h1 className="title-profile">
-            {/* PROFILE PAGE */}
-            {/* <div className="picture-container">
-            <img src={vines} alt="vines" className="vines-1" />
-            <img src={vines} alt="vines" className="vines-1" />
-          </div> */}
-          </h1>
+          <h1 className="title-profile"></h1>
           <div className="userNameContainer">
             <div className="display-userName">
-              <p className="userName">username</p>
+              <p>{userName}</p>
             </div>
             {/* Username ska hämtas här */}
           </div>
         </div>
-        <div className="quotes-container">Motiverande quotes här!</div>
+        <div className="quotes-container">
+          <h2>{quote.Quote}</h2>
+        </div>
         {/*Container för category.
         Container under för att se alla bananer /kategori */}
 
@@ -63,7 +88,7 @@ function myPage() {
           <p className="banana-text-1">Your total bananas!</p>
           <div className="banana-display-mobile">
             <img src={banana} alt="banan" className="bananaMobile" />{" "}
-            <p className="Total-bananas-text"> = 36</p>
+            <p className="Total-bananas-text"> {totalPoints}</p>
           </div>
         </div>
         {/* <div className="banana-display"> */}

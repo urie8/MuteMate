@@ -21,6 +21,7 @@ export const ENDPOINTS = {
   GETRANDOMPRAISEQUOTE: `${API_BASE_URL}/api/Quote/GetRandomPraiseQuote`,
   GETRANDOMENCOURAGEMENTQUOTE: `${API_BASE_URL}/api/Quote/GetRandomEncouragementQuote`,
   GETQUESTIONSANSWEREDWRONG: `${API_BASE_URL}/api/Quiz/GetQuestionsAnsweredWrong`,
+  GETLOGGEDINUSER: `${API_BASE_URL}/api/Account/users/{userId}`,
 
   // POST endpoints
   ADDCORRECTUSERANSWERS: `${API_BASE_URL}/api/UserAnswer/AddCorrectUserAnswers`,
