@@ -32,6 +32,8 @@ namespace MuteMate.Server.Controllers
             return User.FindFirstValue(ClaimTypes.NameIdentifier); // Get the current user's ID from claims
         }
 
+
+
         [HttpGet("/CorrectUserAnswers")]
         public async Task<IActionResult> GetCorrectAnswers()
         {

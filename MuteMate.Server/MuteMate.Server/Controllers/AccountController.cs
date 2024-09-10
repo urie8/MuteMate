@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MuteMate.Server.Models;
+using System.Security.Claims;
 
 namespace MuteMate.Server.Controllers
 {
@@ -17,6 +18,7 @@ namespace MuteMate.Server.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
 
         [HttpPost]
         [Route("register")]
@@ -52,6 +54,26 @@ namespace MuteMate.Server.Controllers
             }
             return BadRequest(new { Success = false, Message = "Invalid login attempt." });
         }
+
+        [HttpGet]
+        [Route("users/${userId}")]
+        public async Task<IActionResult> GetUserById(string userId)
+        {
+            if (string.IsNullOrEmpty(userId))
+                return BadRequest(new { Success = false, Message = "User ID is required." });
+
+            // Hämta användardata från datalagret (t.ex. databas)
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+                return NotFound(new { Success = false, Message = "User not found." });
+
+            // Returnera användardata
+            return Ok(new { Success = true, Username = user.UserName });
+        }
+
+
+
     }
 
 

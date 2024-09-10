@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MuteMate.Server.Migrations;
 using MuteMate.Server.Models;
 
 namespace MuteMate.Server.Data.Repositories
