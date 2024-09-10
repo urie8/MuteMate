@@ -1,6 +1,32 @@
+
+/* mobile */
+
+.different-offers-text{
+    margin-bottom: 20px;
+}
+
+.about-category-containers{
+    margin-bottom: 20px;
+
+}
+
+.ending-text{
+    margin-bottom: 10px;
+
+}
+
+.intro-text{
+    margin-bottom: 10px;
+    
+}
+
+.animals-letters-colors-text{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
 .about-container{
-    padding: 30px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,14 +34,13 @@
 }
 
 .about-text-container{
-    margin-top: 50px;
-    width: 85rem;
+    width: 80vw;
     border: black 1px solid;
-    padding: 5rem;
     font-family: "Roboto";
-    font-size: 20px;
     background-color: #fefee3;
-    border-radius: 2rem;
+    border-radius: 20px;
+    padding: 20px;
+    height: 460px;
 }
 
 .about-title{
@@ -23,27 +48,155 @@
     font-weight: bold;
     color: #c5d7d7;
     font-family: "Fredoka";
-    margin-bottom: 1rem;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+}
+
+.about-information-text{
 }
 
 
-@media (min-width: 390px) and (max-width: 844px)
-{
-    .about-container{
-        height: 100vh;
+
+
+
+
+/* Tablet Breakpoint */
+@media (min-width: 400px) {
+
+.different-offers-text{
+    margin-bottom: 20px;
+       font-size: 25px;
+    font-family: "Fredoka";
+}
+
+.about-category-containers{
+
+}
+
+.ending-text{
+       font-size: 25px;
+    font-family: "Fredoka";
+
+}
+
+.intro-text{
+       font-size: 25px;
+    font-family: "Fredoka";
     
+}
+
+.animals-letters-colors-text{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+        font-family: "Fredoka";
+
+    
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about-text-container{
+    width: 80vw;
+    border: black 1px solid;
+    font-family: "Roboto";
+    background-color: #fefee3;
+    border-radius: 20px;
+    padding: 40px;
+    height: 70vh;
+}
+
+.about-title{
+    font-size: 80px;
+    font-weight: bold;
+    color: #c5d7d7;
+    font-family: "Fredoka";
+        text-align: center;
+    
+}
+
+.about-information-text{
+}
+
+
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 845px) {
+
+
+.different-offers-text{
+       font-size: 25px;
+    font-family: "Fredoka";
+}
+
+.about-category-containers{
+
+}
+
+.ending-text{
+       font-size: 25px;
+    font-family: "Fredoka";
+
+}
+
+.intro-text{
+       font-size: 25px;
+    font-family: "Fredoka";
+    
+}
+
+.animals-letters-colors-text{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+        font-family: "Fredoka";
+
+    
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about-text-container{
+    width: 80vw;
+    border: black 1px solid;
+    font-family: "Roboto";
+    background-color: #fefee3;
+    border-radius: 20px;
+    padding: 40px;
+    height: 70vh;
+}
+
+ .about-title {
+        font-size: 80px;
+        font-weight: bold;
+        color: #c5d7d7;
+        font-family: "Fredoka";
+        text-align: center;
+        margin-top: 0; /* Ta bort margin-top */
+        margin-bottom: 0; /* Ta bort margin-bottom */
+        padding: 0; /* Ta bort padding */
     }
-    .about-text-container{
-        width: 20rem;
-        padding: 1.5rem;
-        font-size: 13px;
-    }
-    .about-title{
-        font-size: 30px;
-    }    
-    .about-text-container{
-        margin-top: 0px;
-    }
+
+.about-information-text{
+}
+
+
+
+
 
 }
 
