@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import logo from "../images/MuteMateLogo.png";
 import vines from "../images/vines.png";
@@ -16,7 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const navigate = useNavigate();
   const ref = useRef(null);
 
   // Close the menu when clicking outside of it
@@ -42,6 +42,7 @@ function Navbar() {
       .then((data) => {
         if (data.success) {
           setIsLoggedIn(false); // Update state to logged out
+          window.location.href = "/";
         }
       })
       .catch((error) => console.error("Error logging out:", error));
@@ -51,17 +52,6 @@ function Navbar() {
     checkLoginStatus();
     console.log(isLoggedIn);
   }, []);
-
-  function getCookie(name) {
-    const cookies = document.cookie.split("; ");
-    for (let cookie of cookies) {
-      const [key, value] = cookie.split("=");
-      if (key === name) {
-        return value;
-      }
-    }
-    return null;
-  }
 
   return (
     <>
@@ -82,6 +72,9 @@ function Navbar() {
             </NavLink>
             <NavLink className="navbar-text" to="/categoryPractise">
               Practice
+            </NavLink>
+            <NavLink className="navbar-text" to="/about">
+              About us
             </NavLink>
 
             {isLoggedIn ? (
@@ -125,13 +118,45 @@ function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
               >
-                <NavLink
-                  to="/login"
-                  className="dropdown-link"
-                  onClick={() => setOpen(false)}
-                >
-                  Register
-                </NavLink>
+                {!isLoggedIn ? (
+                  <>
+                    <NavLink
+                      to="/login"
+                      className="dropdown-link"
+                      onClick={() => setOpen(false)}
+                    >
+                      Register
+                    </NavLink>
+                    <NavLink
+                      to="/login"
+                      className="dropdown-link"
+                      onClick={() => setOpen(false)}
+                    >
+                      Log in
+                    </NavLink>
+                  </>
+                ) : (
+                  <>
+                    <NavLink
+                      to="/myPage"
+                      className="dropdown-link"
+                      onClick={() => setOpen(false)}
+                    >
+                      Profile
+                    </NavLink>
+                    <NavLink
+                      to="/"
+                      className="dropdown-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleLogout();
+                        setOpen(false); // Close the menu after logout
+                      }}
+                    >
+                      Log out
+                    </NavLink>
+                  </>
+                )}
                 <NavLink
                   to="/categoryQuiz"
                   className="dropdown-link"
@@ -153,15 +178,6 @@ function Navbar() {
                 >
                   About
                 </NavLink>
-                <NavLink
-                  to="/myPage"
-                  className="dropdown-link"
-                  onClick={() => setOpen(false)}
-                >
-                  Profile
-                </NavLink>
-
-                {/* TODO: profile ska bara synas om man är inloggad */}
               </motion.div>
             )}
           </AnimatePresence>
