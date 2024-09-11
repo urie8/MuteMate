@@ -67,6 +67,7 @@ namespace MuteMate.Server.Data.Repositories
                                 .Where(q => q.Category == "Animals")
                                 .Include(q => q.Answers)
                                 .OrderBy(q => Guid.NewGuid())
+                                .Take(5)
                                 .ToListAsync();
         }
 
