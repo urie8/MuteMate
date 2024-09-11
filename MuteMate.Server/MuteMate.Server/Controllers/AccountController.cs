@@ -91,23 +91,6 @@ namespace MuteMate.Server.Controllers
         }
 
         [HttpGet]
-        [Route("users/${userId}")]
-        public async Task<IActionResult> GetUserById(string userId)
-        {
-            if (string.IsNullOrEmpty(userId))
-                return BadRequest(new { Success = false, Message = "User ID is required." });
-
-            // Hämta användardata från datalagret (t.ex. databas)
-            var user = await _userManager.FindByIdAsync(userId);
-
-            if (user == null)
-                return NotFound(new { Success = false, Message = "User not found." });
-
-            // Returnera användardata
-            return Ok(new { Success = true, Username = user.UserName });
-        }
-
-        [HttpGet]
         [Route("getLoggedInUserPoints")]
         public async Task<IActionResult> GetLoggedInUserPoints()
         {
