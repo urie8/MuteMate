@@ -65,7 +65,7 @@ function myPage({}) {
   const totalBananas = correctAnswers.length;
 
   useEffect(() => {
-    if (totalBananas >= 25) {
+    if (totalBananas >= 10) {
       setCategory("praise");
     } else {
       setCategory("encouragement");
