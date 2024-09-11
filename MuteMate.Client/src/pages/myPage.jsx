@@ -157,7 +157,7 @@ function myPage({}) {
     fetchCorrectAnswersAnimals();
   }, []);
 
-  const totalPointsAnimals = correctAnswersLetters.length;
+  const totalPointsAnimals = correctAnswersAnimals.length;
 
   if (loading || loadingColors || loadingLetters || loadingAnimals) {
     return <div>Loading...</div>; // Show a loading state while fetching data
