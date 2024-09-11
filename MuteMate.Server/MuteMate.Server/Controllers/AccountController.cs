@@ -114,13 +114,7 @@ namespace MuteMate.Server.Controllers
             }
             return Unauthorized(new { Success = false, Message = "User is not authenticated." });
         }
-
-
-
-
-
-
-
+        //Hjälp
     }
 
 
