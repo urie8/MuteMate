@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MuteMate.Server.Data.Repositories;
 using MuteMate.Server.Models;
@@ -11,6 +12,8 @@ namespace MuteMate.Server.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
+
+
     public class UserAnswerController : ControllerBase
     {
 
@@ -97,5 +100,6 @@ namespace MuteMate.Server.Controllers
                 return StatusCode(500, "Internal server error: " + ex.Message);
             }
         }
+
     }
 }
