@@ -41,7 +41,7 @@ function Navbar() {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          setIsLoggedIn(false); // Update state to logged out
+          setIsLoggedIn(false); // Update state to logged out.
           window.location.href = "/";
         }
       })
@@ -55,6 +55,10 @@ function Navbar() {
 
   return (
     <>
+      <div
+        className={`navbar-overlay ${isOpen ? "active" : ""}`}
+        onClick={() => setOpen(false)}
+      ></div>
       <div className="container-navbar">
         <div className="navbar-wrapper" ref={ref}>
           <img src={vinesnoborder} alt="Logo" className="navbar-vine" />
@@ -188,3 +192,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+

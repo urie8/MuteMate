@@ -44,7 +44,26 @@ body {
   padding: 1rem;
   z-index: 10;
   width: 88vw;
+  z-index: 1000;
 }
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 999; 
+  backdrop-filter: blur(5px); 
+  display: none; 
+}
+.navbar-overlay.active {
+  display: block;
+}
+.hamburger-react{
+z-index: 1001;
+}
+
 
 .banana-pic {
   height: 6vw;
