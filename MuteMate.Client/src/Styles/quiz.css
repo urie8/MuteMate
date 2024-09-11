@@ -7,13 +7,15 @@
 .quiz-wrapper {
   display: flex;
   flex-direction: column;
+  width: 1000px;
+  height: auto;
   border-radius: 20px;
   background-color: #fefee3;
   border: 1px solid black;
   align-items: center;
   justify-content: space-evenly;
-  width: 1000px;
-  height: 250px;
+  gap: 1rem;
+  padding: 15px;
 }
 
 .answer-buttons {
@@ -23,18 +25,50 @@
 
 .default-quiz-btn {
   width: 100px;
+  height: auto;
+  font-size: 20px;
+  border-radius: 10px;
+  font-family: "Roboto";
+  background-color: #f1f0a0;
 }
 
 .correct-quiz-btn {
   width: 100px;
+  height: auto;
+  font-size: 20px;
+  border-radius: 10px;
+  font-family: "Roboto";
   color: white;
   background-color: green;
 }
 
 .incorrect-quiz-btn {
   width: 100px;
+  height: auto;
+  font-size: 20px;
+  border-radius: 10px;
+  font-family: "Roboto";
   color: white;
   background-color: red;
+}
+
+.submit-btn {
+  width: 200px;
+  height: auto;
+  font-size: 20px;
+  border-radius: 10px;
+  font-family: "Roboto";
+  background-color: #f1f0a0;
+}
+
+.question-img {
+  width: auto;
+  height: 150px;
+}
+
+.answer-image {
+  width: 60px;
+  height: auto;
 }
 
 @media (min-width: 390px) and (max-width: 844px) {

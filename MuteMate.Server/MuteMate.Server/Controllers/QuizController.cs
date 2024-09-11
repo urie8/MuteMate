@@ -99,14 +99,12 @@ namespace MuteMate.Server.Controllers
             }
             else
             {
-
                 var responsesJson = JsonSerializer.Serialize(categoryAnimals, _jsonSerializerOptions);
                 return Content(responsesJson, "application/json");
                 //return Ok(categoryAnimals);
             }
 
         }
-
 
 
         [HttpGet("Get5RandomCategoryColor")]

@@ -29,15 +29,16 @@ function QuizComponent({ category }) {
     }
   }, [questions, error]);
 
-  function handleAnswerClick(e, isCorrect) {
+  function handleAnswerClick(answerId, isCorrect) {
     setSelectedAnswer(isCorrect);
     setSubmitBtn(false);
     // When the user clicks an answer, that answers info is saved as an object in useranswers array
     const userAnswer = {
       questionId: currentQuestion.Id,
-      answerId: parseInt(e.target.value),
+      answerId: answerId,
       isCorrect: isCorrect,
     };
+
     setUserAnswers((prevUserAnswers) => [...prevUserAnswers, userAnswer]);
 
     console.log(userAnswers);
@@ -55,7 +56,7 @@ function QuizComponent({ category }) {
     } else {
       setQuizFinished(true);
       console.log("hi");
-      // Make a post request to the API with the current users answers
+      // TODO: Check if user is logged in, if yes make post request
       fetch(ENDPOINTS.ADDCORRECTUSERANSWERS, {
         method: "POST",
         headers: {
@@ -68,7 +69,7 @@ function QuizComponent({ category }) {
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
-          return response.json(); // Assuming your API returns JSON
+          return response.json();
         })
         .then((data) => {
           console.log("Success:", data);
@@ -87,6 +88,20 @@ function QuizComponent({ category }) {
     return isCorrect ? "correct-quiz-btn" : "incorrect-quiz-btn";
   };
 
+  const renderAnswerContent = (answer) => {
+    if (category === "colors" || category === "animals") {
+      return (
+        <img
+          src={`http://localhost:5237/${answer.Answer}`}
+          alt="Answer"
+          className="answer-image"
+        />
+      );
+    } else {
+      return answer.Answer; // Default to text if no special case
+    }
+  };
+
   return (
     <div className="quiz-wrapper">
       {loading ? (
@@ -98,6 +113,7 @@ function QuizComponent({ category }) {
           <h1 className="question-title">
             {currentQuestion.Question || "No Question Available"}
           </h1>
+          <h2 className="question-number">Question nr:</h2>
           <img
             className="question-img"
             src={`http://localhost:5237/${currentQuestion.Image}`}
@@ -108,19 +124,23 @@ function QuizComponent({ category }) {
               currentQuestion.Answers.$values.map((a, index) => (
                 <button
                   className={getButtonClass(a.IsCorrect)}
-                  onClick={(e) => handleAnswerClick(e, a.IsCorrect)}
+                  onClick={(e) => handleAnswerClick(a.Id, a.IsCorrect)}
                   key={index}
                   value={a.Id}
                   disabled={selectedAnswer !== null} // Disable buttons after selection
                 >
-                  {a.Answer}
+                  {renderAnswerContent(a)}
                 </button>
               ))
             ) : (
               <p>No answers available</p>
             )}
           </div>
-          <button disabled={submitBtn} onClick={handleNextQuestionClick}>
+          <button
+            className="submit-btn"
+            disabled={submitBtn}
+            onClick={handleNextQuestionClick}
+          >
             Next question
           </button>
         </>

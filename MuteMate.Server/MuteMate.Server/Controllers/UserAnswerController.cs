@@ -91,6 +91,7 @@ namespace MuteMate.Server.Controllers
                 var result = await _userAnswerRepo.PostCorrectAnswersAsync(userAnswers);
                 return Ok(result);
             }
+
             catch (Exception ex)
             {
                 // Log the exception and return a server error status code
