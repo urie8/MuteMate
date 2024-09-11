@@ -191,20 +191,18 @@ body {
 
 /*------------------------------------------------------------------------*/
 
-/* Default styles for larger screens */
-
 @media (max-width: 768px) {
   .navbar-wrapper {
-    flex-direction: column; /* Stack elements vertically */
-    height: auto; /* Let height adjust */
+    flex-direction: column;
+    height: auto;
   }
 
   .navbar-link-wrapper {
-    display: none; /* Hide regular links on smaller screens */
+    display: none;
   }
 
   .mute-mate-text {
-    font-size: 4vw; /* Adjust text size for smaller screens */
+    font-size: 4vw;
   }
 
   .navbar-logo {
@@ -212,18 +210,18 @@ body {
   }
 
   .hamburger-react {
-    display: block; /* Show hamburger on mobile */
+    display: block;
   }
 }
 
 @media (max-width: 480px) {
   .navbar-wrapper {
     flex-direction: column;
-    padding: 10px; /* Add padding for smaller screens */
+    padding: 10px;
   }
 
   .mute-mate-text {
-    font-size: 5vw; /* Smaller text on very small screens */
+    font-size: 5vw;
   }
 
   .navbar-logo {
@@ -231,14 +229,14 @@ body {
   }
 
   .navbar-banan {
-    width: 20%; /* Adjust banana image size */
+    width: 20%;
   }
 
   .dropdown-menu {
-    width: 95vw; /* Full width dropdown for smaller screens */
+    width: 95vw;
   }
 
   .dropdown-link {
-    font-size: 5vw; /* Adjust link text size */
+    font-size: 5vw;
   }
 }
