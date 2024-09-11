@@ -44,7 +44,6 @@ body {
   padding: 1rem;
   z-index: 10;
   width: 88vw;
-  /* för blurrad bakgrund */
   z-index: 1000;
 }
 .navbar-overlay {

@@ -41,7 +41,7 @@ function Navbar() {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          setIsLoggedIn(false); // Update state to logged out
+          setIsLoggedIn(false); // Update state to logged out.
           window.location.href = "/";
         }
       })
