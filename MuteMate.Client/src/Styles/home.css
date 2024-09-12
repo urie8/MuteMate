@@ -17,7 +17,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 82vh;
-  background-color: #a4be74;
+  /* background-color: #a4be74; */
   padding-bottom: 260px;
 }
 .container-home {
@@ -128,7 +128,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #a4be74;
+    /* background-color: #a4be74; */
     padding-bottom: 30px;
   }
 }
@@ -158,7 +158,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #a4be74;
+    /* background-color: #a4be74; */
     padding-bottom: 30px;
     min-height: 0vh;
   }

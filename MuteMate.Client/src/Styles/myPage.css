@@ -13,6 +13,12 @@
 body {
   width: 100vw;
   height: 100vh;
+   background-image: url("../images/mutematebackground2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 @media only screen and (min-width: 768px) {
