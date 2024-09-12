@@ -212,16 +212,14 @@ z-index: 1001;
 
 @media (max-width: 768px) {
   .navbar-wrapper {
-    justify-content: space-between; /* Logo, text, and hamburger in a row */
     height: auto;
   }
 
-  /* Display hamburger next to logo and text */
   .title-pic-wrapper {
-    flex-direction: row; /* Ensure logo and text stay in a row */
+    flex-direction: row; 
     justify-content: flex-start;
     align-items: center;
-    gap: 10px; /* Space between logo, text, and hamburger */
+    gap: 10px; 
   }
 
   .navbar-link-wrapper {
@@ -248,7 +246,6 @@ z-index: 1001;
 
 @media (max-width: 480px) {
   .navbar-wrapper {
-    justify-content: space-between;
     padding: 10px; 
     height: 8vh;
   }
