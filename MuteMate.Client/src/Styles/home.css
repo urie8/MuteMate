@@ -1,5 +1,3 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 
 * {
@@ -74,8 +72,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-    padding-bottom: 40px;
-
+  padding-bottom: 40px;
 }
 .button-containerhome button {
   border: none;
@@ -99,6 +96,13 @@ body {
   font-family: "fredoka";
 }
 
+.landingpage-profileName {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "fredoka";
+  margin-top: 1vh;
+}
+
 /* Tablet Breakpoint */
 @media (min-width: 400px) {
   .container-home {
@@ -120,13 +124,13 @@ body {
   .tagline-home {
     font-size: 50px;
   }
-   .containerboxhome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #a4be74;
-  padding-bottom: 30px;
-}
+  .containerboxhome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a4be74;
+    padding-bottom: 30px;
+  }
 }
 
 /* Desktop Breakpoint */
@@ -151,35 +155,34 @@ body {
     font-size: 60px;
   }
   .containerboxhome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #a4be74;
-  padding-bottom: 30px;
-    min-height:  0vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a4be74;
+    padding-bottom: 30px;
+    min-height: 0vh;
+  }
 
-}
+  .signIn-btn {
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "fredoka";
+  }
 
-.signIn-btn {
-  padding: 20px;
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "fredoka";
-}
+  .button-containerhome button:last-child {
+    margin-top: 0px;
+  }
 
-.button-containerhome button:last-child {
-  margin-top: 0px;
-}
+  .button-containerhome {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+  }
 
-.button-containerhome {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 40px;
-}
-
-.button-containerhome button:hover {
+  .button-containerhome button:hover {
     background-color: #9b9a45;
-}
+  }
 }
