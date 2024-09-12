@@ -23,13 +23,6 @@ function Spinner() {
           <img class="spinner-banana-img banana-10" src={banana} alt="Banana" />
         </div>
       </div>
-
-      {/* <div className="spinner-wrapper">
-        <div className="spinner-container">
-          <div className="spinner"></div>
-          <img src={angryMonkey} alt="Monkey" className="spinner-monkey-img" />
-        </div>
-      </div> */}
     </>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Result from "../components/result";
 import Spinner from "../components/spinner";
 import { ENDPOINTS } from "../api/apiEndpoints";
 
@@ -19,20 +18,20 @@ function Test() {
           console.error("Error fetching data:", error);
           setIsLoading(false); // Ändra tillståndet även vid fel
         });
-    }, 2000); // 2 sekunders fördröjning
+    }, 2000); // 4 sekunders fördröjning
   }, []);
 
   return (
     <>
-      <Result />
-      {isLoading ? (
+     
+      {/* {isLoading ? (
         <Spinner />
       ) : (
         <div>
-          <h1>Data är laddad!</h1>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
+          <h1>Visa upp ens data</h1>
         </div>
-      )}
+      )} */}
+      <Spinner/>
     </>
   );
 }
