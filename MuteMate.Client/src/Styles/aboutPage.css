@@ -1,204 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
 
-/* mobile */
+@media (min-width: 390px) {
 
-.different-offers-text{
+/* @media (max-width: 599px) { */
+  .about-text-links {
+    font-family: "Roboto";
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+  }
+
+  .about-text-links:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  .about-text-links:active {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  .about-text-links:visited {
+    color: inherit;
+  }
+  .different-offers-text {
     margin-bottom: 20px;
-}
+  }
 
-.about-category-containers{
+  .about-paw-image {
+    width: 30px;
+    margin-left: 10px;
+  }
+
+  .about-abc-image {
+    width: 30px;
+    margin-left: 20px;
+  }
+  .about-color-image {
+    width: 28px;
+    margin-left: 32px;
+  }
+
+  .about-category-containers {
     margin-bottom: 20px;
-
-}
-
-.ending-text{
-    margin-bottom: 10px;
-
-}
-
-.intro-text{
-    margin-bottom: 10px;
-    
-}
-
-.animals-letters-colors-text{
     display: flex;
-    justify-content: center;
-    font-weight: bold;
-}
+    flex-direction: column;
+    font-size: 20px;
+    gap: 8px;
+  }
 
-.about-container{
+  .ending-text {
+    margin-bottom: 10px;
+  }
+
+  .intro-text {
+    margin-bottom: 10px;
+  }
+
+  .animals-letters-colors-text {
+    display: flex;
+
+    font-weight: 600;
+    font-family: "Roboto";
+  }
+
+  .about-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -20px;
+    /* padding-bottom: 210px; */
+  }
 
-}
-
-.about-text-container{
+  .about-text-container {
     width: 80vw;
     border: black 1px solid;
     font-family: "Roboto";
     background-color: #fefee3;
     border-radius: 20px;
     padding: 20px;
-    height: 460px;
-}
+    min-height: 460px;
+    overflow: auto;
+  }
 
-.about-title{
+  .about-title {
     font-size: 45px;
     font-weight: bold;
     color: #c5d7d7;
     font-family: "Fredoka";
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-}
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-.about-information-text{
-}
-
-
-
-
-
-
-/* Tablet Breakpoint */
-@media (min-width: 400px) {
-
-.different-offers-text{
-    margin-bottom: 20px;
-       font-size: 25px;
-    font-family: "Fredoka";
-}
-
-.about-category-containers{
-
-}
-
-.ending-text{
-       font-size: 25px;
-    font-family: "Fredoka";
-
-}
-
-.intro-text{
-       font-size: 25px;
-    font-family: "Fredoka";
-    
-}
-
-.animals-letters-colors-text{
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 30px;
-        font-family: "Fredoka";
-
-    
-}
-
-.about-container{
+  .about-information-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+  }
 }
 
-.about-text-container{
+/* Tablet Breakpoint */
+@media (min-width: 500px) and (max-width: 1023px) {
+  /* @media (min-width: 400px) { */
+
+  .about-text-links {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+  }
+
+  .about-text-links:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  .about-text-links:active {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  .about-text-links:visited {
+    color: inherit;
+  }
+  .different-offers-text {
+    margin-bottom: 20px;
+    width: 67vw;
+  }
+
+  .about-paw-image {
+    width: 30px;
+    margin-left: 10px;
+  }
+
+  .about-abc-image {
+    width: 30px;
+    margin-left: 20px;
+  }
+  .about-color-image {
+    width: 28px;
+    margin-left: 32px;
+  }
+
+  .about-category-containers {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    gap: 8px;
+  }
+
+  .ending-text {
+    margin-bottom: 10px;
+    width: 67vw;
+  }
+
+  .intro-text {
+    margin-bottom: 10px;
+    width: 67vw;
+  }
+
+  .animals-letters-colors-text {
+    display: flex;
+    font-weight: 800;
+    font-family: "Roboto";
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: -20px; */
+    padding-bottom:50px;
+        margin-top: 10px;
+
+
+  }
+
+  .about-text-container {
     width: 80vw;
     border: black 1px solid;
     font-family: "Roboto";
     background-color: #fefee3;
     border-radius: 20px;
-    padding: 40px;
-    height: 70vh;
-}
+    padding: 20px;
+    min-height: 460px;
+    overflow: auto;
+    font-size: 20px;
+  }
 
-.about-title{
+  .about-title {
     font-size: 80px;
     font-weight: bold;
     color: #c5d7d7;
     font-family: "Fredoka";
-        text-align: center;
-    
-}
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-.about-information-text{
-}
-
-
-}
-
-/* Desktop Breakpoint */
-@media (min-width: 845px) {
-
-
-.different-offers-text{
-       font-size: 25px;
-    font-family: "Fredoka";
-}
-
-.about-category-containers{
-
-}
-
-.ending-text{
-       font-size: 25px;
-    font-family: "Fredoka";
-
-}
-
-.intro-text{
-       font-size: 25px;
-    font-family: "Fredoka";
-    
-}
-
-.animals-letters-colors-text{
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 30px;
-        font-family: "Fredoka";
-
-    
-}
-
-.about-container{
+  .about-information-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+  }
 }
 
-.about-text-container{
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+  /* @media (min-width: 845px) { */
+
+    .about-monkey-image {
+    margin-left: 20px;
+  }
+
+  .about-text-links {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+  }
+
+  .about-text-links:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  .about-text-links:active {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  .about-text-links:visited {
+    color: inherit;
+  }
+  .different-offers-text {
+    margin-bottom: 20px;
+    width: 61vw;
+  }
+
+  .about-paw-image {
+    width: 30px;
+    margin-left: 10px;
+  }
+
+  .about-abc-image {
+    width: 30px;
+    margin-left: 20px;
+  }
+  .about-color-image {
+    width: 28px;
+    margin-left: 32px;
+  }
+
+  .about-category-containers {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    gap: 8px;
+  }
+
+  .ending-text {
+    margin-bottom: 30px;
+    width: 61vw;
+  }
+
+  .intro-text {
+    margin-bottom: 10px;
+    width: 61vw;
+  }
+
+  .animals-letters-colors-text {
+    display: flex;
+    font-weight: 800;
+    font-family: "Roboto";
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: -20px; */
+    /* padding-bottom: 210px; */
+    padding-bottom: 50px;
+    margin-top: 10px;
+  }
+
+  .about-text-container {
     width: 80vw;
     border: black 1px solid;
     font-family: "Roboto";
     background-color: #fefee3;
     border-radius: 20px;
-    padding: 40px;
-    height: 70vh;
+    padding: 20px;
+    min-height: 460px;
+    overflow: auto;
+    font-size: 1.4rem;
+  }
+
+  .about-title {
+    font-size: 80px;
+    font-weight: bold;
+    color: #c5d7d7;
+    font-family: "Fredoka";
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .about-information-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
- .about-title {
-        font-size: 80px;
-        font-weight: bold;
-        color: #c5d7d7;
-        font-family: "Fredoka";
-        text-align: center;
-        margin-top: 0; /* Ta bort margin-top */
-        margin-bottom: 0; /* Ta bort margin-bottom */
-        padding: 0; /* Ta bort padding */
-    }
-
-.about-information-text{
-}
-
-
-
-
-
-}
-
-
-
