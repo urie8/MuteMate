@@ -125,7 +125,7 @@ function Navbar() {
                 {!isLoggedIn ? (
                   <>
                     <NavLink
-                      to="/login"
+                      to="/register"
                       className="dropdown-link"
                       onClick={() => setOpen(false)}
                     >
