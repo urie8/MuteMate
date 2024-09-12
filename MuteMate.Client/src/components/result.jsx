@@ -107,10 +107,19 @@ function Result({ userAnswers }) {
 
                       <div className="grey-line-practice-letters"></div>
 
-                      {correctAnswer && (
-                        <p className="practice-letter-correct-answer">
-                          {correctAnswer.Answer}
-                        </p>
+                      {question.Category === "Animals" ? (
+                        <img
+                          src={`http://localhost:5237/${correctAnswer.Answer}`}
+                          alt="Correct Answer"
+                          className="practice-animal-image"
+                        />
+                      ) : (
+                        (question.Category === "Letters" ||
+                          question.Category === "Colors") && (
+                          <p className="practice-letter-correct-answer">
+                            {correctAnswer.Answer}
+                          </p>
+                        )
                       )}
                     </div>
                   );
