@@ -214,6 +214,7 @@ body {
     align-items: center;
     margin-top: 10px;
     gap: 10px;
+    padding-bottom: 200px;
   }
 
   .text-container {
