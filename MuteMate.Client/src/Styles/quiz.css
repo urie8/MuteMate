@@ -71,5 +71,44 @@
   height: auto;
 }
 
+
 @media (min-width: 390px) and (max-width: 844px) {
+
+
+  .quiz-wrapper {
+    width: 70%; /* Ändra bredden till 90% av skärmens bredd */
+    padding: 10px;
+    border-radius: 15px; /* Minska rundningen för mobil */
+   
+  }
+.quizPage-container{
+   padding-bottom: 300px;
+}
+  .question-img {
+    width: 70%;
+    height: auto; /* Se till att bilden skalar med bredden */
+  }
+
+  .answer-buttons {
+    display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 10px; 
+    }
+
+  .default-quiz-btn, .correct-quiz-btn, .incorrect-quiz-btn {
+    width: 100%; /* Gör knapparna fullbredd på mobil */
+    font-size: 18px; /* Minska fontstorleken något */
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 18px; 
+  }
+
+  .question-title {
+    font-size: 18px; 
+  }
+   .question-number{
+    font-size: 15px;
+   }
 }
