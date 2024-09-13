@@ -23,7 +23,7 @@ function Test() {
 
   return (
     <>
-     
+      <Spinner />
       {/* {isLoading ? (
         <Spinner />
       ) : (
@@ -31,7 +31,6 @@ function Test() {
           <h1>Visa upp ens data</h1>
         </div>
       )} */}
-      <Spinner/>
     </>
   );
 }

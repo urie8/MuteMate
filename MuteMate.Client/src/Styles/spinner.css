@@ -10,8 +10,14 @@
   position: relative;
   width: 200px;
   height: 200px;
+   transform: translateY(-150px);
 }
-
+/* Media query för mobil */
+@media (max-width: 768px) {
+  .spinner-container {
+      transform: translate(-40px, -280px);
+  }
+}
 .spinner-banana-img {
   position: absolute;
   top: 50%;
@@ -90,7 +96,7 @@
   }
 }
 
-@keyframes spinBanana1 {
+ @keyframes spinBanana1 {
   0% { transform: rotate(0deg) translate(100px) rotate(0deg); }
   100% { transform: rotate(360deg) translate(100px) rotate(-360deg); }
 }
@@ -138,4 +144,10 @@
 @keyframes spinBanana10 {
   0% { transform: rotate(324deg) translate(100px) rotate(-324deg); }
   100% { transform: rotate(684deg) translate(100px) rotate(-684deg); }
-}
+} 
+
+ 
+
+ 
+ 
+  
