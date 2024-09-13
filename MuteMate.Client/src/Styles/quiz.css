@@ -321,7 +321,7 @@
   .answer-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Ensure 2 buttons per row */
-    gap: 20px; /* Increase gap for readability */
+    gap: 20px; 
     justify-items: center;
     margin-top: 17px;
   }
@@ -329,8 +329,8 @@
   .default-quiz-btn,
   .correct-quiz-btn,
   .incorrect-quiz-btn {
-    width: 45vw; /* Make button width relative to viewport */
-    max-width: 180px; /* Ensure it doesn't grow too large */
+    width: 45vw; 
+    max-width: 180px; 
     height: auto;
     font-size: 22px;
     border-radius: 10px;
@@ -370,78 +370,3 @@
   }
 }
 
-/* .quizPage-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.quiz-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 1000px;
-  height: auto;
-  border-radius: 20px;
-  background-color: #fefee3;
-  border: 1px solid black;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 1rem;
-  padding: 15px;
-}
-
-.answer-buttons {
-  display: flex;
-  gap: 5px;
-}
-
-.default-quiz-btn {
-  width: 100px;
-  height: auto;
-  font-size: 20px;
-  border-radius: 10px;
-  font-family: "Roboto";
-  background-color: #f1f0a0;
-}
-
-.correct-quiz-btn {
-  width: 100px;
-  height: auto;
-  font-size: 20px;
-  border-radius: 10px;
-  font-family: "Roboto";
-  color: white;
-  background-color: green;
-}
-
-.incorrect-quiz-btn {
-  width: 100px;
-  height: auto;
-  font-size: 20px;
-  border-radius: 10px;
-  font-family: "Roboto";
-  color: white;
-  background-color: red;
-}
-
-.submit-btn {
-  width: 200px;
-  height: auto;
-  font-size: 20px;
-  border-radius: 10px;
-  font-family: "Roboto";
-  background-color: #f1f0a0;
-}
-
-.question-img {
-  width: auto;
-  height: 150px;
-}
-
-.answer-image {
-  width: 60px;
-  height: auto;
-}
-
-@media (min-width: 390px) and (max-width: 844px) {
-} */
