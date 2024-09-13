@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import { NavLink } from "react-router-dom";
+import Spinner from "../components/spinner";
 import "../Styles/register.css";
 
 function Register() {
@@ -10,6 +11,7 @@ function Register() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // Börjar med isLoading = false
   const navigate = useNavigate();
 
   // state variable for error messages
@@ -41,6 +43,7 @@ function Register() {
     } else {
       // clear error message
       setError("");
+     setIsLoading(true); // Startar spinner när vi skickar begäran
       // post data to the /register api
       fetch(ENDPOINTS.REGISTER, {
         method: "POST",
@@ -59,15 +62,20 @@ function Register() {
           console.log(data);
           if (data.ok) {
             setError("Successful register.");
-            setTimeout(() => {
+           // setTimeout(() => {
               navigate("/login");
-            }, 1500); // 1.5 sekund fördröjning så man hinner se meddelandet
-          } else setError("Error registering.");
+           // }, 1500); // 1 sekund fördröjning så man hinner se meddelandet
+            setIsLoading(false);
+          } else {
+            setError("Error registering.");
+            setIsLoading(false); // Stoppa spinnern vid fel
+          }
         })
         .catch((error) => {
           // handle network error
           console.error(error);
           setError("Error registering.");
+          setIsLoading(false); // Stoppa spinnern vid fel
         });
     }
   };
@@ -75,76 +83,83 @@ function Register() {
   return (
     <div className="register-container">
       <div className="containerbox">
-        {/* <div className="img-container"></div> */}
-        <div className="image-container"></div>
+        {/* Visa spinner om isLoading är true */}
+        {isLoading ? (
+          <Spinner /> // Visa spinnern när laddning pågår
+        ) : (
+          <div>
+            <div className="image-container"></div>
 
-        <h3 className="register-text">Register</h3>
-        <div className="form-container register-form-left">
-          <form onSubmit={handleSubmit}>
-            <label className="register-label-text" htmlFor="email">
-              Email:
-            </label>
+            <h3 className="register-text">Register</h3>
+            <div className="form-container register-form-left">
+              <form onSubmit={handleSubmit}>
+                <label className="register-label-text" htmlFor="email">
+                  Email:
+                </label>
 
-            <input
-              className="register-input"
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
+                <input
+                  className="register-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                />
 
-            <label className="register-label-text" htmlFor="username">
-              Username:
-            </label>
+                <label className="register-label-text" htmlFor="username">
+                  Username:
+                </label>
 
-            <input
-              className="register-input"
-              type="text"
-              id="userName"
-              name="userName"
-              value={userName}
-              onChange={handleChange}
-            />
+                <input
+                  className="register-input"
+                  type="text"
+                  id="userName"
+                  name="userName"
+                  value={userName}
+                  onChange={handleChange}
+                />
 
-            <label className="register-label-text" htmlFor="password">
-              Password:
-            </label>
+                <label className="register-label-text" htmlFor="password">
+                  Password:
+                </label>
 
-            <input
-              className="register-input"
-              type="password"
-              id="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
+                <input
+                  className="register-input"
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                />
 
-            <label className="register-label-text" htmlFor="confirmPassword">
-              Confirm Password:
-            </label>
-            <input
-              className="register-input"
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              value={confirmPassword}
-              onChange={handleChange}
-            />
-            {error && <p className="register-error">{error}</p>}
+                <label
+                  className="register-label-text"
+                  htmlFor="confirmPassword"
+                >
+                  Confirm Password:
+                </label>
+                <input
+                  className="register-input"
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={handleChange}
+                />
+                {error && <p className="register-error">{error}</p>}
 
-            <div className="register-btn-container">
-              {" "}
-              <button className="register-button" type="submit">
-                Register
-              </button>
-              {/* <button onClick={handleLoginClick}>Go to Login</button> */}
-              <NavLink to="/login" className="register-login">
-                Already have an account? Log in.
-              </NavLink>
+                <div className="register-btn-container">
+                  <button className="register-button" type="submit">
+                    Register
+                  </button>
+                  <NavLink to="/login" className="register-login">
+                    Already have an account? Log in.
+                  </NavLink>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
