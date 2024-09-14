@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import useFetchQuestions from "../hooks/useFetchQuestions";
 import "../Styles/quiz.css";
@@ -73,7 +72,6 @@ function QuizComponent({ category }) {
     }
   }
 
-  // Metod för att sätta en klass på färg för answers.
   const getColorClass = (answer) => {
     switch (answer.toLowerCase()) {
       case "orange":
@@ -120,7 +118,6 @@ function QuizComponent({ category }) {
 
   const renderAnswerContent = (answer) => {
     if (category === "colors") {
-      // For color answers, return only the color class
       return (
         <div className={getColorClass(answer.Answer)}>{answer.Answer}</div>
       );
@@ -128,8 +125,8 @@ function QuizComponent({ category }) {
       return (
         <img
           src={`http://localhost:5237/${answer.Answer}`}
-          // alt="Answer"
           className="answer-image"
+          alt="Answer"
         />
       );
     } else {
@@ -138,48 +135,52 @@ function QuizComponent({ category }) {
   };
 
   return (
-    <div className="quiz-wrapper">
-      {loading ? (
-        <h2>Loading...</h2>
-      ) : quizFinished ? (
+    <>
+      {quizFinished ? (
         <Result userAnswers={userAnswers} />
       ) : (
-        <>
-          <h1 className="question-title">
-            {currentQuestion.Question || "No Question Available"}
-          </h1>
-          <img
-            className="question-img"
-            src={`http://localhost:5237/${currentQuestion.Image}`}
-            alt="Question"
-          />
-          <div className="answer-buttons">
-            {currentQuestion.Answers && currentQuestion.Answers.$values ? (
-              currentQuestion.Answers.$values.map((a, index) => (
-                <button
-                  className={getButtonClass(a.IsCorrect, a)}
-                  onClick={(e) => handleAnswerClick(a.Id, a.IsCorrect)}
-                  key={index}
-                  value={a.Id}
-                  disabled={selectedAnswer !== null} // Disable buttons after selection
-                >
-                  {renderAnswerContent(a)}
-                </button>
-              ))
-            ) : (
-              <p>No answers available</p>
-            )}
-          </div>
-          <button
-            className="submit-btn"
-            disabled={submitBtn}
-            onClick={handleNextQuestionClick}
-          >
-            Next question
-          </button>
-        </>
+        <div className="quiz-wrapper">
+          {loading ? (
+            <h2>Loading...</h2>
+          ) : (
+            <>
+              <h1 className="question-title">
+                {currentQuestion.Question || "No Question Available"}
+              </h1>
+              <img
+                className="question-img"
+                src={`http://localhost:5237/${currentQuestion.Image}`}
+                alt="Question"
+              />
+              <div className="answer-buttons">
+                {currentQuestion.Answers && currentQuestion.Answers.$values ? (
+                  currentQuestion.Answers.$values.map((a, index) => (
+                    <button
+                      className={getButtonClass(a.IsCorrect, a)}
+                      onClick={() => handleAnswerClick(a.Id, a.IsCorrect)}
+                      key={index}
+                      value={a.Id}
+                      disabled={selectedAnswer !== null}
+                    >
+                      {renderAnswerContent(a)}
+                    </button>
+                  ))
+                ) : (
+                  <p>No answers available</p>
+                )}
+              </div>
+              <button
+                className="submit-btn"
+                disabled={submitBtn}
+                onClick={handleNextQuestionClick}
+              >
+                Next question
+              </button>
+            </>
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
