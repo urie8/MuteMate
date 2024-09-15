@@ -10,14 +10,12 @@ namespace MuteMate.Server.Controllers
     [ApiController]
     public class QuizController : ControllerBase
     {
-
         private readonly QuizRepo _quizRepo;
 
         private JsonSerializerOptions _jsonSerializerOptions = new()
         {
             ReferenceHandler = ReferenceHandler.Preserve // Konfigurering av JSON-serialisering
         };
-
 
         public QuizController(QuizRepo quizRepo)
         {
@@ -62,27 +60,22 @@ namespace MuteMate.Server.Controllers
             }
         }
 
-
-
-
         [HttpGet("GetCategoryLetters")]
 
         public async Task<IActionResult> GetCategoryLettersAsync()
         {
 
             List<QuestionModel> categoryLetters = await _quizRepo.GetCategoryLetters();
+
             if (categoryLetters == null)
             {
                 return NotFound();
-
             }
+
             else
-
             {
-
                 var responsesJson = JsonSerializer.Serialize(categoryLetters, _jsonSerializerOptions);
                 return Content(responsesJson, "application/json");
-                //return Ok(categoryLetters);
             }
 
         }
@@ -95,13 +88,11 @@ namespace MuteMate.Server.Controllers
             if (categoryAnimals == null)
             {
                 return NotFound();
-
             }
             else
             {
                 var responsesJson = JsonSerializer.Serialize(categoryAnimals, _jsonSerializerOptions);
                 return Content(responsesJson, "application/json");
-                //return Ok(categoryAnimals);
             }
 
         }

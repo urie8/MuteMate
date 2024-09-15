@@ -4,6 +4,7 @@ import { ENDPOINTS } from "../api/apiEndpoints";
 import { NavLink } from "react-router-dom";
 import Spinner from "../components/spinner";
 import "../Styles/register.css";
+import { Spin } from "hamburger-react";
 
 function Register() {
   // state variables for email and passwords
@@ -43,7 +44,7 @@ function Register() {
     } else {
       // clear error message
       setError("");
-     setIsLoading(true); // Startar spinner när vi skickar begäran
+      setIsLoading(true); // Startar spinner när vi skickar begäran
       // post data to the /register api
       fetch(ENDPOINTS.REGISTER, {
         method: "POST",
@@ -62,9 +63,9 @@ function Register() {
           console.log(data);
           if (data.ok) {
             setError("Successful register.");
-           // setTimeout(() => {
-              navigate("/login");
-           // }, 1500); // 1 sekund fördröjning så man hinner se meddelandet
+            // setTimeout(() => {
+            navigate("/login");
+            // }, 1500); // 1 sekund fördröjning så man hinner se meddelandet
             setIsLoading(false);
           } else {
             setError("Error registering.");
@@ -83,83 +84,79 @@ function Register() {
   return (
     <div className="register-container">
       <div className="containerbox">
-        {/* Visa spinner om isLoading är true */}
-        {isLoading ? (
-          <Spinner /> // Visa spinnern när laddning pågår
-        ) : (
-          <div>
-            <div className="image-container"></div>
+        <div>
+          <div className="image-container"></div>
 
-            <h3 className="register-text">Register</h3>
-            <div className="form-container register-form-left">
-              <form onSubmit={handleSubmit}>
-                <label className="register-label-text" htmlFor="email">
-                  Email:
-                </label>
+          <h3 className="register-text">Register</h3>
+          <div className="form-container register-form-left">
+            <form onSubmit={handleSubmit}>
+              <label className="register-label-text" htmlFor="email">
+                Email:
+              </label>
 
-                <input
-                  className="register-input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={handleChange}
-                />
+              <input
+                className="register-input"
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+              />
 
-                <label className="register-label-text" htmlFor="username">
-                  Username:
-                </label>
+              <label className="register-label-text" htmlFor="username">
+                Username:
+              </label>
 
-                <input
-                  className="register-input"
-                  type="text"
-                  id="userName"
-                  name="userName"
-                  value={userName}
-                  onChange={handleChange}
-                />
+              <input
+                className="register-input"
+                type="text"
+                id="userName"
+                name="userName"
+                value={userName}
+                onChange={handleChange}
+              />
 
-                <label className="register-label-text" htmlFor="password">
-                  Password:
-                </label>
+              <label className="register-label-text" htmlFor="password">
+                Password:
+              </label>
 
-                <input
-                  className="register-input"
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={password}
-                  onChange={handleChange}
-                />
+              <input
+                className="register-input"
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+              />
 
-                <label
-                  className="register-label-text"
-                  htmlFor="confirmPassword"
-                >
-                  Confirm Password:
-                </label>
-                <input
-                  className="register-input"
-                  type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  value={confirmPassword}
-                  onChange={handleChange}
-                />
-                {error && <p className="register-error">{error}</p>}
+              <label className="register-label-text" htmlFor="confirmPassword">
+                Confirm Password:
+              </label>
+              <input
+                className="register-input"
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={confirmPassword}
+                onChange={handleChange}
+              />
+              {error && <p className="register-error">{error}</p>}
 
-                <div className="register-btn-container">
+              <div className="register-btn-container">
+                {isLoading ? (
+                  <Spinner />
+                ) : (
                   <button className="register-button" type="submit">
                     Register
                   </button>
-                  <NavLink to="/login" className="register-login">
-                    Already have an account? Log in.
-                  </NavLink>
-                </div>
-              </form>
-            </div>
+                )}
+                <NavLink to="/login" className="register-login">
+                  Already have an account? Log in.
+                </NavLink>
+              </div>
+            </form>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

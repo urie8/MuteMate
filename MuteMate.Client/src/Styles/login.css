@@ -7,31 +7,28 @@
     text-align: center;
     font-family: "Roboto";
     margin-bottom: 20px;
-        margin-top: 30px;
-    
+    margin-top: 30px;
   }
 
-  .login-button{
+  .login-button {
     margin-bottom: 10px;
-        background-color: #f1f0a0;
-
-
+    background-color: #f1f0a0;
   }
 
   .login-button:hover {
     background-color: #9b9a45;
-}
+  }
 
-  .rememberme-text{
+  .rememberme-text {
     font-family: "Roboto";
     font-size: 16px;
     margin-top: 3px;
   }
 
- .login-container{
-  display: flex;
-  justify-content: center;
- }
+  .login-container {
+    display: flex;
+    justify-content: center;
+  }
 
   .log-in-error {
     color: red;
@@ -49,15 +46,13 @@
     font-size: 20px;
   }
 
-  .form-wrapper{
+  .form-wrapper {
     display: flex;
   }
 
-  .checkbox-input{
+  .checkbox-input {
     width: 20px;
   }
-
-
 }
 
 /*    Desktop */

@@ -4,11 +4,13 @@ import { ENDPOINTS } from "../api/apiEndpoints";
 import useFetchQuestions from "../hooks/useFetchQuestions";
 import "../Styles/quiz.css";
 import Result from "./result";
+import Spinner from "./spinner";
 
 function QuizComponent({ category }) {
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [loading, setLoading] = useState(true);
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [questionNumber, setQuestionNumber] = useState(1);
   const [quizFinished, setQuizFinished] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [userAnswers, setUserAnswers] = useState([]);
@@ -46,6 +48,7 @@ function QuizComponent({ category }) {
     setSelectedAnswer(null);
     if (questionIndex < questions.length - 1) {
       setQuestionIndex(questionIndex + 1);
+      setQuestionNumber(questionNumber + 1);
       setCurrentQuestion(questions[questionIndex + 1]);
       setSubmitBtn(true);
     } else {
@@ -140,7 +143,7 @@ function QuizComponent({ category }) {
   return (
     <div className="quiz-wrapper">
       {loading ? (
-        <h2>Loading...</h2>
+        <Spinner />
       ) : quizFinished ? (
         <Result userAnswers={userAnswers} />
       ) : (
@@ -148,6 +151,7 @@ function QuizComponent({ category }) {
           <h1 className="question-title">
             {currentQuestion.Question || "No Question Available"}
           </h1>
+          <h2 className="question-counter">Question {questionNumber}/5</h2>
           <img
             className="question-img"
             src={`http://localhost:5237/${currentQuestion.Image}`}

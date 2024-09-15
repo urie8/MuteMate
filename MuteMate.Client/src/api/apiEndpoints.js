@@ -8,6 +8,8 @@ export const ENDPOINTS = {
   LOGIN: `${API_BASE_URL}/api/Account/login`,
   LOGOUT: `${API_BASE_URL}/api/Account/logout`,
   IsAuthenticated: `${API_BASE_URL}/api/Account/isAuthenticated`,
+
+  // GET Endpoints:
   GETCATEGORIESCOLORS: `${API_BASE_URL}/api/Quiz/GetCategoryColors`,
   GETCATEGORIESLETTERS: `${API_BASE_URL}/api/Quiz/GetCategoryLetters`,
   GETCATEGORIESANIMALS: `${API_BASE_URL}/api/Quiz/GetCategoryAnimals`,
@@ -26,6 +28,4 @@ export const ENDPOINTS = {
 
   // POST endpoints
   ADDCORRECTUSERANSWERS: `${API_BASE_URL}/api/UserAnswer/AddCorrectUserAnswers`,
-
-  // Add other endpoints here
 };

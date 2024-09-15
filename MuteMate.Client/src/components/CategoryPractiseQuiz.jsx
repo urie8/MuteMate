@@ -3,7 +3,13 @@ import { useNavigate } from "react-router-dom";
 import "../categoryPractise.css";
 import happyMonkey from "../images/happyMonkey.png";
 
-function CategoryPractiseQuiz({ message, linkTo, monkeyLetters, monkeyAnimals, monkeyColors }) {
+function CategoryPractiseQuiz({
+  message,
+  linkTo,
+  monkeyLetters,
+  monkeyAnimals,
+  monkeyColors,
+}) {
   const navigate = useNavigate();
 
   function handleImageClick(category) {
@@ -91,4 +97,3 @@ function CategoryPractiseQuiz({ message, linkTo, monkeyLetters, monkeyAnimals, m
 }
 
 export default CategoryPractiseQuiz;
-

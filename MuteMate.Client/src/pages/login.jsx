@@ -3,11 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import "../Styles/login.css";
 import { NavLink } from "react-router-dom";
+import Spinner from "../components/spinner";
+
 function Login() {
   // state variables for email and password
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [rememberme, setRememberme] = useState(false);
+  const [loading, setLoadning] = useState(false);
   // state variable for error messages
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -37,7 +40,7 @@ function Login() {
       const loginurl = rememberme
         ? `${ENDPOINTS.LOGIN}?useCookies=true`
         : `${ENDPOINTS.LOGIN}?useSessionCookies=true`;
-
+      setLoadning(true);
       fetch(loginurl, {
         method: "POST",
         headers: {
@@ -52,16 +55,17 @@ function Login() {
         .then((response) => {
           // handle success or error from the server
           if (response.ok) {
-            setError("Successful Login.");
             window.location.href = "/";
           } else {
             setError("Error Logging In.");
+            setLoadning(false);
           }
         })
         .catch((error) => {
           // handle network error
           console.error(error);
           setError("Error Logging in.");
+          setLoadning(false);
         });
     }
   };
@@ -112,17 +116,19 @@ function Login() {
                   checked={rememberme}
                   onChange={handleChange}
                 />
-
                 <span className="rememberme-text">Remember Me</span>
                 {/* {error && <p className="log-in-error">{error}</p>} */}
               </div>
               {error && <p className="log-in-error">{error}</p>}
               {/* <span>Remember Me</span> */}
               <div className="register-btn-container">
-                <button className="login-button" type="submit">
-                  Login
-                </button>
-
+                {loading ? (
+                  <Spinner />
+                ) : (
+                  <button className="login-button" type="submit">
+                    Login
+                  </button>
+                )}
                 <NavLink className="register-login" to="/register">
                   No account? Sign up!
                 </NavLink>

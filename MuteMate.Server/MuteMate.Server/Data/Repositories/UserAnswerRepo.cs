@@ -13,7 +13,8 @@ namespace MuteMate.Server.Data.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<List<AnswerModel?>> GetCorrectAnswersForUserAsync(string userId) //total banana points
+        //total banana points
+        public async Task<List<AnswerModel?>> GetCorrectAnswersForUserAsync(string userId)
         {
             var correctAnswers = await _dbContext.UserAnswers
                 .Where(ua => ua.UserId == userId && ua.Answer.IsCorrect)
@@ -22,7 +23,6 @@ namespace MuteMate.Server.Data.Repositories
 
             return correctAnswers;
         }
-
 
         //Hämta userns correct answers för category Colors
 
@@ -37,7 +37,6 @@ namespace MuteMate.Server.Data.Repositories
         }
 
         //Hämta userns correct answers för category Letters
-
         public async Task<List<AnswerModel?>> GetCorrectAnswersForCategoryLettersAsync(string userId)
         {
             return await _dbContext.UserAnswers
@@ -49,7 +48,6 @@ namespace MuteMate.Server.Data.Repositories
         }
 
         //Hämta userns correct answers för category Animals
-
         public async Task<List<AnswerModel?>> GetCorrectAnswersForCategoryAnimalsAsync(string userId)
         {
             return await _dbContext.UserAnswers

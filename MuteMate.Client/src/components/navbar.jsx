@@ -5,7 +5,6 @@ import logo from "../images/MuteMateLogo.png";
 import vines from "../images/vines.png";
 import banan from "../images/banan1.png";
 import vinesnoborder from "../images/vinenoborder.png";
-
 import "../Styles/navbar.css";
 import Hamburger from "hamburger-react";
 import { useClickAway } from "react-use";
@@ -192,5 +191,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-

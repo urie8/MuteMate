@@ -3,12 +3,9 @@ import useFetchQuotes from "../hooks/useFetchQuotes";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import "../Styles/myPage.css";
 import banana from "../images/banan1.png";
-import vines from "../images/vines.png";
-import { useNavigate } from "react-router-dom";
 import colorwheel from "/public/MiiaImages/color-wheel.png";
 import alphabet from "/public/MiiaImages/abc.png";
 import livestock from "/public/MiiaImages/livestock.png";
-import AuthorizeView from "../components/authorizeView";
 
 const maxPoints = 48;
 
@@ -166,14 +163,6 @@ function myPage({}) {
   if (error) {
     return <div>{error}</div>; // Display error message if there's any error
   }
-
-  // useEffect(() => {
-  //   if (totalBananas.length >= 25) {
-  //     setCategory("praise");
-  //   } else if (totalBananas <= 25) setCategory("encouragement");
-  // }, [totalBananas]);
-
-  // API
 
   return (
     <>

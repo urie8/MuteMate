@@ -4,7 +4,8 @@ import { ENDPOINTS } from "../api/apiEndpoints";
 function useFetchQuotes(category) {
   const [quote, setQuote] = useState("");
   const [error, setError] = useState("");
-const points = 3;
+  const points = 3;
+
   useEffect(() => {
     if (!category) return;
 
@@ -17,7 +18,7 @@ const points = 3;
       case "encouragement":
         endpoint = ENDPOINTS.GETRANDOMENCOURAGEMENTQUOTE;
         break;
-      
+
       default:
         setError("Could not find quotes");
         return;
@@ -33,7 +34,7 @@ const points = 3;
           return result.json();
         })
         .then((data) => {
-            console.log("data: ", data)
+          console.log("data: ", data);
           setQuote(data);
           setError("");
         })

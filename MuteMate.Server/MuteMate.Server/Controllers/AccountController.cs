@@ -21,7 +21,6 @@ namespace MuteMate.Server.Controllers
         }
 
 
-
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
@@ -114,8 +113,5 @@ namespace MuteMate.Server.Controllers
             }
             return Unauthorized(new { Success = false, Message = "User is not authenticated." });
         }
-        //Hjälp
     }
-
-
 }

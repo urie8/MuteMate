@@ -7,12 +7,9 @@ namespace MuteMate.Server.Models
     {
         [Key]
         public int Id { get; set; }
-
         [Column("quote")]
         public string Quote { get; set; } = null!;
-
         [Column("category")]
         public string Category { get; set; }
-
     }
 }

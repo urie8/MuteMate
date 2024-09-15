@@ -87,12 +87,5 @@ namespace MuteMate.Server.Controllers
                 return Content(responsesJson, "application/json");
             }
         }
-
-
-
-
-
-
-
     }
 }

@@ -5,7 +5,6 @@ import SearchBar from "./searchBarComponent";
 import colorpic from "../images/chromatic.png";
 import SearchBarMobile from "./searchbarMobile";
 
-
 function PracticeColorsComponent() {
   const [colorQuestions, setColorQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,7 +48,6 @@ function PracticeColorsComponent() {
     }
   };
 
-  
   const filteredQuestions = colorQuestions.filter((question) => {
     const correctAnswer = question.Answers?.$values?.find(
       (answer) => answer.IsCorrect
@@ -70,7 +68,6 @@ function PracticeColorsComponent() {
         <div className="practice-colors-text-container">
           <div className="practice-text">Practice: Colors</div>
           <img className="color-image" src={colorpic} alt="Pawprint" />
-
           <SearchBar
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
@@ -111,4 +108,3 @@ function PracticeColorsComponent() {
 }
 
 export default PracticeColorsComponent;
-
