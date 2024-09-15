@@ -4,6 +4,7 @@ import { ENDPOINTS } from "../api/apiEndpoints";
 import useFetchQuestions from "../hooks/useFetchQuestions";
 import "../Styles/quiz.css";
 import Result from "./result";
+import MonkeyReaction from "./monkeyReaction";
 
 function QuizComponent({ category }) {
   const [currentQuestion, setCurrentQuestion] = useState({});
@@ -170,13 +171,19 @@ function QuizComponent({ category }) {
               <p>No answers available</p>
             )}
           </div>
-          <button
-            className="submit-btn"
-            disabled={submitBtn}
-            onClick={handleNextQuestionClick}
-          >
-            Next question
-          </button>
+          <div className="submit-answer-wrapper">
+            <button
+              className="submit-btn"
+              disabled={submitBtn}
+              onClick={handleNextQuestionClick}
+            >
+              Next question
+            </button>
+            <div className="monkey-answer-reaction">
+              <h2 className="monkey-answer-text"></h2>
+              <MonkeyReaction isCorrect={selectedAnswer} />
+            </div>
+          </div>
         </>
       )}
     </div>
