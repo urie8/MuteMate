@@ -5,6 +5,7 @@ import banana from "../images/banana.png";
 import bananaSkugga from "../images/banana-skugga.png";
 import happyMonkey from "../images/happyMonkey.png";
 import { ENDPOINTS } from "../api/apiEndpoints";
+import { getColorClass } from "../Utils/colorUtils";
 
 const maxPoints = 5;
 
@@ -14,38 +15,29 @@ function Result({ userAnswers }) {
   const [questions, setQuestions] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
-  // när info kommer in, loopa igenom dem och välj ut de som ej svarats rätt på, spara questionId på dem i en variable
   useEffect(() => {
     const fetchQuestionsForWrongAnswers = async () => {
-      //välj ut de med fel svar
       const wrongAnswers = userAnswers.filter((answer) => !answer.isCorrect);
-      // spara id på dem
       const wrongQuestionsId = wrongAnswers.map((answer) => answer.questionId);
-      console.log("id på de med fel svar: ", wrongQuestionsId);
-      //räkna ut banana points
       const countCorrect = maxPoints - wrongAnswers.length;
       setCorrectAnswers(countCorrect);
-      console.log("Antal rätta svar: ", countCorrect);
 
       if (wrongQuestionsId.length > 0) {
         try {
           const response = await fetch(
-            //här vill jag fetcha endast de man svarat fel på, skickar en queryParameter
             `${ENDPOINTS.GETQUESTIONSANSWEREDWRONG}?id=${wrongQuestionsId.join(
               ","
             )}`
           );
           const data = await response.json();
-
           setQuestions(data.$values);
-          console.log("inkommande info: ", data.$values);
         } catch (error) {
           console.error("Problem fetching the questions", error);
         }
       }
     };
     fetchQuestionsForWrongAnswers();
-  }, []);
+  }, [userAnswers]);
 
   useEffect(() => {
     if (correctAnswers <= 2) {
@@ -85,7 +77,6 @@ function Result({ userAnswers }) {
           </div>
         </div>
 
-        {/* om man hade fel, visa vilka de var så att de kan öva */}
         {correctAnswers < maxPoints ? (
           <div className="practise-container">
             <h1 className="practise-text">Let's practice what we missed!</h1>
@@ -93,9 +84,7 @@ function Result({ userAnswers }) {
               <div className="practice-letters-component-container">
                 {questions.map((question) => {
                   const imageUrl = `http://localhost:5237/${question.Image}`;
-
                   const correctAnswer = question.Answers?.$values?.[0];
-                  // question.Answers?.$values?.find( (answer) => answer.IsCorrect );
 
                   return (
                     <div key={question.Id} className="practice-letters-card">
@@ -113,14 +102,15 @@ function Result({ userAnswers }) {
                           alt="Correct Answer"
                           className="practice-animal-image"
                         />
-                      ) : (
-                        (question.Category === "Letters" ||
-                          question.Category === "Colors") && (
-                          <p className="practice-letter-correct-answer">
-                            {correctAnswer.Answer}
-                          </p>
-                        )
-                      )}
+                      ) : question.Category === "Letters" ? (
+                        <p className="practice-letter-correct-answer">
+                          {correctAnswer.Answer}
+                        </p>
+                      ) : question.Category === "Colors" ? (
+                        <p className={getColorClass(correctAnswer.Answer)}>
+                          {correctAnswer.Answer}
+                        </p>
+                      ) : null}
                     </div>
                   );
                 })}
