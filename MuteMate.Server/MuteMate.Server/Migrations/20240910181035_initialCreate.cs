@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MuteMate.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class initialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -323,7 +323,7 @@ namespace MuteMate.Server.Migrations
                     { 5, "N", false, 4 },
                     { 6, "B", true, 4 },
                     { 7, "T", false, 4 },
-                    { 8, "F", false, 5 },
+                    { 8, "F", false, 4 },
                     { 9, "N", false, 5 },
                     { 10, "Z", false, 5 },
                     { 11, "C", true, 5 },
@@ -380,7 +380,7 @@ namespace MuteMate.Server.Migrations
                     { 63, "C", false, 18 },
                     { 64, "P", true, 18 },
                     { 65, "I", false, 18 },
-                    { 66, "M", false, 18 },
+                    { 66, "M", false, 19 },
                     { 67, "Q", true, 19 },
                     { 68, "X", false, 19 },
                     { 69, "W", false, 19 },
