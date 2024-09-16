@@ -3,6 +3,7 @@ import { ENDPOINTS } from "../api/apiEndpoints";
 import useFetchQuestions from "../hooks/useFetchQuestions";
 import "../Styles/quiz.css";
 import Result from "./result";
+import MonkeyReaction from "./monkeyReaction";
 
 function QuizComponent({ category }) {
   const [currentQuestion, setCurrentQuestion] = useState({});
@@ -135,53 +136,55 @@ function QuizComponent({ category }) {
   };
 
   return (
-    <>
-      {quizFinished ? (
-        <Result userAnswers={userAnswers} />
-      ) : (
-        <div className="quiz-wrapper">
-          {loading ? (
-            <h2>Loading...</h2>
-          ) : (
-            <>
-              <h1 className="question-title">
-                {currentQuestion.Question || "No Question Available"}
-              </h1>
-              <img
-                className="question-img"
-                src={`http://localhost:5237/${currentQuestion.Image}`}
-                alt="Question"
-              />
-              <div className="answer-buttons">
-                {currentQuestion.Answers && currentQuestion.Answers.$values ? (
-                  currentQuestion.Answers.$values.map((a, index) => (
-                    <button
-                      className={getButtonClass(a.IsCorrect, a)}
-                      onClick={() => handleAnswerClick(a.Id, a.IsCorrect)}
-                      key={index}
-                      value={a.Id}
-                      disabled={selectedAnswer !== null}
-                    >
-                      {renderAnswerContent(a)}
-                    </button>
-                  ))
-                ) : (
-                  <p>No answers available</p>
-                )}
-              </div>
+  <>
+    {loading ? (
+      <h2>Loading...</h2>
+    ) : quizFinished ? (
+      <Result userAnswers={userAnswers} />
+    ) : (
+      <div className="quiz-wrapper">
+        <h1 className="question-title">
+          {currentQuestion.Question || "No Question Available"}
+        </h1>
+        <img
+          className="question-img"
+          src={`http://localhost:5237/${currentQuestion.Image}`}
+          alt="Question"
+        />
+        <div className="answer-buttons">
+          {currentQuestion.Answers && currentQuestion.Answers.$values ? (
+            currentQuestion.Answers.$values.map((a, index) => (
               <button
-                className="submit-btn"
-                disabled={submitBtn}
-                onClick={handleNextQuestionClick}
+                className={getButtonClass(a.IsCorrect, a)}
+                onClick={(e) => handleAnswerClick(a.Id, a.IsCorrect)}
+                key={index}
+                value={a.Id}
+                disabled={selectedAnswer !== null} // Disable buttons after selection
               >
-                Next question
+                {renderAnswerContent(a)}
               </button>
-            </>
+            ))
+          ) : (
+            <p>No answers available</p>
           )}
         </div>
-      )}
-    </>
-  );
+        <div className="submit-answer-wrapper">
+          <button
+            className="submit-btn"
+            disabled={submitBtn}
+            onClick={handleNextQuestionClick}
+          >
+            Next question
+          </button>
+          <div className="monkey-answer-reaction">
+            <h2 className="monkey-answer-text"></h2>
+            <MonkeyReaction isCorrect={selectedAnswer} />
+          </div>
+        </div>
+      </div>
+    )}
+  </>
+);
 }
 
 export default QuizComponent;
