@@ -7,9 +7,8 @@ function Quiz() {
   return (
     <>
       <div className="quizPage-container">
-        <AuthorizeView>
           <QuizComponent category={category}></QuizComponent>
-        </AuthorizeView>
+       
       </div>
     </>
   );
