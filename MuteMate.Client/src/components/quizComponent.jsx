@@ -10,6 +10,7 @@ function QuizComponent({ category }) {
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [loading, setLoading] = useState(true);
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [questionCounter, setQuestionCounter] = useState(1);
   const [quizFinished, setQuizFinished] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [userAnswers, setUserAnswers] = useState([]);
@@ -47,6 +48,7 @@ function QuizComponent({ category }) {
     setSelectedAnswer(null);
     if (questionIndex < questions.length - 1) {
       setQuestionIndex(questionIndex + 1);
+      setQuestionCounter(questionCounter + 1);
       setCurrentQuestion(questions[questionIndex + 1]);
       setSubmitBtn(true);
     } else {
@@ -149,6 +151,7 @@ function QuizComponent({ category }) {
           <h1 className="question-title">
             {currentQuestion.Question || "No Question Available"}
           </h1>
+          <h2 className="counter">Question {questionCounter}/5</h2>
           <img
             className="question-img"
             src={`http://localhost:5237/${currentQuestion.Image}`}

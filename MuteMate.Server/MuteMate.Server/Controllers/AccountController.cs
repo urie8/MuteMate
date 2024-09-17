@@ -20,8 +20,6 @@ namespace MuteMate.Server.Controllers
             _userAnswerRepo = userAnswerRepo;
         }
 
-
-
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
@@ -69,8 +67,6 @@ namespace MuteMate.Server.Controllers
         [Route("isAuthenticated")]
         public IActionResult IsAuthenticated()
         {
-
-
             if (User.Identity.IsAuthenticated)
             {
                 return Ok(new { isLoggedIn = true });
@@ -116,6 +112,5 @@ namespace MuteMate.Server.Controllers
         }
         //Hjälp
     }
-
 
 }
