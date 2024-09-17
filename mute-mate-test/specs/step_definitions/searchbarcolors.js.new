@@ -1,0 +1,17 @@
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+
+Given('that I am on the Practice Page colors', () => {
+  // TODO: implement step
+});
+
+When('I click on the Searchbar', () => {
+  // TODO: implement step
+});
+
+When('I type in {string} in the Searchbar', (a) => {
+  // TODO: implement step
+});
+
+Then('I should se the {string} sign on the practice page', (a) => {
+  // TODO: implement step
+});
