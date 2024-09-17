@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../Styles/practiceAnimalsComponent.css";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import pawprint from "../images/pawprint.png";
-import SearchBar from "./searchBarComponent"; 
+import SearchBar from "./searchBarComponent";
 import SearchBarMobile from "./searchbarMobile";
 
 function PracticeAnimalsComponent() {
@@ -20,16 +20,20 @@ function PracticeAnimalsComponent() {
 
   // Filtrerar animals questions
   const filteredQuestions = animalQuestions.filter((question) => {
+    // Hitta det korrekta svaret för frågan
     const correctAnswer = question.Answers?.$values?.find(
       (answer) => answer.IsCorrect
     );
 
+    // Hämta frågans titel och det korrekta svaret och konvertera till små bokstäver
     const questionTitle = question.Title?.toLowerCase() || "";
     const correctAnswerText = correctAnswer?.Answer?.toLowerCase() || "";
 
+    // Filtrera frågorna baserat på om frågans titel eller det korrekta svaret innehåller sökfrågan
+    const searchQueryLower = searchQuery.toLowerCase();
     return (
-      questionTitle.includes(searchQuery.toLowerCase()) ||
-      correctAnswerText.includes(searchQuery.toLowerCase())
+      questionTitle.includes(searchQueryLower) ||
+      correctAnswerText.includes(searchQueryLower)
     );
   });
 
@@ -86,4 +90,3 @@ function PracticeAnimalsComponent() {
 }
 
 export default PracticeAnimalsComponent;
-
