@@ -3,11 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { ENDPOINTS } from "../api/apiEndpoints";
 import "../Styles/login.css";
 import { NavLink } from "react-router-dom";
+import Spinner from "../components/spinner";
+
 function Login() {
   // state variables for email and password
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [rememberme, setRememberme] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   // state variable for error messages
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -33,6 +36,7 @@ function Login() {
     } else {
       // clear error message
       setError("");
+      setIsLoading(true); 
       // post data to the /login api
       const loginurl = rememberme
         ? `${ENDPOINTS.LOGIN}?useCookies=true`
@@ -56,12 +60,14 @@ function Login() {
             window.location.href = "/";
           } else {
             setError("Error Logging In.");
+            setIsLoading(false);
           }
         })
         .catch((error) => {
           // handle network error
           console.error(error);
           setError("Error Logging in.");
+          setIsLoading(false);
         });
     }
   };
@@ -74,7 +80,7 @@ function Login() {
           {/* <div className="img-container"></div> */}
           <div className="image-container"></div>
           <div className="form-container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{ position: 'relative' }}> 
               <label className="forminput" htmlFor="userName">
                 Username:
               </label>
@@ -118,6 +124,7 @@ function Login() {
               </div>
               {error && <p className="log-in-error">{error}</p>}
               {/* <span>Remember Me</span> */}
+              {isLoading && <Spinner />}
               <div className="register-btn-container">
                 <button className="login-button" type="submit">
                   Login
@@ -136,3 +143,4 @@ function Login() {
 }
 
 export default Login;
+

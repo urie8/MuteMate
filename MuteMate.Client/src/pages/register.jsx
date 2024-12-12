@@ -83,16 +83,12 @@ function Register() {
   return (
     <div className="register-container">
       <div className="containerbox">
-        {/* Visa spinner om isLoading är true */}
-        {isLoading ? (
-          <Spinner /> // Visa spinnern när laddning pågår
-        ) : (
           <div>
             <div className="image-container"></div>
 
             <h3 className="register-text">Register</h3>
             <div className="form-container register-form-left">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} style={{ position: "relative" }}>
                 <label className="register-label-text" htmlFor="email">
                   Email:
                 </label>
@@ -147,7 +143,7 @@ function Register() {
                   onChange={handleChange}
                 />
                 {error && <p className="register-error">{error}</p>}
-
+                {isLoading && <Spinner />}
                 <div className="register-btn-container">
                   <button className="register-button" type="submit">
                     Register
@@ -159,7 +155,6 @@ function Register() {
               </form>
             </div>
           </div>
-        )}
       </div>
     </div>
   );
